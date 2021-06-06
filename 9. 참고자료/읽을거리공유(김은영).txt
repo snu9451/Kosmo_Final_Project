@@ -1,0 +1,24 @@
+#1.	세션Session에 대하여...
+	https://enai.tistory.com/29
+
+#2.	유스케이스 다이어그램 - include와 extend
+	http://dslab.konkuk.ac.kr/Class/2013/13SMA/Team_project/1st/T4/SMA2013_T4_UML_Report.pdf
+
+#3.	카카오지도API 길찾기 바로가기
+	https://apis.map.kakao.com/web/guide/#routeurl
+
+#4.	Unique Key
+	https://mine-it-record.tistory.com/41
+	
+
+#5.	배치파일(배치프로그램) 작성하기
+	https://boxtalk.tistory.com/68
+	https://ko.wikihow.com/%EB%B0%B0%EC%B9%98-%ED%8C%8C%EC%9D%BC-%EC%A7%80%EC%97%B0%ED%95%98%EB%8A%94-%EB%B2%95
+	https://ko.wikihow.com/%EB%B0%B0%EC%B9%98-%ED%8C%8C%EC%9D%BC-%EC%A7%80%EC%97%B0%ED%95%98%EB%8A%94-%EB%B2%95
+
+#6.	ERD 개념
+	https://s-s-coders.tistory.com/20
+	https://velog.io/@muchogusto/ERD-%EA%B7%B8%EB%A6%AC%EA%B8%B0
+
+#7.	유스케이스(Use Case) 다이어그램 Wikipedia
+	https://en.wikipedia.org/wiki/Use_case_diagram
