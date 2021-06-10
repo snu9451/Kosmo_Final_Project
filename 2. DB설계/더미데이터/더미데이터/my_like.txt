@@ -1,0 +1,20 @@
+INSERT INTO my_like(bm_no,mem_email)
+value (1,'apple@good.com');
+INSERT INTO my_like(bm_no,mem_email)
+value (3,'apple@good.com');
+INSERT INTO my_like(bm_no,mem_email)
+value (3,'pine@good.com');
+INSERT INTO my_like(bm_no,mem_email)
+value (4,'pine@good.com');
+INSERT INTO my_like(bm_no,mem_email)
+value (5,'grape@good.com');
+INSERT INTO my_like(bm_no,mem_email)
+value (6,'grape@good.com');
+INSERT INTO my_like(bm_no,mem_email)
+value (8,'blue@good.com');
+INSERT INTO my_like(bm_no,mem_email)
+value (8,'water@good.com');
+INSERT INTO my_like(bm_no,mem_email)
+value (1,'blue@good.com');
+INSERT INTO my_like(bm_no,mem_email)
+value (2,'water@good.com');

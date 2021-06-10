@@ -1,0 +1,26 @@
+INSERT INTO board_img(bi_no,bi_file,bm_no)
+value (1,'1.png',1);
+INSERT INTO board_img(bi_no,bi_file,bm_no)
+value (2,'2.png',1);
+INSERT INTO board_img(bi_no,bi_file,bm_no)
+value (3,'3.png',2);
+INSERT INTO board_img(bi_no,bi_file,bm_no)
+value (4,'4.png',3);
+INSERT INTO board_img(bi_no,bi_file,bm_no)
+value (5,'5.png',4);
+INSERT INTO board_img(bi_no,bi_file,bm_no)
+value (6,'6.png',4);
+INSERT INTO board_img(bi_no,bi_file,bm_no)
+value (7,'7.png',5);
+INSERT INTO board_img(bi_no,bi_file,bm_no)
+value (8,'8.png',6);
+INSERT INTO board_img(bi_no,bi_file,bm_no)
+value (9,'9.png',7);
+INSERT INTO board_img(bi_no,bi_file,bm_no)
+value (10,'10.png',8);
+INSERT INTO board_img(bi_no,bi_file,bm_no)
+value (11,'11.png',8);
+INSERT INTO board_img(bi_no,bi_file,bm_no)
+value (13,'12.png',9);
+INSERT INTO board_img(bi_no,bi_file,bm_no)
+value (14,'13.png',10);
