@@ -1,0 +1,14 @@
+INSERT INTO rider(order_rider,errand_no,mem_nickname)
+value ('T',1,'오렌지');
+INSERT INTO rider(order_rider,errand_no,mem_nickname)
+value ('F',1,'포도');
+INSERT INTO rider(order_rider,errand_no,mem_nickname)
+value ('T',2,'사과');
+INSERT INTO rider(order_rider,errand_no,mem_nickname)
+value ('F',2,'바나나');
+INSERT INTO rider(order_rider,errand_no,mem_nickname)
+value ('T',3,'파인애플');
+INSERT INTO rider(order_rider,errand_no,mem_nickname)
+value ('F',3,'바나나');
+
+
