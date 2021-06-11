@@ -1,0 +1,12 @@
+INSERT INTO Room_ppl(room_no,mem__nickname)
+value (1,'수박');
+INSERT INTO Room_ppl(room_no,mem__nickname)
+value (1,'딸기');
+INSERT INTO Room_ppl(room_no,mem__nickname)
+value (2,'');
+INSERT INTO Room_ppl(room_no,mem__nickname)
+value (2,'');
+INSERT INTO Room_ppl(room_no,mem__nickname)
+value (3,'');
+INSERT INTO Room_ppl(room_no,mem__nickname)
+value (3,'');

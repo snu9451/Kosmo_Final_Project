@@ -21,6 +21,12 @@ value (10,'10.png',8);
 INSERT INTO board_img(bi_no,bi_file,bm_no)
 value (11,'11.png',8);
 INSERT INTO board_img(bi_no,bi_file,bm_no)
-value (13,'12.png',9);
+value (12,'12.png',9);
 INSERT INTO board_img(bi_no,bi_file,bm_no)
-value (14,'13.png',10);
+value (13,'13.png',10);
+INSERT INTO board_img(bi_no,bi_file,bm_no)
+value (14,'14.png',11);
+INSERT INTO board_img(bi_no,bi_file,bm_no)
+value (15,'15.png',12);
+INSERT INTO board_img(bi_no,bi_file,bm_no)
+value (16,'16.png',13);

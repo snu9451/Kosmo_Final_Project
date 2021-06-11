@@ -16,6 +16,6 @@ value ('tomato@good.com','1.png','토마토','123','F',60,'2016-04-04 17:40:51',
 INSERT INTO member_ori(mem_email, mem_img, mem__nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,pay_pw)
 value ('melon@good.com','1.png','멜론','123','M',70,'2015-07-02 05:32:32','F','F','1234');
 INSERT INTO member_ori(mem_email, mem_img, mem__nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,pay_pw)
-value ('blue@good.com','1.png','블루베리','123','F',80,'2016-04-15 08:44:48','F','F','1234');
+value ('blue@good.com','1.png','블루베리','123','F',30,'2016-04-15 08:44:48','F','F','1234');
 INSERT INTO member_ori(mem_email, mem_img, mem__nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,pay_pw)
 value ('water@good.com','1.png','수박','123','M',30,'2015-02-12 00:02:21','F','F','1234');

@@ -1,0 +1,20 @@
+INSERT INTO comment_sub(comment_sub_no,comment_no,mem__nickname,comment_sub_msg,comment_sub_date)
+value (1,1,'바나나','안됩니다.','-');
+INSERT INTO comment_sub(comment_sub_no,comment_no,mem__nickname,comment_sub_msg,comment_sub_date)
+value (2,1,'멜론','그지 새끼냐?','-');
+INSERT INTO comment_sub(comment_sub_no,comment_no,mem__nickname,comment_sub_msg,comment_sub_date)
+value (3,3,'딸기','진품입니다!품질 보증서 있어요~','-');
+INSERT INTO comment_sub(comment_sub_no,comment_no,mem__nickname,comment_sub_msg,comment_sub_date)
+value (4,5,'수박','ㅜㅠㅠㅠ좋은 골프채라서 비싸요.','-');
+INSERT INTO comment_sub(comment_sub_no,comment_no,mem__nickname,comment_sub_msg,comment_sub_date)
+value (5,6,'멜론','안살거면 꺼지세요','-');
+INSERT INTO comment_sub(comment_sub_no,comment_no,mem__nickname,comment_sub_msg,comment_sub_date)
+value (6,6,'바나나','ㅋㅋㅋ시비 오지네','-');
+INSERT INTO comment_sub(comment_sub_no,comment_no,mem__nickname,comment_sub_msg,comment_sub_date)
+value (7,8,'귤','깨끗이 사용했습니다!','-');
+INSERT INTO comment_sub(comment_sub_no,comment_no,mem__nickname,comment_sub_msg,comment_sub_date)
+value (8,9,'파인애플','그쵸?ㅠㅠ근데 이사를 가서 다 정리하려고요','-');
+INSERT INTO comment_sub(comment_sub_no,comment_no,mem__nickname,comment_sub_msg,comment_sub_date)
+value (9,9,'귤','아 메세지 남길게요','-');
+INSERT INTO comment_sub(comment_sub_no,comment_no,mem__nickname,comment_sub_msg,comment_sub_date)
+value (10,10,'파인애플','이미 거래중이라서요~죄송해요','-');
