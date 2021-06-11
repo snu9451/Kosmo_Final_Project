@@ -1,0 +1,33 @@
+심부름주문/심부름값제공/심부름완료/심부름남은금액 => 명칭정하기
+심부름주문/심부름값제공  이거 둘이 묶을 건지도 얘기하기
+
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+value (1,'grape@good.com','2020-05-20 12:50:37','충전',50000,50000,'i');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+value (2,'grape@good.com','2020-06-20 12:50:37','심부름주문',5000,45000,'o');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+value (3,'grape@good.com','2020-06-20 12:50:37','심부름값제공',1000,44000,'o');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+value (4,'orange@good.com','2020-06-20 13:18:37','심부름완료',1000,1000,'i');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+value (5,'grape@good.com','2020-06-20 13:18:37','심부름남은금액',800,44800,'i');
+
+
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+value (6,'banana@good.com','2020-06-20 14:50:37','충전',50000,50000,'i');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+value (7,'banana@good.com','2020-06-20 15:50:37','심부름주문',8000,42000,'o');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+value (8,'banana@good.com','2020-06-20 15:50:37','심부름값제공',1000,43000,'o');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+value (9,'apple@good.com','2020-06-20 16:30:37','심부름완료',1000,1000,'i');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+value (10,'banana@good.com','2020-06-20 15:50:37','심부름남은금액',500,43500,'i');
+
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+value (12,'banana@good.com','2020-06-21 13:50:37','심부름주문',20000,23500,'o');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+value (13,'banana@good.com','2020-06-21 13:50:37','심부름값제공',3000,20500,'o');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+value (14,'pine@good.com','2020-06-21 14:10:37','심부름완료',3000,4000,'i');
+

@@ -1,0 +1,7 @@
+
+INSERT INTO errand(errand_no,errand_item,errand_date,errand_price,errand_real_price,errand_errand,errand_content,errand_timeLimit,errand_hasRider)
+value (1,'스타벅스 아이스아메리카노','2020-06-20 12:50:37','5000','4200','1000','tall사이즈로 부탁해요~30분이내로 가능하면 받아주세요ㅜㅜ점심시간 전에 들어가야 해서요','2020-06-20 13:20:37','S');
+INSERT INTO errand(errand_no,errand_item,errand_date,errand_price,errand_real_price,errand_errand,errand_content,errand_timeLimit,errand_hasRider)
+value (2,'상추,오이,가지','2020-06-20 15:50:37','8000','7500','1000','집 문고리에 걸어주시면 좋겠는데 저희 집 위치는 제가 거래성사돼면 올릴게요~','2020-06-20 16:50:37','S');
+INSERT INTO errand(errand_no,errand_item,errand_date,errand_price,errand_real_price,errand_errand,errand_content,errand_timeLimit,errand_hasRider)
+value (3,'오구오구쌀3kg','2020-06-21 13:50:37','20000','20000','3000','쌀 좀 부탁합니다.','2020-06-21 14:20:37','S');
