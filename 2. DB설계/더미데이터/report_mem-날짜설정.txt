@@ -1,0 +1,6 @@
+INSERT INTO report_mem(report_no,report_msg,report_date,report_type)
+value (1,'욕을 해서 기분이 나쁘네요','-','욕설');
+INSERT INTO report_mem(report_no,report_msg,report_date,report_type)
+value (2,'메세지로 이런거 보내는 거 너무 싫네요~','-','전문판매업자');
+INSERT INTO report_mem(report_no,report_msg,report_date,report_type)
+value (1,'다른 사람 물건 파는 곳까지와서 왜 저렇게 시비터는지 모르겠네요;','-','비매너 사용자');

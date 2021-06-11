@@ -1,0 +1,10 @@
+INSERT INTO report_mem_type(report_type)
+value ('전문판매업자');
+INSERT INTO report_mem_type(report_type)
+value ('비매너 사용자');
+INSERT INTO report_mem_type(report_type)
+value ('욕설');
+INSERT INTO report_mem_type(report_type)
+value ('성희롱');
+INSERT INTO report_mem_type(report_type)
+value ('기타');

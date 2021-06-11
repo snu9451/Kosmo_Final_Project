@@ -18,5 +18,12 @@ value (8,'엘지 노트북 17인치 팝니다',420,'-',2,'2년 썼어요',800000
 INSERT INTO board_master(bm_no,bm_title,bm_hit,bm_date,bm_like,bm_content,bm_price,bm_isSold,mem__nickname,category_name)
 value (9,'원피스 팝니다',23,'-',0,'줄무늬 원피스 팔아요',20000,'F','블루베리','의류');
 INSERT INTO board_master(bm_no,bm_title,bm_hit,bm_date,bm_like,bm_content,bm_price,bm_isSold,mem__nickname,category_name)
-value (10,'장식용 무드등',20,'-',0,'귀여운 펭귄 모양이에요',2000,'F','파인애플','기타');
+value (10,'장식용 무드등',20,'-',0,'완전 존예에요',2000,'F','파인애플','기타');
+INSERT INTO board_master(bm_no,bm_title,bm_hit,bm_date,bm_like,bm_content,bm_price,bm_isSold,mem__nickname,category_name)
+value (11,'의자팝니다',40,'-',0,'완전 존예에요',200000,'F','토마토','가구');
+INSERT INTO board_master(bm_no,bm_title,bm_hit,bm_date,bm_like,bm_content,bm_price,bm_isSold,mem__nickname,category_name)
+value (12,'목걸이팔아요',60,'-',0,'완전 존예에요',120000,'F','토마토','의류');
+INSERT INTO board_master(bm_no,bm_title,bm_hit,bm_date,bm_like,bm_content,bm_price,bm_isSold,mem__nickname,category_name)
+value (13,'책팔요',34,'-',0,'낚였죠~~',80000,'F','토마토','도서');
+
 
