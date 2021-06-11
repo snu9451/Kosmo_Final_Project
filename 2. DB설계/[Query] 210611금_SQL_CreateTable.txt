@@ -1,0 +1,318 @@
+DROP TABLE "errand";
+
+CREATE TABLE "errand" (
+	"errand_no"	number(5)		NULL,
+	"errand_item"	varchar2(50)		NULL,
+	"errand_date"	date default sysdate		NOT NULL,
+	"errand_price"	number(6)		NULL,
+	"errand_errand"	number(6)		NULL,
+	"errand_content"	varchar2(200)		NULL,
+	"errand_timeLimit"	date default sysdate		NULL,
+	"errand_hasRider"	char(1)		NULL
+);
+
+DROP TABLE "member";
+
+CREATE TABLE "member" (
+	"mem_email"	VARCHAR2(50)		NOT NULL,
+	"mem_img"	varchar2(100)		NULL,
+	"mem__nickname"	varchar2(30)		NULL,
+	"mem_pw"	varchar2(80)		NULL,
+	"mem_gender"	char(1)		NULL,
+	"mem_age"	number(2)		NULL,
+	"mem_create_date"	date default sysdate		NULL,
+	"isSocial"	char(1)		NULL,
+	"mem_active"	char(1)		NULL,
+	"pay_pw"	Varchar2(80)		NULL
+);
+
+DROP TABLE "coin";
+
+CREATE TABLE "coin" (
+	"mem_email"	VARCHAR2(50)		NOT NULL,
+	"coin_remain"	number(7)		NULL
+);
+
+DROP TABLE "coin_trans";
+
+CREATE TABLE "coin_trans" (
+	"trans_no"	number(5)		NOT NULL,
+	"mem_email"	VARCHAR2(50)		NOT NULL,
+	"trans_date"	date default sysdate		NULL,
+	"trans_content"	varchar2(200)		NULL,
+	"trans_price"	number(6)		NULL,
+	"trans_remain"	number(6)		NULL,
+	"trans_io"	char(1)		NULL
+);
+
+DROP TABLE "report_mem";
+
+CREATE TABLE "report_mem" (
+	"report_no"	number(3)		NOT NULL,
+	"report_msg"	varchar2(200)		NULL,
+	"report_date"	date default sysdate		NULL,
+	"report_type"	varchar2(100)		NOT NULL
+);
+
+DROP TABLE "join_report_mem";
+
+CREATE TABLE "join_report_mem" (
+	"position"	char(1)		NOT NULL,
+	"report_no"	number(3)		NOT NULL,
+	"mem_email"	VARCHAR2(50)		NOT NULL
+);
+
+DROP TABLE "comment_sub";
+
+CREATE TABLE "comment_sub" (
+	"comment_sub_no"	number(3)		NOT NULL,
+	"comment_no"	number(3)		NOT NULL,
+	"mem__nickname"	VARCHAR2(30)		NOT NULL,
+	"comment_sub_msg"	varchar2(200)		NULL,
+	"comment_sub_date"	date default sysdate		NULL
+);
+
+DROP TABLE "comment";
+
+CREATE TABLE "comment" (
+	"comment_no"	number(3)		NOT NULL,
+	"comment_msg"	varchar2(200)		NULL,
+	"mem__nickname"	VARCHAR2(30)		NOT NULL,
+	"comment_date"	date default sysdate		NULL,
+	"bm_no"	number(6)		NOT NULL
+);
+
+DROP TABLE "board_master";
+
+CREATE TABLE "board_master" (
+	"bm_no"	number(6)		NOT NULL,
+	"bm_title"	varchar2(100)		NULL,
+	"bm_hit"	number(3)		NULL,
+	"bm_date"	date default sysdate		NULL,
+	"bm_like"	number(3)		NULL,
+	"bm_content"	varchar2(200)		NULL,
+	"bm_price"	number(9)		NULL,
+	"bm_isSold"	char(1)		NULL,
+	"mem__nickname"	VARCHAR2(30)		NOT NULL,
+	"category_name"	VARCHAR2(50)		NOT NULL
+);
+
+DROP TABLE "board_img";
+
+CREATE TABLE "board_img" (
+	"bi_no"	number(7)		NOT NULL,
+	"bi_file"	varchar2(100)		NULL,
+	"bm_no"	number(6)		NOT NULL
+);
+
+DROP TABLE "category";
+
+CREATE TABLE "category" (
+	"category_name"	VARCHAR2(50)		NOT NULL
+);
+
+DROP TABLE "report_board";
+
+CREATE TABLE "report_board" (
+	"report_no"	number(6)		NOT NULL,
+	"report_msg"	varchar2(200)		NULL,
+	"report_date"	date default sysdate		NULL,
+	"bm_no"	number(6)		NOT NULL,
+	"report_type"	varchar2(100)		NOT NULL
+);
+
+DROP TABLE "join_report__board";
+
+CREATE TABLE "join_report__board" (
+	"position"	char(1)		NOT NULL,
+	"report_no"	number(6)		NOT NULL,
+	"mem_email"	VARCHAR2(50)		NOT NULL
+);
+
+DROP TABLE "rider";
+
+CREATE TABLE "rider" (
+	"order_rider"	char(1)		NOT NULL,
+	"errand_no"	number(5)		NULL,
+	"mem_nickname"	VARCHAR2(30)		NOT NULL
+);
+
+DROP TABLE "bank_mem";
+
+CREATE TABLE "bank_mem" (
+	"account_no"	number(13)		NOT NULL,
+	"bmem_name"	varchar2(20)		NULL,
+	"bmem_deposit"	number(7)		NULL,
+	"account_pw"	number(4)		NULL,
+	"mem_IDnum"	number(13)		NULL
+);
+
+DROP TABLE "member_naver";
+
+CREATE TABLE "member_naver" (
+	"Nmem_email"	VARCHAR2(50)		NOT NULL,
+	"Nmem_img"	varchar2(100)		NULL,
+	"Nmem__nickname"	varchar2(30)		NULL,
+	"Nmem_pw"	varchar2(20)		NULL,
+	"Nmem_gender"	char(1)		NULL,
+	"Nmem_age"	number(2)		NULL,
+	"Nmem_create_date"	date default sysdate		NULL,
+	"Nmem_like"	number(2)		NULL
+);
+
+DROP TABLE "board_like";
+
+CREATE TABLE "board_like" (
+	"bm_no"	number(6)		NOT NULL,
+	"like10s"	number(3)		NULL,
+	"like20s"	number(3)		NULL,
+	"like30s"	number(3)		NULL,
+	"like40s"	number(3)		NULL,
+	"like50s"	number(3)		NULL,
+	"like60s"	number(3)		NULL
+);
+
+DROP TABLE "my_like";
+
+CREATE TABLE "my_like" (
+	"bm_no"	number(6)		NOT NULL,
+	"mem_email"	VARCHAR2(50)		NOT NULL
+);
+
+DROP TABLE "Room_ppl";
+
+CREATE TABLE "Room_ppl" (
+	"room_no"	NUMBER(3)		NOT NULL,
+	"mem__nickname"	varchar2(30)		NOT NULL
+);
+
+DROP TABLE "Conversation";
+
+CREATE TABLE "Conversation" (
+	"conver_no"	number(5)		NOT NULL,
+	"room_no"	NUMBER(3)		NOT NULL,
+	"mem__nickname"	VARCHAR2(50)		NOT NULL,
+	"conver_text"	VARCHAR2(200)		NULL,
+	"conver_time"	VARCHAR2(50)		NULL,
+	"isRead"	char(1)		NULL
+);
+
+DROP TABLE "search_words";
+
+CREATE TABLE "search_words" (
+	"keyword"	varchar2(50)		NOT NULL,
+	"word_total"	number(7)		NULL,
+	"word_day"	number(5)		NULL
+);
+
+DROP TABLE "report_mem_type";
+
+CREATE TABLE "report_mem_type" (
+	"report_type"	varchar2(100)		NOT NULL
+);
+
+DROP TABLE "report_board_type";
+
+CREATE TABLE "report_board_type" (
+	"report_type"	varchar2(100)		NOT NULL
+);
+
+ALTER TABLE "errand" ADD CONSTRAINT "PK_ERRAND" PRIMARY KEY (
+	"errand_no"
+);
+
+ALTER TABLE "member" ADD CONSTRAINT "PK_MEMBER" PRIMARY KEY (
+	"mem_email"
+);
+
+ALTER TABLE "coin" ADD CONSTRAINT "PK_COIN" PRIMARY KEY (
+	"mem_email"
+);
+
+ALTER TABLE "coin_trans" ADD CONSTRAINT "PK_COIN_TRANS" PRIMARY KEY (
+	"trans_no"
+);
+
+ALTER TABLE "report_mem" ADD CONSTRAINT "PK_REPORT_MEM" PRIMARY KEY (
+	"report_no"
+);
+
+ALTER TABLE "join_report_mem" ADD CONSTRAINT "PK_JOIN_REPORT_MEM" PRIMARY KEY (
+	"position",
+	"report_no"
+);
+
+ALTER TABLE "comment_sub" ADD CONSTRAINT "PK_COMMENT_SUB" PRIMARY KEY (
+	"comment_sub_no"
+);
+
+ALTER TABLE "comment" ADD CONSTRAINT "PK_COMMENT" PRIMARY KEY (
+	"comment_no"
+);
+
+ALTER TABLE "board_master" ADD CONSTRAINT "PK_BOARD_MASTER" PRIMARY KEY (
+	"bm_no"
+);
+
+ALTER TABLE "board_img" ADD CONSTRAINT "PK_BOARD_IMG" PRIMARY KEY (
+	"bi_no"
+);
+
+ALTER TABLE "category" ADD CONSTRAINT "PK_CATEGORY" PRIMARY KEY (
+	"category_name"
+);
+
+ALTER TABLE "report_board" ADD CONSTRAINT "PK_REPORT_BOARD" PRIMARY KEY (
+	"report_no"
+);
+
+ALTER TABLE "join_report__board" ADD CONSTRAINT "PK_JOIN_REPORT__BOARD" PRIMARY KEY (
+	"position",
+	"report_no"
+);
+
+ALTER TABLE "rider" ADD CONSTRAINT "PK_RIDER" PRIMARY KEY (
+	"order_rider",
+	"errand_no"
+);
+
+ALTER TABLE "bank_mem" ADD CONSTRAINT "PK_BANK_MEM" PRIMARY KEY (
+	"account_no"
+);
+
+ALTER TABLE "member_naver" ADD CONSTRAINT "PK_MEMBER_NAVER" PRIMARY KEY (
+	"Nmem_email"
+);
+
+ALTER TABLE "board_like" ADD CONSTRAINT "PK_BOARD_LIKE" PRIMARY KEY (
+	"bm_no"
+);
+
+ALTER TABLE "my_like" ADD CONSTRAINT "PK_MY_LIKE" PRIMARY KEY (
+	"bm_no",
+	"mem_email"
+);
+
+ALTER TABLE "Room_ppl" ADD CONSTRAINT "PK_ROOM_PPL" PRIMARY KEY (
+	"room_no",
+	"mem__nickname"
+);
+
+ALTER TABLE "Conversation" ADD CONSTRAINT "PK_CONVERSATION" PRIMARY KEY (
+	"conver_no",
+	"room_no",
+	"mem__nickname"
+);
+
+ALTER TABLE "search_words" ADD CONSTRAINT "PK_SEARCH_WORDS" PRIMARY KEY (
+	"keyword"
+);
+
+ALTER TABLE "report_mem_type" ADD CONSTRAINT "PK_REPORT_MEM_TYPE" PRIMARY KEY (
+	"report_type"
+);
+
+ALTER TABLE "report_board_type" ADD CONSTRAINT "PK_REPORT_BOARD_TYPE" PRIMARY KEY (
+	"report_type"
+);
+
