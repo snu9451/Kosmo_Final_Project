@@ -1,0 +1,991 @@
+<html>
+    <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>자바스크립트 socket.io를 활용한 채팅 구현</title>
+        <style>
+            /* cspell:disable-file */
+            /* webkit printing magic: print all background colors */
+            html {
+                -webkit-print-color-adjust: exact;
+            }
+            * {
+                box-sizing: border-box;
+                -webkit-print-color-adjust: exact;
+            }
+
+            body,
+            html {
+                margin: 0;
+                padding: 0;
+            }
+            @media only screen {
+                body {
+                    margin: 2em auto;
+                    max-width: 900px;
+                    color: rgb(55, 53, 47);
+                }
+            }
+
+            body {
+                line-height: 1.5;
+                white-space: pre-wrap;
+            }
+
+            a,
+            a.visited {
+                color: inherit;
+                text-decoration: underline;
+            }
+
+            .pdf-relative-link-path {
+                font-size: 80%;
+                color: #444;
+            }
+
+            h1,
+            h2,
+            h3 {
+                letter-spacing: -0.01em;
+                line-height: 1.2;
+                font-weight: 600;
+                margin-bottom: 0;
+            }
+
+            .page-title {
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 0.75em;
+            }
+
+            h1 {
+                font-size: 1.875rem;
+                margin-top: 1.875rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+                margin-top: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.25rem;
+                margin-top: 1.25rem;
+            }
+
+            .source {
+                border: 1px solid #ddd;
+                border-radius: 3px;
+                padding: 1.5em;
+                word-break: break-all;
+            }
+
+            .callout {
+                border-radius: 3px;
+                padding: 1rem;
+            }
+
+            figure {
+                margin: 1.25em 0;
+                page-break-inside: avoid;
+            }
+
+            figcaption {
+                opacity: 0.5;
+                font-size: 85%;
+                margin-top: 0.5em;
+            }
+
+            mark {
+                background-color: transparent;
+            }
+
+            .indented {
+                padding-left: 1.5em;
+            }
+
+            hr {
+                background: transparent;
+                display: block;
+                width: 100%;
+                height: 1px;
+                visibility: visible;
+                border: none;
+                border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+            }
+
+            img {
+                max-width: 100%;
+            }
+
+            @media only print {
+                img {
+                    max-height: 100vh;
+                    object-fit: contain;
+                }
+            }
+
+            @page {
+                margin: 1in;
+            }
+
+            .collection-content {
+                font-size: 0.875rem;
+            }
+
+            .column-list {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .column {
+                padding: 0 1em;
+            }
+
+            .column:first-child {
+                padding-left: 0;
+            }
+
+            .column:last-child {
+                padding-right: 0;
+            }
+
+            .table_of_contents-item {
+                display: block;
+                font-size: 0.875rem;
+                line-height: 1.3;
+                padding: 0.125rem;
+            }
+
+            .table_of_contents-indent-1 {
+                margin-left: 1.5rem;
+            }
+
+            .table_of_contents-indent-2 {
+                margin-left: 3rem;
+            }
+
+            .table_of_contents-indent-3 {
+                margin-left: 4.5rem;
+            }
+
+            .table_of_contents-link {
+                text-decoration: none;
+                opacity: 0.7;
+                border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+            }
+
+            table,
+            td,
+            th {
+                border: 1px solid rgba(55, 53, 47, 0.09);
+                border-collapse: collapse;
+            }
+
+            table {
+                border-left: none;
+                border-right: none;
+            }
+
+            td,
+            th {
+                font-weight: normal;
+                padding: 0.25em 0.5em;
+                line-height: 1.5;
+                min-height: 1.5em;
+                text-align: left;
+            }
+
+            th {
+                color: rgba(55, 53, 47, 0.6);
+            }
+
+            ol,
+            ul {
+                margin: 0;
+                margin-block-start: 0.6em;
+                margin-block-end: 0.6em;
+            }
+
+            li > ol:first-child,
+            li > ul:first-child {
+                margin-block-start: 0.6em;
+            }
+
+            ul > li {
+                list-style: disc;
+            }
+
+            ul.to-do-list {
+                text-indent: -1.7em;
+            }
+
+            ul.to-do-list > li {
+                list-style: none;
+            }
+
+            .to-do-children-checked {
+                text-decoration: line-through;
+                opacity: 0.375;
+            }
+
+            ul.toggle > li {
+                list-style: none;
+            }
+
+            ul {
+                padding-inline-start: 1.7em;
+            }
+
+            ul > li {
+                padding-left: 0.1em;
+            }
+
+            ol {
+                padding-inline-start: 1.6em;
+            }
+
+            ol > li {
+                padding-left: 0.2em;
+            }
+
+            .mono ol {
+                padding-inline-start: 2em;
+            }
+
+            .mono ol > li {
+                text-indent: -0.4em;
+            }
+
+            .toggle {
+                padding-inline-start: 0;
+                list-style-type: none;
+            }
+
+            /* Indent toggle children */
+            .toggle > li > details {
+                padding-left: 1.7em;
+            }
+
+            .toggle > li > details > summary {
+                margin-left: -1.1em;
+            }
+
+            .selected-value {
+                display: inline-block;
+                padding: 0 0.5em;
+                background: rgba(206, 205, 202, 0.5);
+                border-radius: 3px;
+                margin-right: 0.5em;
+                margin-top: 0.3em;
+                margin-bottom: 0.3em;
+                white-space: nowrap;
+            }
+
+            .collection-title {
+                display: inline-block;
+                margin-right: 1em;
+            }
+
+            time {
+                opacity: 0.5;
+            }
+
+            .icon {
+                display: inline-block;
+                max-width: 1.2em;
+                max-height: 1.2em;
+                text-decoration: none;
+                vertical-align: text-bottom;
+                margin-right: 0.5em;
+            }
+
+            img.icon {
+                border-radius: 3px;
+            }
+
+            .user-icon {
+                width: 1.5em;
+                height: 1.5em;
+                border-radius: 100%;
+                margin-right: 0.5rem;
+            }
+
+            .user-icon-inner {
+                font-size: 0.8em;
+            }
+
+            .text-icon {
+                border: 1px solid #000;
+                text-align: center;
+            }
+
+            .page-cover-image {
+                display: block;
+                object-fit: cover;
+                width: 100%;
+                height: 30vh;
+            }
+
+            .page-header-icon {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+
+            .page-header-icon-with-cover {
+                margin-top: -0.72em;
+                margin-left: 0.07em;
+            }
+
+            .page-header-icon img {
+                border-radius: 3px;
+            }
+
+            .link-to-page {
+                margin: 1em 0;
+                padding: 0;
+                border: none;
+                font-weight: 500;
+            }
+
+            p > .user {
+                opacity: 0.5;
+            }
+
+            td > .user,
+            td > time {
+                white-space: nowrap;
+            }
+
+            input[type="checkbox"] {
+                transform: scale(1.5);
+                margin-right: 0.6em;
+                vertical-align: middle;
+            }
+
+            p {
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+            }
+
+            .image {
+                border: none;
+                margin: 1.5em 0;
+                padding: 0;
+                border-radius: 0;
+                text-align: center;
+            }
+
+            .code,
+            code {
+                background: rgba(135, 131, 120, 0.15);
+                border-radius: 3px;
+                padding: 0.2em 0.4em;
+                border-radius: 3px;
+                font-size: 85%;
+                tab-size: 2;
+            }
+
+            code {
+                color: #eb5757;
+            }
+
+            .code {
+                padding: 1.5em 1em;
+            }
+
+            .code-wrap {
+                white-space: pre-wrap;
+                word-break: break-all;
+            }
+
+            .code > code {
+                background: none;
+                padding: 0;
+                font-size: 100%;
+                color: inherit;
+            }
+
+            blockquote {
+                font-size: 1.25em;
+                margin: 1em 0;
+                padding-left: 1em;
+                border-left: 3px solid rgb(55, 53, 47);
+            }
+
+            .bookmark {
+                text-decoration: none;
+                max-height: 8em;
+                padding: 0;
+                display: flex;
+                width: 100%;
+                align-items: stretch;
+            }
+
+            .bookmark-title {
+                font-size: 0.85em;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                height: 1.75em;
+                white-space: nowrap;
+            }
+
+            .bookmark-text {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .bookmark-info {
+                flex: 4 1 180px;
+                padding: 12px 14px 14px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .bookmark-image {
+                width: 33%;
+                flex: 1 1 180px;
+                display: block;
+                position: relative;
+                object-fit: cover;
+                border-radius: 1px;
+            }
+
+            .bookmark-description {
+                color: rgba(55, 53, 47, 0.6);
+                font-size: 0.75em;
+                overflow: hidden;
+                max-height: 4.5em;
+                word-break: break-word;
+            }
+
+            .bookmark-href {
+                font-size: 0.75em;
+                margin-top: 0.25em;
+            }
+
+            .sans {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+            }
+            .code {
+                font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            }
+            .serif {
+                font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif;
+            }
+            .mono {
+                font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+            }
+            .pdf .sans {
+                font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR';
+            }
+
+            .pdf .code {
+                font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR';
+            }
+
+            .pdf .serif {
+                font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR';
+            }
+
+            .pdf .mono {
+                font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR';
+            }
+
+            .highlight-default {}
+            .highlight-gray {
+                color: rgb(155,154,151);
+            }
+            .highlight-brown {
+                color: rgb(100,71,58);
+            }
+            .highlight-orange {
+                color: rgb(217,115,13);
+            }
+            .highlight-yellow {
+                color: rgb(223,171,1);
+            }
+            .highlight-teal {
+                color: rgb(15,123,108);
+            }
+            .highlight-blue {
+                color: rgb(11,110,153);
+            }
+            .highlight-purple {
+                color: rgb(105,64,165);
+            }
+            .highlight-pink {
+                color: rgb(173,26,114);
+            }
+            .highlight-red {
+                color: rgb(224,62,62);
+            }
+            .highlight-gray_background {
+                background: rgb(235,236,237);
+            }
+            .highlight-brown_background {
+                background: rgb(233,229,227);
+            }
+            .highlight-orange_background {
+                background: rgb(250,235,221);
+            }
+            .highlight-yellow_background {
+                background: rgb(251,243,219);
+            }
+            .highlight-teal_background {
+                background: rgb(221,237,234);
+            }
+            .highlight-blue_background {
+                background: rgb(221,235,241);
+            }
+            .highlight-purple_background {
+                background: rgb(234,228,242);
+            }
+            .highlight-pink_background {
+                background: rgb(244,223,235);
+            }
+            .highlight-red_background {
+                background: rgb(251,228,228);
+            }
+            .block-color-default {
+                color: inherit;
+                fill: inherit;
+            }
+            .block-color-gray {
+                color: rgba(55, 53, 47, 0.6);
+                fill: rgba(55, 53, 47, 0.6);
+            }
+            .block-color-brown {
+                color: rgb(100,71,58);
+                fill: rgb(100,71,58);
+            }
+            .block-color-orange {
+                color: rgb(217,115,13);
+                fill: rgb(217,115,13);
+            }
+            .block-color-yellow {
+                color: rgb(223,171,1);
+                fill: rgb(223,171,1);
+            }
+            .block-color-teal {
+                color: rgb(15,123,108);
+                fill: rgb(15,123,108);
+            }
+            .block-color-blue {
+                color: rgb(11,110,153);
+                fill: rgb(11,110,153);
+            }
+            .block-color-purple {
+                color: rgb(105,64,165);
+                fill: rgb(105,64,165);
+            }
+            .block-color-pink {
+                color: rgb(173,26,114);
+                fill: rgb(173,26,114);
+            }
+            .block-color-red {
+                color: rgb(224,62,62);
+                fill: rgb(224,62,62);
+            }
+            .block-color-gray_background {
+                background: rgb(235,236,237);
+            }
+            .block-color-brown_background {
+                background: rgb(233,229,227);
+            }
+            .block-color-orange_background {
+                background: rgb(250,235,221);
+            }
+            .block-color-yellow_background {
+                background: rgb(251,243,219);
+            }
+            .block-color-teal_background {
+                background: rgb(221,237,234);
+            }
+            .block-color-blue_background {
+                background: rgb(221,235,241);
+            }
+            .block-color-purple_background {
+                background: rgb(234,228,242);
+            }
+            .block-color-pink_background {
+                background: rgb(244,223,235);
+            }
+            .block-color-red_background {
+                background: rgb(251,228,228);
+            }
+            .select-value-color-default {
+                background-color: rgba(206,205,202,0.5);
+            }
+            .select-value-color-gray {
+                background-color: rgba(155,154,151, 0.4);
+            }
+            .select-value-color-brown {
+                background-color: rgba(140,46,0,0.2);
+            }
+            .select-value-color-orange {
+                background-color: rgba(245,93,0,0.2);
+            }
+            .select-value-color-yellow {
+                background-color: rgba(233,168,0,0.2);
+            }
+            .select-value-color-green {
+                background-color: rgba(0,135,107,0.2);
+            }
+            .select-value-color-blue {
+                background-color: rgba(0,120,223,0.2);
+            }
+            .select-value-color-purple {
+                background-color: rgba(103,36,222,0.2);
+            }
+            .select-value-color-pink {
+                background-color: rgba(221,0,129,0.2);
+            }
+            .select-value-color-red {
+                background-color: rgba(255,0,26,0.2);
+            }
+
+            .checkbox {
+                display: inline-flex;
+                vertical-align: text-bottom;
+                width: 16;
+                height: 16;
+                background-size: 16px;
+                margin-left: 2px;
+                margin-right: 5px;
+            }
+
+            .checkbox-on {
+                background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+            }
+
+            .checkbox-off {
+                background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+            }
+        </style>
+    </head>
+    <body>
+        <article id="2a45f45c-8ebd-4c5a-abff-3477838bbf44" class="page serif">
+            <header>
+                <h1 class="page-title">자바스크립트
+                    <a href="http://socket.io">socket.io</a>를 활용한 채팅 구현</h1>
+            </header>
+            <div class="page-body"><hr id="f4904139-a191-4379-b650-e8ad45dc937f"/>
+                <ul id="5b173961-7ab0-4da6-958d-384716daa16c" class="bulleted-list">
+                    <li>출처:
+                        <a
+                            href="https://jinhyukoo.github.io/js/2020/12/05/socket.io%ED%86%B5%EC%8B%A0.html">https://jinhyukoo.github.io/js/2020/12/05/socket.io통신.html</a>
+                    </li>
+                </ul><hr id="b5069d47-6ec3-454d-a0ae-65f8d5b1b2f7"/>
+                <h2 id="09446d78-1514-4436-adb3-7fd842e7e847" class="">
+                    <mark class="highlight-orange_background">socket.io</mark>
+                </h2>
+                <p id="04d29f66-108b-4db7-abe8-62a7a845f487" class="">
+                    <strong>실시간</strong>
+                    웹 애플리케이션을 위한
+                    <strong>JavaScript 라이브러리</strong>이다. - MN: 채팅 뿐만 아니라 자바에서의 소켓통신처럼 동기화 처리가 필요한 상황에서 사용할 수 있는 라이브러리</p>
+                <h3 id="8937acdd-ac08-44cc-81e1-41f9600b9f05" class="">
+                    <mark class="highlight-orange_background">환경 셋팅</mark>
+                </h3>
+                <ol id="e45e4f18-e84b-4b98-8ae2-bc45516d2819" class="numbered-list" start="1">
+                    <li>바탕화면에 [Chat] 폴더 생성</li>
+                </ol>
+                <ol id="77c80116-751c-479c-a6a8-c5b9da347960" class="numbered-list" start="2">
+                    <li>express (express generator) 설치<pre id="728f5f5c-2b7a-4e50-bbe8-2ffe70250b05" class="code"><code>npm install express-generator -g
+express --no-view
+
+// 설명: express-generator를 전역으로 설치한 뒤 view engine을 사용하지 않는 형태의 서버를 만들겠다는 뜻</code></pre>
+                        <p id="c1a17fcb-91e4-42d1-a0e4-d96c949cc221" class="">위 명령어를 실행하면 아래와 같은 파일이 생성된다.</p>
+                        <figure id="904c1284-9272-424f-a3dc-580ad7225b44" class="image">
+                            <a
+                                href="img/Untitled.png"><img
+                                style="width:192px"
+                                src="img/Untitled.png"/></a>
+                        </figure>
+                    </li>
+                </ol>
+                <ol id="3bfa3488-ee1f-4460-807a-96c4b83386f5" class="numbered-list" start="3">
+                    <li>npm 설치<pre id="32e45132-4407-4990-9017-45878c03e58e" class="code"><code>npm install
+// 잘 작동하는지 확인하려면 npm start</code></pre>
+                        <p id="604576a7-7345-4388-bce1-3c3af046db28" class="">위 명령어를 실행하면 아래 처럼 추가로 파일들이 생성된다.</p>
+                        <figure id="f83c4d3c-9422-4b42-b7c8-131089a27e21" class="image">
+                            <a
+                                href="img/Untitled%201.png"><img
+                                style="width:192px"
+                                src="img/Untitled%201.png"/></a>
+                        </figure>
+                    </li>
+                </ol>
+                <ol id="05cf5d02-b58f-42ec-a237-b5bf5ccb3285" class="numbered-list" start="4">
+                    <li>npm start 명령어 실행 후 브라우저에서 localhost:3000을 입력했을 때 아래와 같은 화면이 뜨면 잘 설치한 것이다.<figure id="952a5cd7-55fe-460b-8f21-68d56e1b1682" class="image">
+                            <a
+                                href="img/Untitled%202.png"><img
+                                style="width:720px"
+                                src="img/Untitled%202.png"/></a>
+                        </figure>
+                    </li>
+                </ol>
+                <ol id="eb91a1d3-9eb8-4c5b-b8b8-e93f3fd12bb5" class="numbered-list" start="5">
+                    <li>
+                        <a href="http://socket.io">socket.io</a>
+                        설치하기<pre id="4d5deda2-87fb-4b7a-9fd9-c861875b83cc" class="code"><code>npm install --save socket.io</code></pre>
+                    </li>
+                </ol>
+                <ol id="d58fb928-94b9-4fc9-bb93-d45661237745" class="numbered-list" start="6">
+                    <li>이제 본격적으로 채팅을 구현하기 위해 파일들을 수정하자.<pre id="939cec77-b15f-4926-b87d-5293d82f67d6" class="code"><code>&lt;!-- //public/index.html --&gt;
+
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;title&gt;express&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;stylesheets/style.css&quot;&gt;
+  &lt;!-- &lt;script defer src=&quot;../node_modules/socket.io/client-dist/socket.io.js&quot;&gt;&lt;/script&gt; --&gt;
+  &lt;script defer src=&quot;/socket.io/socket.io.js&quot;&gt;&lt;/script&gt;
+  &lt;script defer src=&quot;javascripts/socket.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;ul id=&quot;messages&quot;&gt;&lt;/ul&gt;
+    &lt;form id=&quot;chat-form&quot; action=&quot;&quot;&gt;
+      &lt;input id=&quot;m&quot; autocomplete=&quot;off&quot; /&gt;&lt;button&gt;send&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+                        <pre id="503a61ab-bbbb-4981-a47b-da62f569ea6d" class="code"><code>/* public/stylesheets/style.css */
+/* 채팅창 화면에 대한 스타일 설정 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font: 13px helvetica, arial;
+  background-color: #ceecf5;
+}
+form {
+  background: #eee;
+  padding: 3px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+form input {
+  border: 0;
+  border-radius: 5px;
+  padding: 10px;
+  width: 90%;
+  margin-right: 0.5%;
+}
+form button {
+  width: 9%;
+  border-radius: 5px;
+  background: #ffd600;
+  border: none;
+  padding: 10px;
+}
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}</code></pre>
+                        <pre id="99d86541-b061-4c65-b095-2dfbdf35f059" class="code"><code>#!/usr/bin/env node
+
+/** bin/www */
+
+/**
+ * module dependencies.
+ */
+
+const app = require(&#x27;../app&#x27;);
+const debug = require(&#x27;debug&#x27;)(&#x27;socket-example:server&#x27;);
+const http = require(&#x27;http&#x27;);
+
+/**
+ * get port from environment and store in express.
+ */
+
+const port = normalizeport(process.env.port || &#x27;5500&#x27;);
+app.set(&#x27;port&#x27;, port);
+
+/**
+ * create http server.
+ */
+
+const server = http.createserver(app);
+const io = require(&#x27;socket.io&#x27;)(server);
+io.on(&#x27;connection&#x27;, (socket) =&gt; {
+  console.log(&#x27;a user connected&#x27;);
+    socket.on(&#x27;chat message&#x27;, (message) =&gt; {
+        io.emit(&#x27;chat message&#x27;, message);
+    });
+});
+
+/**
+ * listen on provided port, on all network interfaces.
+ */
+server.listen(port);
+server.on(&#x27;error&#x27;, onerror);
+server.on(&#x27;listening&#x27;, onlistening);
+
+/**
+ * normalize a port into a number, string, or false.
+ */
+
+function normalizeport(val) {
+    var port = parseint(val, 10);
+
+    if (isnan(port)) {
+        // named pipe
+        return val;
+    }
+
+    if (port &gt;= 0) {
+        // port number
+        return port;
+    }
+
+    return false;
+}
+
+/**
+ * event listener for http server &quot;error&quot; event.
+ */
+
+function onerror(error) {
+    if (error.syscall !== &#x27;listen&#x27;) {
+        throw error;
+    }
+
+    var bind = typeof port === &#x27;string&#x27;
+        ? &#x27;pipe &#x27; + port
+        : &#x27;port &#x27; + port;
+
+    // handle specific listen errors with friendly messages
+    switch (error.code) {
+        case &#x27;eacces&#x27;:
+            console.error(
+                bind + &#x27; requires elevated privileges&#x27;
+            );
+            process.exit(1);
+            break;
+        case &#x27;eaddrinuse&#x27;:
+            console.error(bind + &#x27; is already in use&#x27;);
+            process.exit(1);
+            break;
+        default:
+            throw error;
+    }
+}
+
+/**
+ * event listener for http server &quot;listening&quot; event.
+ */
+
+function onlistening() {
+    var addr = server.address();
+    var bind = typeof addr === &#x27;string&#x27;
+        ? &#x27;pipe &#x27; + addr
+        : &#x27;port &#x27; + addr.port;
+    debug(&#x27;listening on &#x27; + bind);
+}</code></pre>
+                    </li>
+                </ol>
+                <ol id="2ed710cc-e328-4677-9b73-5236c5644461" class="numbered-list" start="7">
+                    <li>public/javascripts 폴더에 [socket.js]라는 파일을 추가한다.<pre id="e661b683-11a6-4f3f-b191-e79993e38219" class="code"><code>//public/javascripts/socket.js 클라이언트 사이드
+
+const socket = io();
+
+const chatform = document.getelementbyid(&#x27;chat-form&#x27;);
+const chatbox = document.getelementbyid(&#x27;messages&#x27;);
+
+chatform.addeventlistener(&#x27;submit&#x27;, (e) =&gt; {
+    e.preventdefault();
+    console.log(&quot;메세지?/&quot;);
+    const message = e
+        .target
+        .m
+        .value
+        socket
+        .emit(&#x27;chat message&#x27;, message);
+    e.target.m.value = &#x27;&#x27;;
+})
+
+socket.on(&#x27;chat message&#x27;, (message) =&gt; {
+    console.log(&quot;소켓&quot;);
+    chatbox.appendchild(makemessage(message));
+})
+
+const makemessage = (message) =&gt; {
+    const msgbox = document.createelement(&#x27;div&#x27;);
+    msgbox.classname = &quot;message-wrapper&quot;;
+    msgbox.innertext = message;
+    return msgbox;
+}</code></pre>
+                    </li>
+                </ol>
+                <ol id="a404792b-4a26-4135-9d6f-66e1d34fb9c5" class="numbered-list" start="8">
+                    <li>이제 npm start 한 상태에서 브라우저로 localhost:3000에 접속하면 console 창에 다음과 같이 (미리 지정해놓은)
+                        &#x27;a user connected&#x27;라는 메세지가 출력된다.</li>
+                </ol>
+                <ol id="5c03220f-4f15-43eb-a976-b653651ab7d5" class="numbered-list" start="9">
+                    <li>실행해보자.<figure id="19035fcd-0b46-40fa-8322-676400e07087" class="image">
+                            <a
+                                href="img/Untitled%203.png"><img
+                                style="width:165px"
+                                src="img/Untitled%203.png"/></a>
+                        </figure>
+                        <ul id="9d65c31c-04fe-428c-8362-abc0f25c98b5" class="bulleted-list">
+                            <li>
+                                <a href="http://localhost:5500/">http://localhost:5500/</a>
+                                접속</li>
+                        </ul>
+                        <figure id="2eaea0e1-5890-4afa-9eff-4bd54b5d734f" class="image">
+                            <a
+                                href="img/Untitled%204.png"><img
+                                style="width:491px"
+                                src="img/Untitled%204.png"/></a>
+                            <figcaption>브라우저</figcaption>
+                        </figure>
+                        <figure id="45472da1-8aef-444d-b5f0-d6ec2f3fa68b" class="image">
+                            <a
+                                href="img/Untitled%205.png"><img
+                                style="width:374px"
+                                src="img/Untitled%205.png"/></a>
+                            <figcaption>console 창</figcaption>
+                        </figure>
+                        <figure id="0aa9cc17-158d-4482-90d7-4b923ddb5fe5" class="image">
+                            <a
+                                href="img/Untitled%206.png"><img
+                                style="width:999px"
+                                src="img/Untitled%206.png"/></a>
+                            <figcaption>두 번째 유저도 접속</figcaption>
+                        </figure>
+                        <figure id="d5c8c1ff-c19d-44b6-afd8-0dec18d989d4" class="image">
+                            <a
+                                href="img/Untitled%207.png"><img
+                                style="width:407px"
+                                src="img/Untitled%207.png"/></a>
+                        </figure>
+                        <p id="f0bd7bba-a564-404c-affe-66224bb64406" class="">실시간 채팅 테스트</p>
+                        <figure id="334c44e2-67b5-4b67-a1c9-823cfd7dfef6" class="image">
+                            <a
+                                href="img/Untitled%208.png"><img
+                                style="width:999px"
+                                src="img/Untitled%208.png"/></a>
+                        </figure>
+                        <p id="210d3d33-7498-4f5a-b6d2-1e26f3d8cf3c" class="">Ctrl+C ⇒ y 로 종료하기</p>
+                        <figure id="f925c457-d25c-4b18-874f-6fd7a8239038" class="image">
+                            <a
+                                href="img/Untitled%209.png"><img
+                                style="width:381px"
+                                src="img/Untitled%209.png"/></a>
+                        </figure>
+                        <p id="19bcbebf-a79b-4de0-a886-53b3ef9af75b" class=""></p>
+                    </li>
+                </ol>
+            </div>
+        </article>
+    </body>
+</html>
