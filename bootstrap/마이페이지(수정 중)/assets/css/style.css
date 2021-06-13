@@ -33,6 +33,15 @@ h6 {
   font-family: "Sunflower", sans-serif;
 }
 
+
+.test__img {
+  margin-right: 5px;
+}
+
+.msg__font {
+  font-size: 10px;
+}
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -120,21 +129,22 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  opacity: 0.9;
+  opacity: 1;
   transition: all 0.5s;
   z-index: 997;
   padding: 5px 0;
+  background-color: rgb(119, 119, 119);
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 #header.header-scrolled {
-  background: #fff;
+  background: rgb(119, 119, 119);
   top: 0;
   padding: 15px;
 }
 
 #header .logo {
-  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+  text-shadow: -1px 0 rgb(0, 0, 0), 0 1px rgb(0, 0, 0), 1px 0 rgb(0, 0, 0), 0 -1px rgb(0, 0, 0);
   font-size: 32px;
   margin: 0;
   padding: 0;
@@ -145,17 +155,16 @@ h6 {
 }
 
 #header .logo a {
-  color: #222222;
+  color: white
 }
 
 #header .logo a span {
-  color: orange;
+  color: gray;
 }
 
 #header .logo img {
   max-height: 40px;
 }
-
 @media (max-width: 992px) {
   #header {
     padding: 15px;
@@ -186,18 +195,28 @@ h6 {
   padding: 10px 0 10px 28px;
 }
 
+
 .nav-menu a {
   text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
   display: block;
   position: relative;
   color: #222222;
   transition: 0.3s;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
   padding: 0 3px;
   font-family: "Sunflower", sans-serif;
 }
+.icofont-envelope-open {
+  font-size: 17px;
+}
 
+.badge-danger {
+  text-shadow: 0px 0 black, 0 0px black, 0px 0 black, 0 0px black;
+  position: absolute;
+  transform-origin: top right;
+  margin-top: -.25rem;
+}
 .nav-menu > ul > li > a:before {
   content: "";
   position: absolute;
@@ -205,7 +224,7 @@ h6 {
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: brown;
+  background-color: yellow;
   visibility: hidden;
   width: 0px;
   transition: all 0.3s ease-in-out 0s;
@@ -221,7 +240,7 @@ h6 {
 .nav-menu a:hover,
 .nav-menu .active > a,
 .nav-menu li:hover > a {
-  color: orange;
+  color: gray;
 }
 
 .nav-menu .drop-down ul {
@@ -566,39 +585,65 @@ section {
 .featured-services .icon-box::before {
   content: "";
   position: absolute;
-  background: #cbe0fb;
+  background: #fff;
   right: 0;
   left: 0;
   bottom: 0;
-  top: 100%;
+  top: 0%;
   transition: all 0.3s;
   z-index: -1;
 }
 
-.featured-services .icon-box:hover::before {
-  background: orange;
+/* .featured-services .icon-box:hover::before {
+  background: gray;
   top: 0;
   border-radius: 0px;
-}
+} */
 
 .featured-services .icon {
   margin-bottom: 15px;
+  margin-top: 15px;
+  margin-left: 5px;
+}
+
+.featured-services .icon1 {
+  display: flex;
+  margin: auto;
+  border-radius: 25px;
+}
+.featured-services .icon2 {
+  display: flex;
+  margin: auto;
+  border-radius: 25px;
+}
+.featured-services .icon3 {
+  display: flex;
+  margin: auto;
+  border-radius: 25px;
+}
+.featured-services .icon4 {
+  display: flex;
+  margin: auto;
+  border-radius: 25px;
+}
+.featured-services .icon5 {
+  display: flex;
+  margin: auto;
+  border-radius: 25px;
 }
 
 .featured-services .icon i {
   font-size: 48px;
   line-height: 1;
-  color: orange;
+  color: gray;
   transition: all 0.3s ease-in-out;
 }
 
-.featured-services .icon-box:hover .icon i {
-  color: brown;
-}
 .featured-services .title {
   font-weight: 700;
-  font-size: 18px;
-  margin-top: 25px;
+  font-size: 20px;
+  margin: auto;
+  text-align: left;
 }
 
 .featured-services .mypage {
@@ -611,20 +656,32 @@ section {
   
 }
 
-.featured-services .icon-box:hover .mypage {
+/* .featured-services .icon-box:hover .mypage {
   color: #fff;
-}
+} */
 .featured-services .title a {
   color: #111;
 }
 
-.featured-services .icon-box:hover .title a {
+.featured-services .icon1:hover > .title a{
   color: #fff;
-}
+} 
+.featured-services .icon2:hover > .title a{
+  color: #fff;
+} 
+.featured-services .icon3:hover > .title a{
+  color: #fff;
+} 
+.featured-services .icon4:hover > .title a{
+  color: #fff;
+} 
+.featured-services .icon5:hover > .title a{
+  color: #fff;
+} 
 
-.featured-services .icon-box:hover .icon i {
-  color: brown;
-}
+/* .featured-services .icon-box:hover .icon i {
+  color: rgb(224, 224, 82);
+} */
 .featured-services ul {
   list-style: none;
   padding: 0;
@@ -640,9 +697,9 @@ section {
   display: inline-block;
   background: #fff;
   box-shadow: 0px 6px 15px rgba(16, 110, 234, 0.12);
-  padding: 10px;
+  padding: 5px;
   margin-right: 15px;
-  color: #106eea;
+  color: #111;
   border-radius: 50px;
   align-items: center;
 }
