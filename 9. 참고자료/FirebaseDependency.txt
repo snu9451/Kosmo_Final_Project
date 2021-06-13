@@ -1,0 +1,40 @@
+Firebase7.3.0 버전을 Spring에서 쓰려면 필요한 필수 jar 파일들
+
+com.google.api » api-common			1.10.0
+
+com.google.api-client » google-api-client		1.13.10
+com.google.api-client » google-api-client-gson		1.13.10
+
+com.google.guava » guava				29.0-jre
+	
+com.google.http-client » google-http-client		1.35.0
+com.google.http-client » google-http-client-jackson2	1.35.0
+
+com.fasterxml.jackson.core » jackson-core		2.11.0
+
+io.netty » netty-all					4.1.63.Final
+
+org.slf4j » slf4j-api					1.7.30
+
+com.google.auth » google-auth-library-oauth2-http	0.21.0
+com.google.auth » google-auth-library-credentials	0.21.0
+
+io.opencensus » opencensus-api			0.24.0
+io.opencensus » opencensus-contrib-http-util		0.24.0
+
+io.grpc » grpc-context				1.22.1
+
+
+Spring boot에서 Maven방식으로 하려면 위의 jar파일들을 다운받을 필요 없이 pom.xml에
+<dependency>
+  <groupId>com.google.firebase</groupId>
+  <artifactId>firebase-admin</artifactId>
+  <version>7.3.0</version>
+</dependency>
+를 추가해주면 된다.
+
+android에서 gradle방식으로 하려면 build.gradle에
+dependencies {
+  implementation 'com.google.firebase:firebase-admin:7.3.0'
+}
+를 추가해주면 된다.
