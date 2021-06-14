@@ -1,0 +1,8 @@
+INSERT INTO Room_ppl(room_no,mem_nickname_m,mem_nickname_s,room_date)
+value (1,'수박','딸기');
+INSERT INTO Room_ppl(room_no,mem_nickname_m,mem_nickname_s,room_date)
+value (2,'포도','귤');
+INSERT INTO Room_ppl(room_no,mem_nickname_m,mem_nickname_s,room_date)
+value (3,'바나나','사과');
+INSERT INTO Room_ppl(room_no,mem_nickname_m,mem_nickname_s,room_date)
+value (4,'바나나','파인애플');
