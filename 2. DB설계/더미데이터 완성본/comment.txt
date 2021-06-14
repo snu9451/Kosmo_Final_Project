@@ -1,0 +1,40 @@
+INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+value (1,'네고 가능한가요?',1,0,'포도','2020-06-17 16:46:41',1);
+INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+value (2,'안됩니다.',1,1,'바나나','2020-06-17 17:46:41',1);
+INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+value (3,'그지 새끼냐?',1,1,'멜론','2020-06-17 17:56:41',1);
+INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+value (4,'용량은 얼마나 돼나요?',2,0,'수박','2020-06-18 17:46:41',1);
+INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+value (5,'짝퉁 향수 아니에요?ㅋㅋ',3,0,'블루베리','2020-06-19 17:46:41',3);
+INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+value (6,'진품입니다!품질 보증서 있어요~',3,1,'딸기','2020-06-19 18:46:41',3);
+INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+value (7,'이걸 누가사ㅋㅋㅋㅋㅋ',4,0,'수박','2020-06-20 16:46:41',4);
+INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+value (8,'골프채가 원래 이렇게 비싼가요?',5,0,'사과','2020-06-21 16:46:41',7);
+INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+value (9,'ㅜㅠㅠㅠ좋은 골프채라서 비싸요.',5,1,'수박','2020-06-21 16:59:41',7);
+INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+value (10,'무나라도 안받을 듯 ㅋㅋㅋㅋ',6,0,'딸기','2020-06-22 16:46:41',6);
+INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+value (11,'시비는 꺼지세요.',6,1,'멜론','2020-06-22 16:56:41',6);
+INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+value (12,'ㅋㅋㅋ시비 오지네.',6,1,'바나나','2020-06-22 17:26:41',6);
+INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+value (13,'오 저 무료나눔 받고 싶네요!',7,0,'포도','2020-06-23 16:48:41',6);
+INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+value (14,'2년이나 썼는데 너무 비싸게 파는거아닌가요?',8,0,'멜론','2020-06-24 16:46:41',8);
+INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+value (15,'깨끗이 사용했습니다!',8,1,'귤','2020-06-24 17:46:41',8);
+INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+value (16,'헐 개 예쁜데 너무 싸게 파는거 아닌가요?',9,0,'귤','2020-06-25 16:46:41',10);
+INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+value (17,'그쵸?ㅠㅠ근데 이사를 가서 다 정리하려고요:)',9,1,'파인애플','2020-06-25 17:16:41',10);
+INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+value (18,'아 메세지 남길게요!',9,1,'귤','2020-06-25 18:46:41',10);
+INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+value (19,'저 살게요!',10,0,'사과','2020-06-25 19:46:41',10);
+INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+value (20,'이미 거래중이라서요~죄송해요',10,1,'파인애플','2020-06-25 19:56:41',10);
