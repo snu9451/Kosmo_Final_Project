@@ -4,71 +4,220 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="css/styles.css" rel="stylesheet" />
   <title>Modal</title>
   <script src="https://kit.fontawesome.com/a2c0486048.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-<!-- 버튼 색깔 종류 -->
-<div class="mb-1">
-  <button type="button" class="btn btn-primary">Primary</button>
-  <button type="button" class="btn btn-secondary">Secondary</button>
-  <button type="button" class="btn btn-success">Success</button>
-  <button type="button" class="btn btn-info">Info</button>
-  <button type="button" class="btn btn-warning">Warning</button>
-  <button type="button" class="btn btn-danger">Danger</button>
-  <button type="button" class="btn btn-light">Light</button>
-  <button type="button" class="btn btn-dark">Dark</button>
-  <button type="button" class="btn btn-link">Link</button>
+  <!-- 버튼 색깔 종류 -->
+  <div class="mb-1">
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-light">Light</button>
+    <button type="button" class="btn btn-dark">Dark</button>
+    <button type="button" class="btn btn-link">Link</button>
+  </div>
 
-</div>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    모달 테스트
+  </button>
+  <!-- Button trigger modal2 -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2">
+    모달 테스트2
+  </button>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  모달 테스트
-</button>
+  <!-- Button trigger modal3 -->
+  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal3">
+    모달 테스트3
+  </button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content" style="width: 700px; height: 300px;">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body 
+  <!-- Button trigger modal4 -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal4">
+    모달 테스트4
+  </button>
+
+  <!-- Button trigger modal5 -->
+  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal5">
+    모달 테스트5
+  </button>
+
+
+  <!-- Modal5 -->
+  <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" style="width: 700px; height: 300px;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body 
                   d-flex flex-column justify-content-center align-items-center align-content-center">
-        <h1 class="d-flex align-items-center">
-          <i class="far fa-frown-open" style="color: rgb(28, 28, 204); font-size: 80px;"></i>
-          <span>심부름 매칭에 실패했습니다.</span>
-        </h1>
-        <div>다른 심부름을 선택해주세요.</div>
-      </div>
-      <div class="modal-footer d-flex justify-content-evenly">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+          <h1 class="d-flex align-items-center">
+            <i class="far fa-frown-open" style="color: rgb(28, 28, 204); font-size: 80px;"></i>
+            <span>test5</span>
+          </h1>
+          <div>"우아한남매들"님의 심부름을 선택하셧습니다.</div>
+          <div>선택한 심부름을 진행하시겠습니까?</div>
+        </div>
+        <div class="modal-footer d-flex justify-content-evenly">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">취소</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" style="width: 700px; height: 300px;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body 
+                  d-flex flex-column justify-content-center align-items-center align-content-center">
+          <h1 class="d-flex align-items-center">
+            <!-- <i class="far fa-frown-open" style="color: rgb(28, 28, 204); font-size: 80px;"></i> -->
+            <span>심부름확인</span>
+          </h1>
+          <div>"중랑구불주먹"님으로부터 심부름 요청이 수락되었습니다.</div>
+        </div>
+        <div class="modal-footer d-flex justify-content-evenly">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <!-- ver 4.0 v -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+  <!-- Modal3 -->
+  <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" style="width: 700px; height: 300px;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body 
+                  d-flex flex-column justify-content-center align-items-center align-content-center">
+          <h1 class="d-flex align-items-center">
+            <i class="far fa-frown-open" style="color: rgb(28, 28, 204); font-size: 80px;"></i>
+            <span>심부름하기</span>
+          </h1>
+          <div>"우아한남매들"님의 심부름을 선택하셧습니다.</div>
+          <div>선택한 심부름을 진행하시겠습니까?</div>
+        </div>
+        <div class="modal-footer d-flex justify-content-evenly">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">취소</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" style="width: 700px; height: 300px;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body 
+                  d-flex flex-column justify-content-center align-items-center align-content-center">
+          <h1 class="d-flex align-items-center">
+            <i class="far fa-frown-open" style="color: rgb(28, 28, 204); font-size: 80px;"></i>
+            <span>심부름 매칭에 실패했습니다.</span>
+          </h1>
+          <div>다른 심부름을 선택해주세요.</div>
+        </div>
+        <div class="modal-footer d-flex justify-content-evenly">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal2 -->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" style="width: 700px; height: 300px;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body 
+                  d-flex flex-column justify-content-center align-items-center align-content-center">
+          <h1 class="d-flex align-items-center">
+            <i class="far fa-frown-open" style="color: rgb(33, 214, 33); font-size: 80px;"></i>
+            <span>심부름이 매칭되었습니다.</span>
+            <div> </div>
+            <div class="modal-footer d-flex justify-content-evenly">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal3 -->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content" style="width: 700px; height: 300px;">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body 
+                  d-flex flex-column justify-content-center align-items-center align-content-center">
+            <h1 class="d-flex align-items-center">
+              <i class="far fa-frown-open" style="color: rgb(28, 28, 204); font-size: 80px;"></i>
+              <span>심부름하기</span>
+            </h1>
+            <div>"우아한남매들"님의 심부름을 선택하셧습니다.</div>
+            <div>선택한 심부름을 진행하시겠습니까?</div>
+          </div>
+          <div class="modal-footer d-flex justify-content-evenly">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">취소</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ver 4.0 v -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
 </body>
 
 </html>
