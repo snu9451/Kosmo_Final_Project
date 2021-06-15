@@ -1,0 +1,6 @@
+INSERT INTO conversation_info(errand_no,check_first,check_second,check_first_time,check_second_time,room_no)
+value (1,'T','T','2020-06-20 13:12:37','2020-06-20 13:21:37',2);
+INSERT INTO conversation_info(errand_no,check_first,check_second,check_first_time,check_second_time,room_no)
+value (2,'T','T','2020-06-20 16:27:37','2020-06-20 16:51:37',3);
+INSERT INTO conversation_info(errand_no,check_first,check_second,check_first_time,check_second_time,room_no)
+value (3,'T','T','2020-06-21 14:16:37','2020-06-21 14:21:37',4);

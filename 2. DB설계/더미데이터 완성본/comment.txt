@@ -3,7 +3,7 @@ value (1,'네고 가능한가요?',1,0,'포도','2020-06-17 16:46:41',1);
 INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
 value (2,'안됩니다.',1,1,'바나나','2020-06-17 17:46:41',1);
 INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
-value (3,'그지 새끼냐?',1,1,'멜론','2020-06-17 17:56:41',1);
+value (3,'ㅋㅋ븅신 그지 새끼냐?',1,1,'멜론','2020-06-17 17:56:41',1);
 INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
 value (4,'용량은 얼마나 돼나요?',2,0,'수박','2020-06-18 17:46:41',1);
 INSERT INTO comment(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
