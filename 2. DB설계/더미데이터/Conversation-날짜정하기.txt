@@ -1,4 +1,0 @@
-INSERT INTO Conversation(conver_no,room_no,mem__nickname,conver_text,conver_time,isRead)
-value (1,1,'수박','신세계상품권 3만원 증정, 최대58%할인, 100% 추가적립. 먼저쓰고 익월납부, 매일 100%당첨 룰렛이벤트, 21년 랭키닷컴 1위. 문자업계 독보적 1위. 개인정보 보호마크 획득.','2020-06-19 15:56:41','T');
-INSERT INTO Conversation(conver_no,room_no,mem__nickname,conver_text,conver_time,isRead)
-value (2,1,'딸기','ㅡㅡ','2020-06-19 16:46:41','T');
