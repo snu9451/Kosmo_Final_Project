@@ -10,6 +10,7 @@
     <title>Dashboard - SB Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/controll.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"
@@ -35,16 +36,19 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <div class="sb-sidenav-menu-heading">Core</div>
+                        <div class="sb-sidenav-menu-heading">  
+                            
+                        
+                        </div>
                         <a class="nav-link" href="index.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Dashboard
+                            <!-- <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div> -->
+                            
                         </a>
-                        <div class="sb-sidenav-menu-heading">Interface</div>
+                        <div class="sb-sidenav-menu-heading">관리자페이지</div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
                             data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Layouts
+                            회원관리
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
@@ -57,7 +61,7 @@
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages"
                             aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                            Pages
+                            게시글관리
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
@@ -93,7 +97,7 @@
                                 </div>
                             </nav>
                         </div>
-                        <div class="sb-sidenav-menu-heading">Addons</div>
+                        <!-- <div class="sb-sidenav-menu-heading">Addons</div>
                         <a class="nav-link" href="charts.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Charts
@@ -101,7 +105,7 @@
                         <a class="nav-link" href="tables.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Tables
-                        </a>
+                        </a> -->
                     </div>
                 </div>
             </nav>
@@ -160,17 +164,17 @@
                             <table id="datatablesSimple">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
+                                        <th>가입일</th>
+                                        <th>이메일</th>
+                                        <th>닉네임</th>
+                                        <th>성별</th>
+                                        <th>연령대</th>
+                                        <th>신고횟수</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
                                     <tr>
-                                        <th>Name</th>
+                                        <th>2222</th>
                                         <th>Position</th>
                                         <th>Office</th>
                                         <th>Age</th>
@@ -180,15 +184,15 @@
                                 </tfoot>
                                 <tbody>
                                     <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
+                                        <td>21.05.27.</td>
+                                        <td>as97164@naver.com</td>
+                                        <td>코스모코딩왕</td>
+                                        <td>남</td>
+                                        <td>20~30</td>
+                                        <td>3</td>
                                     </tr>
                                     <tr>
-                                        <td>Garrett Winters</td>
+                                        <td>as97164@naver.com</td>
                                         <td>Accountant</td>
                                         <td>Tokyo</td>
                                         <td>63</td>
@@ -196,7 +200,7 @@
                                         <td>$170,750</td>
                                     </tr>
                                     <tr>
-                                        <td>Ashton Cox</td>
+                                        <td>코스모코딩왕</td>
                                         <td>Junior Technical Author</td>
                                         <td>San Francisco</td>
                                         <td>66</td>
@@ -204,7 +208,7 @@
                                         <td>$86,000</td>
                                     </tr>
                                     <tr>
-                                        <td>Cedric Kelly</td>
+                                        <td>남</td>
                                         <td>Senior Javascript Developer</td>
                                         <td>Edinburgh</td>
                                         <td>22</td>
@@ -212,7 +216,7 @@
                                         <td>$433,060</td>
                                     </tr>
                                     <tr>
-                                        <td>Airi Satou</td>
+                                        <td>20~30</td>
                                         <td>Accountant</td>
                                         <td>Tokyo</td>
                                         <td>33</td>
@@ -220,7 +224,7 @@
                                         <td>$162,700</td>
                                     </tr>
                                     <tr>
-                                        <td>Brielle Williamson</td>
+                                        <td>3</td>
                                         <td>Integration Specialist</td>
                                         <td>New York</td>
                                         <td>61</td>
