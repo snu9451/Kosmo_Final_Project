@@ -1,6 +1,6 @@
-INSERT INTO report_mem(report_no,mem_email_from,mem_email_to,report_msg,report_date,report_type)
-value (1,'grape@good.com','melon@good.com','욕을 해서 기분이 나쁘네요','2020-06-17 18:56:41','욕설');
-INSERT INTO report_mem(report_no,mem_email_from,mem_email_to,report_msg,report_date,report_type)
-value (2,'straw@good.com','water@good.com','메세지로 이런거 보내는 거 너무 싫네요~','2020-06-19 16:56:41','전문판매업자');
-INSERT INTO report_mem(report_no,mem_email_from,mem_email_to,report_msg,report_date,report_type)
-value (3,'grape@good.com','water@good.com','다른 사람 물건 파는 곳까지와서 왜 저렇게 시비터는지 모르겠네요;','2020-06-21 16:50:41','비매너 사용자');
+INSERT INTO report_mem(report_no,mem_email_from,mem_email_to,report_msg,report_date,report_type,report_isHandle);
+value (1,'grape@good.com','melon@good.com','욕을 해서 기분이 나쁘네요','2020-06-17 18:56:41','욕설','T');
+INSERT INTO report_mem(report_no,mem_email_from,mem_email_to,report_msg,report_date,report_type,report_isHandle)
+value (2,'straw@good.com','water@good.com','메세지로 이런거 보내는 거 너무 싫네요~','2020-06-19 16:56:41','전문판매업자','T');
+INSERT INTO report_mem(report_no,mem_email_from,mem_email_to,report_msg,report_date,report_type,report_isHandle)
+value (3,'grape@good.com','water@good.com','다른 사람 물건 파는 곳까지와서 왜 저렇게 시비터는지 모르겠네요;','2020-06-21 16:50:41','비매너 사용자','T');

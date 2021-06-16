@@ -1,6 +1,6 @@
-INSERT INTO report_board(report_no,mem_email,report_msg,report_date,bm_no,report_type)
-value (1,'orange@good.com','도배 해대네요;;','2020-06-27 18:46:41',13,'도배');
-INSERT INTO report_board(report_no,mem_email,report_msg,report_date,bm_no,report_type)
-value (2,'apple@good.com','도배 게시물 신고요!','2020-06-27 18:56:41',12,'도배');
-INSERT INTO report_board(report_no,mem_email,report_msg,report_date,bm_no,report_type)
-value (3,'grape@good.com','도배요~','2020-06-27 19:46:41',13,'도배');
+INSERT INTO report_board(report_no,mem_email,report_msg,report_date,bm_no,report_type,report_isHandle)
+value (1,'orange@good.com','도배 해대네요;;','2020-06-27 18:46:41',13,'도배','T');
+INSERT INTO report_board(report_no,mem_email,report_msg,report_date,bm_no,report_type,report_isHandle)
+value (2,'apple@good.com','도배 게시물 신고요!','2020-06-27 18:56:41',12,'도배','T');
+INSERT INTO report_board(report_no,mem_email,report_msg,report_date,bm_no,report_type,report_isHandle)
+value (3,'grape@good.com','도배요~','2020-06-27 19:46:41',13,'도배','T');

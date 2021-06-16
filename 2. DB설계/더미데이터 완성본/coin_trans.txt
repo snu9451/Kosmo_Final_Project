@@ -31,3 +31,7 @@ value (13,'바나나','2020-06-21 13:50:37','심부름값제공',3000,20500,'o')
 INSERT INTO coin_trans(trans_no, mem_nickname,trans_date,trans_content,trans_price,trans_remain,trans_io)
 value (14,'파인애플','2020-06-21 14:10:37','심부름완료',23000,23000,'i');
 
+INSERT INTO coin_trans(trans_no, mem_nickname,trans_date,trans_content,trans_price,trans_remain,trans_io)
+value (15,'포도','2020-06-26 15:46:41','안전거래구매',44900,24900,'o');
+INSERT INTO coin_trans(trans_no, mem_nickname,trans_date,trans_content,trans_price,trans_remain,trans_io)
+value (16,'블루베리','2020-06-26 15:56:41','안전거래판매',0,20000,'i');
