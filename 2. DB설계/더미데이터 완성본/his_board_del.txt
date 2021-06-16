@@ -1,0 +1,12 @@
+INSERT INTO his_board_del(bm_no,seller_email,category_name,bm_title,bm_date,bm_price)
+value (14,'apple@good.com','식물','장식용 장미 팔아요',2020-06-28 18:46:41',3000);
+INSERT INTO his_board_del(bm_no,seller_email,category_name,bm_title,bm_date,bm_price)
+value (15,'blue@good.com','유아동','귀여운 얘기 양말 팔아요',2020-06-29 13:26:41',6000);
+INSERT INTO his_board_del(bm_no,seller_email,category_name,bm_title,bm_date,bm_price)
+value (16,'banana@good.com','의류','긴 빨간색 후드티 팔아요',2020-06-29 20:46:41',9000);
+INSERT INTO his_board_del(bm_no,seller_email,category_name,bm_title,bm_date,bm_price)
+value (17,'water@good.com','가구','접의식 의자 팔아요',2020-07-02 18:46:41',13000);
+INSERT INTO his_board_del(bm_no,seller_email,category_name,bm_title,bm_date,bm_price)
+value (18,'orange@good.com','화장품','한 번 쓴 퍼프',2020-07-09 13:56:41',6000);
+INSERT INTO his_board_del(bm_no,seller_email,category_name,bm_title,bm_date,bm_price)
+value (19,'apple@good.com','반려동물용품','소고기 개 껌',2020-07-12 20:46:41',7000);

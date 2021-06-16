@@ -1,0 +1,2 @@
+INSERT INTO board_info(bm_no,room_no)
+value (9,5);
