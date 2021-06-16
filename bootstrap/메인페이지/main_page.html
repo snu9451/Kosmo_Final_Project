@@ -8,7 +8,8 @@
   <title>내동생 - Main Page</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
+  <!-- Font Awesome-->
+  <script src="https://kit.fontawesome.com/a2c0486048.js" crossorigin="anonymous"></script>
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -29,7 +30,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <link  href="assets/css/main_page.css" rel="stylesheet">
+  <link href="assets/css/main_page.css" rel="stylesheet">
 
 </head>
 
@@ -38,7 +39,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
       <h1 class="logo mr-auto main__title">
-        <a href="main_page.html">내 동생</a>
+        <a href="main_page.html">내 동생<span>.</span></a>
       </h1>
       <nav class="nav-menu d-none d-lg-block">
         <ul>
@@ -74,9 +75,9 @@
   </header>
   <!-- End Header -->
 
-  <!-- ======= map Section ======= -->
+  <!-- ======= Map Section ======= -->
 
-  <section id="hero" class="d-flex justify-content-center align-items-center">
+  <section id="Map" class="d-flex justify-content-center align-items-center">
     <div>
       <h1>지도 위치 예정</h1>
     </div>
@@ -87,13 +88,46 @@
   <main id="main">
     <!-- ======= Used goods Section ======= -->
     <section id="product" class="product">
-      <div class="container" data-aos="fade-up">
+      <!-- 검색순위 플로팅 -->
+      <div id="search__rank" class="serach__rank">
+        search__rank
+      </div>
 
-        <div class="section-title">
+
+      <div class="container" data-aos="fade-up">
+        <div class="product__title d-flex flex-column justify-content-center align-items-center">
           <h2>지금 거래중인</h2>
           <h3>우리동네 <span>중고거래상품</span></h3>
+          <div class="product__search__box d-flex flex-column align-items-center">
+            <div class="product__prefer d-flex justify-content-around align-items-center">
+              <a href="#">인기상품순</a>
+              <div class="divider"></div>
+              <a href="#">최근상품순</a>
+              <div class="divider"></div>
+              <a href="#">연령별</a>
+            </div>
+            <div class="product__serach__bar">
+              <form>
+                <div class="form-row justify-content-center">
+                  <div class="col-1">
+                    <span style="font-size: 18px;">찾는상품</span>
+                  </div>
+                  <div class="col-7">
+                    <input type="text" class="form-control" placeholder="State">
+                  </div>
+                  <div class="col-1">
+                    <button class="btn btn-primary">Search</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="product__related__search">related search</div>
+
+          </div>
         </div>
 
+
+        <!-- 중고거래 상품 갤러리-->
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
@@ -146,12 +180,10 @@
               <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
-        <!-- End Used goods -->
+    <!-- ============================= End Used goods ========================= -->
 
   </main>
   <!-- End #main -->
