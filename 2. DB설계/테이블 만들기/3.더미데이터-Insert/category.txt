@@ -1,20 +1,20 @@
 INSERT INTO category(category_name)
-value ('디지털기기');
+values ('디지털기기');
 INSERT INTO category(category_name)
-value ('가구');
+values ('가구');
 INSERT INTO category(category_name)
-value ('화장품');
+values ('화장품');
 INSERT INTO category(category_name)
-value ('유아동');
+values ('유아동');
 INSERT INTO category(category_name)
-value ('의류');
+values ('의류');
 INSERT INTO category(category_name)
-value ('도서');
+values ('도서');
 INSERT INTO category(category_name)
-value ('식물');
+values ('식물');
 INSERT INTO category(category_name)
-value ('스포츠');
+values ('스포츠');
 INSERT INTO category(category_name)
-value ('반려동물용품');
+values ('반려동물용품');
 INSERT INTO category(category_name)
-value ('기타');
+values ('기타');

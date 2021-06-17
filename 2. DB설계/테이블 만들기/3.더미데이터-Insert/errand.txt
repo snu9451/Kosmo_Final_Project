@@ -1,0 +1,29 @@
+위도, 경도 전부 0으로 일단 처리함
+
+INSERT INTO errand(errand_no,errand_item,errand_request_date,errand_start_date,errand_finish_date,
+errand_item_price_req,errand_item_price_nds,errand_item_price_fin,
+errand_price,errand_total_price,errand_content,errand_status,errand_deny,
+mem_nickname_req,mem_nickname_nds,errand_lat,errand_lon,req_isShow,nds_isShow)
+values (1,'스타벅스 아이스아메리카노','2020-06-20 12:50:37','2020-06-20 13:00:37','2020-06-20 13:20:37',
+5000,4100,4100,
+1000,5100,'tall사이즈로 부탁해요~30분이내로 가능하면 받아주세요ㅜㅜ점심시간 전에 들어가야 해서요','S','해당없음',
+'포도','귤',0,0,'T','T');
+
+INSERT INTO errand(errand_no,errand_item,errand_request_date,errand_start_date,errand_finish_date,
+errand_item_price_req,errand_item_price_nds,errand_item_price_fin,
+errand_price,errand_total_price,errand_content,errand_status,errand_deny,
+mem_nickname_req,mem_nickname_nds,errand_lat,errand_lon,req_isShow,nds_isShow)
+values (2,'상추,오이,가지','2020-06-20 15:50:37','2020-06-20 16:05:37','2020-06-20 16:50:37',
+8000,7500,7500,
+1000,8500,'집 문고리에 걸어주시면 좋겠는데 저희 집 위치는 제가 매칭 돼면 알려드릴게요~','S','해당없음',
+'바나나','사과',0,0,'T','T');
+
+INSERT INTO errand(errand_no,errand_item,errand_request_date,errand_start_date,errand_finish_date,
+errand_item_price_req,errand_item_price_nds,errand_item_price_fin,
+errand_price,errand_total_price,errand_content,errand_status,errand_deny,
+mem_nickname_req,mem_nickname_nds,errand_lat,errand_lon,req_isShow,nds_isShow)
+values (3,'오구오구쌀3kg','2020-06-21 13:50:37','2020-06-21 14:00:37','2020-06-21 14:20:37'
+20000,20000,20000,
+3000,23000,'쌀 좀 부탁합니다.','S','해당없음',
+'바나나','파인애플',0,0,'T','T');
+
