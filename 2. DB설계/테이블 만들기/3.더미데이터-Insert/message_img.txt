@@ -1,0 +1,8 @@
+INSERT INTO message_img(conver_no,conver_time,room_no,mem_nickname,img_real_name,img_sys_name,isRead,file_size)
+values (1,'2020-06-20 13:09:37',2,'귤','1.jpg','1.jpg','T',50);
+INSERT INTO message_img(conver_no,conver_time,room_no,mem_nickname,img_real_name,img_sys_name,isRead,file_size)
+values (2,'2020-06-20 16:24:07',3,'사과','2.jpg','2.jpg','T',50);
+INSERT INTO message_img(conver_no,conver_time,room_no,mem_nickname,img_real_name,img_sys_name,isRead,file_size)
+values (3,'2020-06-20 16:25:07',3,'사과','3.PNG','3.PNG','T',50);
+INSERT INTO message_img(conver_no,conver_time,room_no,mem_nickname,img_real_name,img_sys_name,isRead,file_size)
+values (4,'2020-06-21 14:09:37',4,'파인애플','4.jpg','4.jpg','T',50);

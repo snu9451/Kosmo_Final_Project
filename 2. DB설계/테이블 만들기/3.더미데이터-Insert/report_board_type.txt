@@ -1,12 +1,12 @@
 INSERT INTO report_board_type(report_type)
-value ('욕설,비방');
+values ('욕설,비방');
 INSERT INTO report_board_type(report_type)
-value ('불법,도박');
+values ('불법,도박');
 INSERT INTO report_board_type(report_type)
-value ('홍보,영리목적');
+values ('홍보,영리목적');
 INSERT INTO report_board_type(report_type)
-value ('음란,유해');
+values ('음란,유해');
 INSERT INTO report_board_type(report_type)
-value ('도배');
+values ('도배');
 INSERT INTO report_board_type(report_type)
-value ('기타');
+values ('기타');

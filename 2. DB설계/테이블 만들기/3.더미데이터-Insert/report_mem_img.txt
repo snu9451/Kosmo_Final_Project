@@ -1,0 +1,6 @@
+INSERT INTO report_mem_img(report_no,img_real_name,img_sys_name,file_size)
+values (1,'1.PNG','1.PNG',50);
+INSERT INTO report_mem_img(report_no,img_real_name,img_sys_name,file_size)
+values (2,'2.PNG','2.PNG',50);
+INSERT INTO report_mem_img(report_no,img_real_name,img_sys_name,file_size)
+values (3,'3.PNG','3.PNG',50);

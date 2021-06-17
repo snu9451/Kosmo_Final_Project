@@ -1,0 +1,303 @@
+﻿CREATE TABLE errand (
+	errand_no	number(5)	NULL,
+	errand_item	varchar2(50)	NULL,
+	errand_request_date	VARCHAR2(50)	NOT NULL,
+	errand_start_date	VARCHAR2(50)	NULL,
+	errand_finish_date	VARCHAR2(50)	NULL,
+	errand_item_price_req	number(6)	NULL,
+	errand_item_price_nds	number(6)	NULL,
+	errand_item_price_fin	number(6)	NULL,
+	errand_price	number(6)	NULL,
+	errand_total_price	number(6)	NULL,
+	errand_content	varchar2(200)	NULL,
+	errand_status	char(1)	NULL,
+	errand_deny	varchar2(200)	NULL,
+	mem_nickname_req	VARCHAR2(30)	NOT NULL,
+	mem_nickname_nds	VARCHAR2(30)	NOT NULL,
+	errand_lat	number(10,7)	NULL,
+	errand_lon	number(10,7)	NULL,
+	req_isShow	char(1)	NULL,
+	nds_isShow	char(1)	NULL
+);
+
+CREATE TABLE member (
+	mem_email	VARCHAR2(50)	NOT NULL,
+	mem_img	varchar2(100)	NULL,
+	mem__nickname	varchar2(50)	NOT NULL,
+	mem_pw	varchar2(80)	NULL,
+	mem_gender	char(1)	NOT NULL,
+	mem_age	number(2)	NOT NULL,
+	mem_create_date	VARCHAR2(50)	NOT NULL,
+	isSocial	char(1)	NULL,	
+	mem_active	char(1)	NULL,
+	mem_star	number(2,1)	NULL,
+	coin_remain	number(7)	NULL,
+	mem_phone	VARCHAR2(11)	NULL,
+	mem_payPW	VARCHAR2(80)	NULL,
+	mem_errand_mode	char(1)	NULL
+);
+
+CREATE TABLE coin_trans (
+	trans_no	number(5)	NOT NULL,
+	mem_nickname	VARCHAR2(50)	NOT NULL,
+	trans_date	VARCHAR2(50)	NULL,
+	trans_content	varchar2(200)	NULL,
+	trans_price	number(6)	NULL,
+	trans_remain	number(6)	NULL,
+	trans_io	char(1)	NULL
+);
+
+CREATE TABLE board_master (
+	bm_no	number(6)	NOT NULL,
+	bm_title	varchar2(100)	NULL,
+	bm_hit	number(3)	NULL,
+	bm_date	VARCHAR2(50)	NULL,
+	bm_like	number(3)	NULL,
+	bm_content	varchar2(200)	NULL,
+	bm_price	number(9)	NULL,
+	bm_status	char(1)	NOT NULL,
+	seller_nickname	VARCHAR2(30)	NOT NULL,
+	category_name	VARCHAR2(50)	NOT NULL,
+	buyer_nickname	VARCHAR2(30)	NULL,
+	seller_isShow	char(1)	NULL,
+	buyer_isShowT	char(1)	NULL,
+	buyer_payDate	VARCHAR2(50)	NULL
+);
+
+CREATE TABLE board_img (
+	bi_no	number(7)	NOT NULL,
+	bm_no	number(6)	NOT NULL,
+	bi_file	varchar2(100)	NULL,
+	bi_size	NUMBER(8)	NULL
+);
+
+CREATE TABLE category (
+	category_name	VARCHAR2(50)	NOT NULL
+);
+
+CREATE TABLE report_board (
+	report_no	number(6)	NOT NULL,
+	mem_email	VARCHAR2(50)	NOT NULL,
+	report_msg	varchar2(200)	NULL,
+	report_date	VARCHAR2(50)	NULL,
+	report_type	VARCHAR2(50)	NOT NULL,
+	bm_no	number(6)	NULL,
+	report_isHandle	char(1)	NULL
+);
+
+CREATE TABLE bank_mem (
+	account_no	number(13)	NOT NULL,
+	bmem_name	varchar2(20)	NULL,
+	bmem_deposit	number(7)	NULL,
+	account_pw	number(4)	NULL,
+	mem_IDnum	number(13)	NULL
+);
+
+CREATE TABLE board_like (
+	bm_no	number(6)	NOT NULL,
+	like10s	number(3)	NULL,
+	like20s	number(3)	NULL,
+	like30s	number(3)	NULL,
+	like40s	number(3)	NULL,
+	like50s	number(3)	NULL,
+	like60s	number(3)	NULL
+);
+
+CREATE TABLE my_like (
+	mem_email	VARCHAR2(50)	NOT NULL,
+	bm_no	number(6)	NOT NULL
+);
+
+CREATE TABLE room (
+	room_no	NUMBER(3)	NOT NULL,
+	mem_nickname_m	VARCHAR2(50)	NOT NULL,
+	mem_nickname_s	VARCHAR2(50)	NOT NULL,
+	room_date	VARCHAR2(50)	NULL
+);
+
+CREATE TABLE Conversation (
+	conver_no	NUMBER(5)	NOT NULL,
+	conver_time	VARCHAR2(50)	NULL,
+	room_no	NUMBER(3)	NOT NULL,
+	mem_nickname	VARCHAR2(50)	NOT NULL,
+	conver_text	VARCHAR2(200)	NULL,
+	isRead	char(1)	NULL
+);
+
+CREATE TABLE search_words (
+	keyword	varchar2(50)	NOT NULL,
+	word_total	number(7)	NULL,
+	word_day	number(5)	NULL
+);
+
+--comment라는 명령어가 존재하는거같다. 그래서 테이블이름으로 사용 안됨
+CREATE TABLE comments (
+	comment_step	NUMBER(3)	NOT NULL,
+	comment_msg	varchar2(200)	NULL,
+	comment_group	NUMBER(3)	NULL,
+	commnet_pos	NUMBER(1)	NULL,
+	mem_nickname	VARCHAR2(50)	NOT NULL,
+	comment_date	VARCHAR2(50)	NULL,
+	bm_no	NUMBER(6)	NOT NULL
+);
+
+CREATE TABLE report_mem (
+	report_no	number(3)	NOT NULL,
+	mem_email_from	VARCHAR2(50)	NOT NULL,
+	mem_email_to	VARCHAR2(50)	NOT NULL,
+	report_msg	varchar2(200)	NULL,
+	report_date	VARCHAR2(50)	NULL,
+	report_type	VARCHAR2(50)	NOT NULL,
+	report_isHandle	char(1)	NULL
+);
+
+CREATE TABLE errand_info (
+	errand_no	number(5)	NULL,
+	check_first	char(1)	NOT NULL,
+	check_second	char(1)	NOT NULL,
+	check_first_time	VARCHAR2(50)	NULL,
+	check_second_time	VARCHAR2(50)	NULL,
+	room_no	NUMBER(3)	NOT NULL
+);
+
+CREATE TABLE report_mem_type (
+	report_type	VARCHAR2(50)	NOT NULL
+);
+
+CREATE TABLE report_board_type (
+	report_type	VARCHAR2(50)	NOT NULL
+);
+
+CREATE TABLE his_board_del (
+	bm_no	number(6)	NOT NULL,
+	seller_email	VARCHAR2(50)	NOT NULL,
+	category_name	VARCHAR2(50)	NULL,
+	bm_title	varchar2(100)	NULL,
+	bm_date	VARCHAR2(50)	NULL,
+	bm_price	number(9)	NULL
+);
+
+CREATE TABLE message_img (
+	conver_no	NUMBER(5)	NOT NULL,
+	conver_time	VARCHAR2(50)	NULL,
+	room_no	NUMBER(3)	NOT NULL,
+	mem_nickname	VARCHAR2(50)	NOT NULL,
+	img_real_name	varchar2(100)	NULL,
+	img_sys_name	varchar2(100)	NULL,
+	isRead	char(1)	NULL,
+	file_size	number(8)	NULL
+);
+
+CREATE TABLE board_info (
+	bm_no	number(6)	NOT NULL,
+	room_no	NUMBER(3)	NOT NULL
+);
+
+CREATE TABLE report_mem_img (
+	report_no	number(3)	NOT NULL,
+	img_real_name	varchar2(100)	NULL,
+	img_sys_name	varchar2(100)	NULL,
+	file_size	number(8)	NULL
+);
+
+CREATE TABLE report_board_img (
+	report_no	number(6)	NOT NULL,
+	img_real_name	varchar2(100)	NULL,
+	img_sys_name	varchar2(100)	NULL,
+	file_size	number(8)	NULL
+);
+
+ALTER TABLE errand ADD CONSTRAINT PK_ERRAND PRIMARY KEY (
+	errand_no
+);
+
+ALTER TABLE member ADD CONSTRAINT PK_MEMBER PRIMARY KEY (
+	mem_email
+);
+
+ALTER TABLE coin_trans ADD CONSTRAINT PK_COIN_TRANS PRIMARY KEY (
+	trans_no
+);
+
+ALTER TABLE board_master ADD CONSTRAINT PK_BOARD_MASTER PRIMARY KEY (
+	bm_no
+);
+
+ALTER TABLE board_img ADD CONSTRAINT PK_BOARD_IMG PRIMARY KEY (
+	bi_no
+);
+
+ALTER TABLE category ADD CONSTRAINT PK_CATEGORY PRIMARY KEY (
+	category_name
+);
+
+ALTER TABLE report_board ADD CONSTRAINT PK_REPORT_BOARD PRIMARY KEY (
+	report_no
+);
+
+ALTER TABLE bank_mem ADD CONSTRAINT PK_BANK_MEM PRIMARY KEY (
+	account_no
+);
+
+ALTER TABLE board_like ADD CONSTRAINT PK_BOARD_LIKE PRIMARY KEY (
+	bm_no
+);
+
+ALTER TABLE my_like ADD CONSTRAINT PK_MY_LIKE PRIMARY KEY (
+	mem_email,
+	bm_no
+);
+
+ALTER TABLE room ADD CONSTRAINT PK_ROOM PRIMARY KEY (
+	room_no
+);
+
+ALTER TABLE Conversation ADD CONSTRAINT PK_CONVERSATION PRIMARY KEY (
+	conver_no
+);
+
+ALTER TABLE search_words ADD CONSTRAINT PK_SEARCH_WORDS PRIMARY KEY (
+	keyword
+);
+
+ALTER TABLE comments ADD CONSTRAINT PK_COMMENT PRIMARY KEY (
+	comment_step
+);
+
+ALTER TABLE report_mem ADD CONSTRAINT PK_REPORT_MEM PRIMARY KEY (
+	report_no
+);
+
+ALTER TABLE errand_info ADD CONSTRAINT PK_ERRAND_INFO PRIMARY KEY (
+	errand_no
+);
+
+ALTER TABLE report_mem_type ADD CONSTRAINT PK_REPORT_MEM_TYPE PRIMARY KEY (
+	report_type
+);
+
+ALTER TABLE report_board_type ADD CONSTRAINT PK_REPORT_BOARD_TYPE PRIMARY KEY (
+	report_type
+);
+
+ALTER TABLE his_board_del ADD CONSTRAINT PK_HIS_BOARD_DEL PRIMARY KEY (
+	bm_no
+);
+
+ALTER TABLE message_img ADD CONSTRAINT PK_MESSAGE_IMG PRIMARY KEY (
+	conver_no
+);
+
+ALTER TABLE board_info ADD CONSTRAINT PK_BOARD_INFO PRIMARY KEY (
+	bm_no,
+	room_no
+);
+
+ALTER TABLE report_mem_img ADD CONSTRAINT PK_REPORT_MEM_IMG PRIMARY KEY (
+	report_no
+);
+
+ALTER TABLE report_board_img ADD CONSTRAINT PK_REPORT_BOARD_IMG PRIMARY KEY (
+	report_no
+);
+

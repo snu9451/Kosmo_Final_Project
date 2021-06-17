@@ -1,0 +1,21 @@
+                                                                                                               성별       나이           만든날짜   , 네이버 가입인지, 회원삭제유무, 결제비번
+INSERT INTO member(mem_email, mem_img, mem__nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,mem_star,coin_remain,mem_phone,mem_payPW,mem_errand_mode)
+values ('banana@good.com','1.png','바나나','123','F',20,'2018-04-29 09:33:51','F','F',0,20500,'01012340000','1234','R');
+INSERT INTO member(mem_email, mem_img, mem__nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,mem_star,coin_remain,mem_phone,mem_payPW,mem_errand_mode)
+values ('apple@good.com','1.png','사과','123','M',10,'2014-06-22 13:56:52','F','F',0,8500,'01012340001','1234','R');
+INSERT INTO member(mem_email, mem_img, mem__nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,mem_star,coin_remain,mem_phone,mem_payPW,mem_errand_mode)
+values ('straw@good.com','1.png','딸기','123','F',20,'2016-06-15 17:31:59','F','F',0,0,'01012340002','1234','R');
+INSERT INTO member(mem_email, mem_img, mem__nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,mem_star,coin_remain,mem_phone,mem_payPW,mem_errand_mode)
+values ('pine@good.com','1.png','파인애플','123','M',30,'2018-02-06 20:44:02','F','F',0,23000,'01012340003','1234','R');
+INSERT INTO member(mem_email, mem_img, mem__nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,mem_star,coin_remain,mem_phone,mem_payPW,mem_errand_mode)
+values ('grape@good.com','1.png','포도','123','F',40,'2018-08-03 18:40:20','F','F',0,24900,'01012340004','1234','R');
+INSERT INTO member(mem_email, mem_img, mem__nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,mem_star,coin_remain,mem_phone,mem_payPW,mem_errand_mode)
+values ('orange@good.com','1.png','귤','123','M',50,'2017-07-17 20:57:17','F','F',0,5100,'01012340005','1234','R');
+INSERT INTO member(mem_email, mem_img, mem__nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,mem_star,coin_remain,mem_phone,mem_payPW,mem_errand_mode)
+values ('tomato@good.com','1.png','토마토','123','F',60,'2016-04-04 17:40:51','F','F',0,0,'01012340006','1234','R');
+INSERT INTO member(mem_email, mem_img, mem__nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,mem_star,coin_remain,mem_phone,mem_payPW,mem_errand_mode)
+values ('melon@good.com','1.png','멜론','123','M',70,'2015-07-02 05:32:32','F','F',0,0,'01012340007','1234','R');
+INSERT INTO member(mem_email, mem_img, mem__nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,mem_star,coin_remain,mem_phone,mem_payPW,mem_errand_mode)
+values ('blue@good.com','1.png','블루베리','123','F',30,'2016-04-15 08:44:48','F','F',0,20000,'01012340008','1234','R');
+INSERT INTO member(mem_email, mem_img, mem__nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,mem_star,coin_remain,mem_phone,mem_payPW,mem_errand_mode)
+values ('water@good.com','1.png','수박','123','M',30,'2015-02-12 00:02:21','F','F',0,0,'01012340009','1234','R');

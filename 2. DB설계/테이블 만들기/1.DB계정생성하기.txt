@@ -1,0 +1,17 @@
+sqlplus  "/as sysdba"
+
+show user;
+
+CREATE USER finalproject identified by tiger; //계정생성
+
+grant connect, resource to finalproject;//계정에 접속
+
+create tablespace ts_finalproject datafile 'C:\app\ariel\oradata\orcl11\final80.dbf' size 50M;//**경로는 자기 컴으로 해주세요~테이블 스페이스 생성과 용량을 넣은거
+
+grant create sequence to finalproject; //시퀀스에 대한 권한 부여
+grant create trigger to finalproject; //트리거에 대한 권한 부여(트리거가 뭔지 알아보기)
+grant create session to finalproject with admin option;//세션 권한부여(접속 권한-로그인이 가능해짐)
+grant create table to finalproject with admin option; //테이블을 만들 수 있는 것에 대한 권한 부여
+grant create view to finalproject;
+
+alter user finalproject quota unlimited on ts_finalproject; //사용자 변경
