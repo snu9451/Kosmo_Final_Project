@@ -41,8 +41,8 @@ function initMap() {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
+            lat: 37.473083599999995,
+            lng: 126.8788276,
           };
           infoWindow.setPosition(pos);
           infoWindow.setContent("Location found.");
