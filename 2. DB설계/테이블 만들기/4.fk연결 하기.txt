@@ -1,6 +1,55 @@
 /* 제약조건 삭제
     > ALTER TABLE 테이블명 DROP CONSTRAINT 제약조건명	*/
 
+ALTER TABLE member ADD UNIQUE(mem_nickname);
+
+
+ALTER TABLE errand ADD CONSTRAINT errand_mem_nickname_req_fk FOREIGN KEY (
+	mem_nickname_req
+)
+REFERENCES member (
+	mem_nickname
+);
+
+ALTER TABLE errand ADD CONSTRAINT errand_mem_nickname_nds_fk FOREIGN KEY (
+	mem_nickname_nds
+)
+REFERENCES member (
+	mem_nickname
+);
+
+
+
+ALTER TABLE coin_trans ADD CONSTRAINT coin_trans_mem_nickname_fk FOREIGN KEY (
+	mem_nickname
+)
+REFERENCES member (
+	mem_nickname
+);
+
+
+ALTER TABLE board_master ADD CONSTRAINT board_master_sel_nickname_fk FOREIGN KEY (
+	seller_nickname
+)
+REFERENCES member (
+	mem_nickname
+);
+
+ALTER TABLE board_master ADD CONSTRAINT board_master_buy_nickname_fk FOREIGN KEY (
+	buyer_nickname
+)
+REFERENCES member (
+	mem_nickname
+);
+
+ALTER TABLE board_master ADD CONSTRAINT board_master_category_name_fk FOREIGN KEY (
+	category_name
+)
+REFERENCES category (
+	category_name
+);
+
+
 ALTER TABLE board_img ADD CONSTRAINT board_img_bm_no_fk FOREIGN KEY (
     bm_no
 )
@@ -69,7 +118,7 @@ REFERENCES member (
     mem_nickname
 );
 
-ALTER TABLE comment ADD CONSTRAINT comment_bm_no_fk FOREIGN KEY (
+ALTER TABLE comments ADD CONSTRAINT comment_bm_no_fk FOREIGN KEY (
     bm_no
 )
 REFERENCES board_master (
@@ -97,7 +146,7 @@ REFERENCES report_mem_type (
     report_type
 );
 
-ALTER TABLE errand_info ADD CONSTRAINT errand_info_ errand_no_fk FOREIGN KEY (
+ALTER TABLE errand_info ADD CONSTRAINT errand_info_errand_no_fk FOREIGN KEY (
     errand_no
 )
 REFERENCES errand (
