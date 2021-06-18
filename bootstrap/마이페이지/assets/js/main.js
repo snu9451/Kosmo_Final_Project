@@ -5,7 +5,8 @@
  * License: https://bootstrapmade.com/license/
  */
 !(function ($) {
-  "use strict";
+
+
 
   // Preloader
   $(window).on("load", function () {
@@ -251,6 +252,34 @@
   $(window).on("load", function () {
     aos_init();
   });
+
+
+
+
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $('#image_section').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  // 이벤트를 바인딩해서 input에 파일이 올라올때 위의 함수를 this context로 실행합니다.
+  $("#imgInput").change(function () {
+    readURL(this);
+  });
+
+
+
+
+
+
+
+
+
+  //////////////////////////////////////////////마이페이지///////////
   $(document).ready(function () {
     $(".each").each(function (index) {
       $(".each")
@@ -258,26 +287,46 @@
         .on("mouseover", function () {
           $(".each").eq(index).css({
             background: "white",
-            
+
             //"transition": "0.3s"
           });
-      $(".title").eq(index).css({
-        color: "#ffc37b",
-        //"transition": "0.3s"
-      });
+          $(".tab_title").eq(index).css({
+            color: "#ffc37b",
+            //"transition": "0.3s"
+          });
+        });
+      $(".each")
+        .eq(index)
+        .on("mouseout", function () {
+          $(".each").eq(index).css({
+            background: "#627ea4",
+            //"transition": "0.1s"
+          });
+          $(".tab_title").eq(index).css({
+            color: "white",
+            //"transition": "0.1s"
+          });
+        });
     });
-    $(".each")
-      .eq(index)
-      .on("mouseout", function () {
-        $(".each").eq(index).css({
-          background: "#627ea4",
-          //"transition": "0.1s"
-        });
-        $(".title").eq(index).css({
-          color: "white",
-          //"transition": "0.1s"
-        });
-      });
   });
-});
-}) (jQuery);
+  ratings = { RatingScore: 4.5 }//////<-별점 inserthere
+  totalRating = 5;
+  table = document.querySelector('.RatingStar');
+  function rateIt() {
+    for (rating in ratings) {
+      ratingPercentage = ratings[rating] / totalRating * 100;
+      ratingRounded = Math.round(ratingPercentage / 10) * 10 + '%';
+      star = table.querySelector(`.${rating} .inner-star`);
+      numberRating = table.querySelector(`.${rating} .numberRating`);
+      star.style.width = ratingRounded;
+    }
+  }
+  rateIt()
+
+
+
+
+
+
+
+})(jQuery);
