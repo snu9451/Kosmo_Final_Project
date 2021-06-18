@@ -23,7 +23,7 @@
 CREATE TABLE member (
 	mem_email	VARCHAR2(50)	NOT NULL,
 	mem_img	varchar2(100)	NULL,
-	mem__nickname	varchar2(50)	NOT NULL,
+	mem_nickname	varchar2(50)	NOT NULL,
 	mem_pw	varchar2(80)	NULL,
 	mem_gender	char(1)	NOT NULL,
 	mem_age	number(2)	NOT NULL,
