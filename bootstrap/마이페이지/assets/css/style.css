@@ -581,6 +581,86 @@ input[type="checkbox"] {
   transition: all 0.3s;
   z-index: -1;
 }
+.featured-services .icon-box1 {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 25px;
+  overflow: hidden;
+  box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.featured-services .left {
+  width: 50%;
+  background-color: red;
+  float: left;
+  box-sizing: border-box;
+}
+.featured-services .right {
+  width: 50%;
+  background-color: rgb(237, 237, 243);
+  float: right;
+  box-sizing: border-box;
+}
+
+.featured-services .con_title {
+  color: #222222;
+  font-weight: 700;
+  font-size: 25px;
+  margin: auto;
+  margin-left: 15px;
+}
+.featured-services .con_nick {
+  color: #222222;
+  font-weight: 700;
+  font-size: 30px;
+  margin: auto;
+}
+.featured-services .con_email {
+  color: #222222;
+  font-weight: 700;
+  font-size: 30px;
+  margin: auto;
+}
+.featured-services .RatingStar{
+  font-size: 30px;
+  margin: auto;
+}
+.featured-services .nickname, .trust {
+  display: flex;
+  padding: 20px;
+}
+.featured-services .email {
+  display: flex;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.inner-star::before {
+  color: #ff9600;
+}
+.outer-star {
+  position: relative;
+  display: inline-block;
+  color: #cccccc;
+}
+.inner-star {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.outer-star::before,
+.inner-star::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "Font Awesome 5 free";
+  font-weight: 900;
+}
 
 .featured-services .icon {
   margin-bottom: 15px;
@@ -599,7 +679,7 @@ input[type="checkbox"] {
   transition: all 0.3s ease-in-out;
 }
 
-.featured-services .title {
+.featured-services .tab_title {
   font-weight: 700;
   font-size: 20px;
   margin: auto;
