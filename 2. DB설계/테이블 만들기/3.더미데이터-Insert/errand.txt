@@ -22,7 +22,7 @@ INSERT INTO errand(errand_no,errand_item,errand_request_date,errand_start_date,e
 errand_item_price_req,errand_item_price_nds,errand_item_price_fin,
 errand_price,errand_total_price,errand_content,errand_status,errand_deny,
 mem_nickname_req,mem_nickname_nds,errand_lat,errand_lon,req_isShow,nds_isShow)
-values (3,'오구오구쌀3kg','2020-06-21 13:50:37','2020-06-21 14:00:37','2020-06-21 14:20:37'
+values (3,'오구오구쌀3kg','2020-06-21 13:50:37','2020-06-21 14:00:37','2020-06-21 14:20:37',
 20000,20000,20000,
 3000,23000,'쌀 좀 부탁합니다.','S','해당없음',
 '바나나','파인애플',0,0,'T','T');
