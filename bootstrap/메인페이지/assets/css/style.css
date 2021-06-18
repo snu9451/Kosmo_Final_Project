@@ -540,20 +540,20 @@ input[type="checkbox"] {
 /*--------------------------------------------------------------
 # Map Section
 --------------------------------------------------------------*/
-#Map {
+#map {
   width: 100vw;
   height: 70vh;
   position: relative;
   text-align: center;
 }
 
-#Map .container {
+#map .container {
   position: relative;
   padding-top: 132px;
 }
 
 @media (min-width: 1024px) {
-  #Map {
+  #map {
     background-attachment: fixed;
   }
 }
