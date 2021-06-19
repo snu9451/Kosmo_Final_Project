@@ -20,6 +20,10 @@
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Jua&family=Sunflower:wght@300&display=swap" rel="stylesheet">
 
+  <!-- Google Map-->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
+
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
@@ -77,10 +81,8 @@
 
   <!-- ======= Map Section ======= -->
 
-  <section id="map" class="d-flex justify-content-center align-items-center">
-    <div>
-      <h1>지도 위치 예정</h1>
-    </div>
+  <section id="Map" class="d-flex justify-content-center align-items-center">
+    <div id="map" style="width: 100%; height: 80vh;"></div>
   </section>
 
   <!-- End map -->
@@ -211,7 +213,6 @@
   <!-- Vendor JS Files -->
   <!--
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
   -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
@@ -226,11 +227,12 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- google map API -->
+  <!-- Google Map Script -->
   <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
   <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4pd9w90oFRuCZOILRd07MBwVAthwIbIA&callback=initMap&region=kr"
     async></script>
+  <script src="./google_map/src/main.js"></script>
 
 </body>
 
