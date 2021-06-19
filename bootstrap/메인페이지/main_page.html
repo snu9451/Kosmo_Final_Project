@@ -91,17 +91,20 @@
     <!-- ======= Used goods Section ======= -->
     <section id="product" class="product">
       <!-- 검색순위 플로팅 -->
-      <div id="search__rank" class="serach__rank">
-        search__rank
+      <div id="search__rank" class="serach__rank position-absolute">
+        <h3 class="mt-1">현재 검색 순위</h3>
+        <div class="d-flex justify-content-sm-center align-items-center">
+          <span>1</span><h4 class="mb-0">나이키 샌달</h4>
+        </div>
       </div>
 
 
       <div class="container" data-aos="fade-up">
-        <div class="product__title d-flex flex-column justify-content-center align-items-center">
+        <div class="product__title d-flex flex-column justify-content-center align-items-center mb-4">
           <h2>지금 거래중인</h2>
-          <h3>우리동네 <span>중고거래상품</span></h3>
+          <h3 class="mb-2">우리동네 <span>중고거래상품</span></h3>
           <div class="product__search__box d-flex flex-column align-items-center">
-            <div class="product__prefer d-flex justify-content-around align-items-center">
+            <div class="product__prefer d-flex justify-content-around align-items-center mb-4">
               <a href="#">인기상품순</a>
               <div class="divider"></div>
               <a href="#">최근상품순</a>
@@ -110,21 +113,19 @@
             </div>
             <div class="product__serach__bar">
               <form>
-                <div class="form-row justify-content-center">
-                  <div class="col-1">
-                    <span style="font-size: 18px;">찾는상품</span>
+                <div class="form-row justify-content-center align-items-center">
+                  <div class="col-2">
+                    <span class="search__bar__span">찾는상품</span>
                   </div>
                   <div class="col-7">
-                    <input type="text" class="form-control" placeholder="State">
+                    <input type="text" class="form-control text-center" placeholder="찾는상품을 입력해주세요..." style="font-size: 20px;">
                   </div>
                   <div class="col-1">
-                    <button class="btn btn-primary">Search</button>
+                    <button class="btn-lg btn-primary">Search</button>
                   </div>
                 </div>
               </form>
             </div>
-            <div class="product__related__search">related search</div>
-
           </div>
         </div>
 
@@ -182,6 +183,15 @@
               <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
             </div>
           </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-arch"></i></div>
+              <h4><a href="">우리동네 상품 6</a></h4>
+              <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -229,9 +239,9 @@
 
   <!-- Google Map Script -->
   <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-  <script
+  <!-- <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4pd9w90oFRuCZOILRd07MBwVAthwIbIA&callback=initMap&region=kr"
-    async></script>
+    async></script> -->
   <script src="./google_map/src/main.js"></script>
 
 </body>

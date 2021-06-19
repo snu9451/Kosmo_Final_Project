@@ -1,12 +1,31 @@
 // Initialize and add the map
 function initMap() {
   // The location
-  const seoul = { lat: 37.541, lng: 126.986 };
+
   // The map, centered
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 13,
-    center: seoul,
+    zoom: 16,
   });
+
+  //infoWindow 초기화
+  let infoWindow = new google.maps.InfoWindow();
+
+  //Marker 초기화
+  let marker = new google.maps.Marker({ map: map });
+
+  navigator.geolocation.getCurrentPosition(onSuccessGeolocation);
+
+  function onSuccessGeolocation(position) {
+    let myPosition = new google.maps.LatLng(
+      position.coords.latitude,
+      position.coords.longitude
+    );
+
+    map.setCenter(myPosition);
+    marker.setPosition(myPosition);
+    infoWindow.setContent("Click here");
+    infoWindow.open(map, marker);
+  }
 
   /* =======================[[ 동일 위도, 경도 집합체 표시 ]]========================= */
   // Create an array of alphabetical characters used to label the markers.
@@ -31,16 +50,13 @@ function initMap() {
 
   /* =======================[[ 내위치 가져오기 ]]========================= */
 
-  //infoWindow 초기화
-  let infoWindow = new google.maps.InfoWindow();
-
-  //Marker 초기화
-  let marker = new google.maps.Marker();
-
+  // [내 위치 가져오기] 버튼
   const locationButton = document.createElement("button");
   locationButton.textContent = "Click here get my position";
   locationButton.classList.add("custom-map-control-button");
   map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+
+  // [내위치 버튼] 클릭시 이벤트
   locationButton.addEventListener("click", () => {
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
@@ -50,16 +66,16 @@ function initMap() {
             lat: position.coords.latitude,
             lng: position.coords.longitude,
           };
-          console.log(`pos.lat: ${pos.lat}, pos.lng: ${pos.lng}`);
           marker.setPosition(pos);
-          marker.setTitle("Click here");
-          marker.open(map);
+          infoWindow.setContent("Click here");
+          infoWindow.open(map, marker);
           // infoWindow.setContent("Location found.");
           //infoWindow.open(map);
           map.setCenter(pos);
 
+          //마커 클릭시 이벤트
           marker.addListener("click", () => {
-            map.setZoom(8);
+            map.setZoom(15);
             map.setCenter(marker.getPosition());
           });
         },
@@ -72,16 +88,16 @@ function initMap() {
       handleLocationError(false, infoWindow, map.getCenter());
     }
   });
-}
 
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(
-    browserHasGeolocation
-      ? "Error: The Geolocation service failed."
-      : "Error: Your browser doesn't support geolocation."
-  );
-  infoWindow.open(map);
+  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(
+      browserHasGeolocation
+        ? "Error: The Geolocation service failed."
+        : "Error: Your browser doesn't support geolocation."
+    );
+    infoWindow.open(map);
+  }
 }
 
 /* MarkerClusterer 위치 */
