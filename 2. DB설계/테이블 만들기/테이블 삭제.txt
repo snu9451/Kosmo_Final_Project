@@ -1,0 +1,48 @@
+drop table BANK_MEM 
+
+drop table BOARD_IMG  
+
+drop table BOARD_INFO   
+
+drop table BOARD_LIKE 
+
+drop table COIN_TRANS 
+
+drop table COMMENTS 
+
+drop table CONVERSATION   
+
+drop table ERRAND_INFO 
+
+drop table HIS_BOARD_DEL  
+
+drop table ERRAND   
+
+drop table MESSAGE_IMG 
+
+drop table MY_LIKE 
+
+drop table REPORT_BOARD_IMG 
+
+drop table REPORT_MEM_IMG 
+
+drop table ROOM 
+
+drop table SEARCH_WORDS
+
+drop table BOARD_MASTER 
+
+drop table REPORT_BOARD 
+
+drop table REPORT_BOARD_TYPE 
+
+drop table CATEGORY
+
+drop table REPORT_MEM 
+
+drop table REPORT_MEM_TYPE  
+
+drop table MEMBER 
+
+
+
