@@ -5,7 +5,7 @@
  * License: https://bootstrapmade.com/license/
  */
 !(function ($) {
-  "use strict";
+  ("use strict");
 
   // Preloader
   $(window).on("load", function () {
@@ -19,7 +19,7 @@
   });
 
   // Smooth scroll for the navigation menu and links with .scrollto classes
-  var scrolltoOffset = $("#header").outerHeight() - 21;
+  let scrolltoOffset = $("#header").outerHeight() - 21;
   if (window.matchMedia("(max-width: 991px)").matches) {
     scrolltoOffset += 20;
   }
@@ -32,11 +32,11 @@
           this.pathname.replace(/^\//, "") &&
         location.hostname == this.hostname
       ) {
-        var target = $(this.hash);
+        let target = $(this.hash);
         if (target.length) {
           e.preventDefault();
 
-          var scrollto = target.offset().top - scrolltoOffset;
+          let scrollto = target.offset().top - scrolltoOffset;
 
           if ($(this).attr("href") == "#header") {
             scrollto = 0;
@@ -71,9 +71,9 @@
   // Activate smooth scroll on page load with hash links in the url
   $(document).ready(function () {
     if (window.location.hash) {
-      var initial_nav = window.location.hash;
+      let initial_nav = window.location.hash;
       if ($(initial_nav).length) {
-        var scrollto = $(initial_nav).offset().top - scrolltoOffset;
+        let scrollto = $(initial_nav).offset().top - scrolltoOffset;
         $("html, body").animate(
           {
             scrollTop: scrollto,
@@ -86,14 +86,14 @@
   });
 
   // Navigation active state on scroll
-  // var nav_sections = $('section');
-  // var main_nav = $('.nav-menu, .mobile-nav');
+  // let nav_sections = $('section');
+  // let main_nav = $('.nav-menu, .mobile-nav');
 
   // $(window).on('scroll', function () {
-  //   var cur_pos = $(this).scrollTop() + 200;
+  //   let cur_pos = $(this).scrollTop() + 200;
 
   //   nav_sections.each(function () {
-  //     var top = $(this).offset().top,
+  //     let top = $(this).offset().top,
   //       bottom = top + $(this).outerHeight();
 
   //     if (cur_pos >= top && cur_pos <= bottom) {
@@ -110,7 +110,7 @@
 
   // Mobile Navigation
   if ($(".nav-menu").length) {
-    var $mobile_nav = $(".nav-menu").clone().prop({
+    let $mobile_nav = $(".nav-menu").clone().prop({
       class: "mobile-nav d-lg-none",
     });
     $("body").append($mobile_nav);
@@ -134,7 +134,7 @@
     });
 
     $(document).click(function (e) {
-      var container = $(".mobile-nav, .mobile-nav-toggle");
+      let container = $(".mobile-nav, .mobile-nav-toggle");
       if (!container.is(e.target) && container.has(e.target).length === 0) {
         if ($("body").hasClass("mobile-nav-active")) {
           $("body").removeClass("mobile-nav-active");
@@ -172,6 +172,31 @@
     } else {
       $(".back-to-top").fadeOut("slow");
     }
+  });
+
+  // Search Rank
+  $(document).ready(function () {
+    const product = $("#product").offset().top;
+    let search__rank = $("#search__rank").offset().top;
+    $(window).scroll(function () {
+      let scroll_top = $(this).scrollTop();
+      console.log(product);
+      console.log(search__rank);
+      if (scroll_top > product) {
+        $(window).on("wheel", function (event) {
+          const scrolly_value = event.originalEvent.deltaY;
+          console.log(event.originalEvent.deltaY);
+
+          if (event.originalEvent.deltaY < 0) {
+            console.log("scroll up");
+          } else {
+            console.log("scroll down");
+            search__rank + scrolly_value;
+            // wheeled down
+          }
+        });
+      }
+    });
   });
 
   $(".back-to-top").click(function () {
@@ -213,7 +238,7 @@
 
   // Porfolio isotope and filter
   $(window).on("load", function () {
-    var portfolioIsotope = $(".portfolio-container").isotope({
+    let portfolioIsotope = $(".portfolio-container").isotope({
       itemSelector: ".portfolio-item",
     });
 
