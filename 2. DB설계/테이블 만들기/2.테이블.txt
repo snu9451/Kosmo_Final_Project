@@ -60,7 +60,7 @@ CREATE TABLE board_master (
 	category_name	VARCHAR2(50)	NOT NULL,
 	buyer_nickname	VARCHAR2(30)	NULL,
 	seller_isShow	char(1)	NULL,
-	buyer_isShowT	char(1)	NULL,
+	buyer_isShow	char(1)	NULL,
 	buyer_payDate	VARCHAR2(50)	NULL
 );
 
