@@ -8,7 +8,7 @@ function initMap() {
     center: seoul,
   });
 
-  /* =======================[[ 위도, 경도 집합체 표시 ]]========================= */
+  /* =======================[[ 동일 위도, 경도 집합체 표시 ]]========================= */
   // Create an array of alphabetical characters used to label the markers.
   const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -30,7 +30,13 @@ function initMap() {
   });
 
   /* =======================[[ 내위치 가져오기 ]]========================= */
-  infoWindow = new google.maps.InfoWindow();
+
+  //infoWindow 초기화
+  let infoWindow = new google.maps.InfoWindow();
+
+  //Marker 초기화
+  let marker = new google.maps.Marker();
+
   const locationButton = document.createElement("button");
   locationButton.textContent = "Click here get my position";
   locationButton.classList.add("custom-map-control-button");
@@ -41,13 +47,21 @@ function initMap() {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const pos = {
-            lat: 37.473083599999995,
-            lng: 126.8788276,
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
           };
-          infoWindow.setPosition(pos);
-          infoWindow.setContent("Location found.");
-          infoWindow.open(map);
+          console.log(`pos.lat: ${pos.lat}, pos.lng: ${pos.lng}`);
+          marker.setPosition(pos);
+          marker.setTitle("Click here");
+          marker.open(map);
+          // infoWindow.setContent("Location found.");
+          //infoWindow.open(map);
           map.setCenter(pos);
+
+          marker.addListener("click", () => {
+            map.setZoom(8);
+            map.setCenter(marker.getPosition());
+          });
         },
         () => {
           handleLocationError(true, infoWindow, map.getCenter());
