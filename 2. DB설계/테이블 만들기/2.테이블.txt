@@ -1,4 +1,4 @@
-﻿CREATE TABLE errand (
+CREATE TABLE errand (
 	errand_no	number(5)	NULL,
 	errand_item	varchar2(50)	NULL,
 	errand_request_date	VARCHAR2(50)	NOT NULL,
@@ -109,7 +109,7 @@ CREATE TABLE my_like (
 );
 
 CREATE TABLE room (
-	room_no	NUMBER(3)	NOT NULL,
+	room_no	NUMBER(5)	NOT NULL,
 	mem_nickname_m	VARCHAR2(50)	NOT NULL,
 	mem_nickname_s	VARCHAR2(50)	NOT NULL,
 	room_date	VARCHAR2(50)	NULL
@@ -132,7 +132,7 @@ CREATE TABLE search_words (
 
 --comment라는 명령어가 존재하는거같다. 그래서 테이블이름으로 사용 안됨
 CREATE TABLE comments (
-	comment_step	NUMBER(3)	NOT NULL,
+	comment_step	NUMBER(6)	NOT NULL,
 	comment_msg	varchar2(200)	NULL,
 	comment_group	NUMBER(3)	NULL,
 	commnet_pos	NUMBER(1)	NULL,
@@ -142,7 +142,7 @@ CREATE TABLE comments (
 );
 
 CREATE TABLE report_mem (
-	report_no	number(3)	NOT NULL,
+	report_no	number(6)	NOT NULL,
 	mem_email_from	VARCHAR2(50)	NOT NULL,
 	mem_email_to	VARCHAR2(50)	NOT NULL,
 	report_msg	varchar2(200)	NULL,

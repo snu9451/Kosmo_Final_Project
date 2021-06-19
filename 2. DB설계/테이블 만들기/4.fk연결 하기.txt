@@ -1,0 +1,206 @@
+/* 제약조건 삭제
+    > ALTER TABLE 테이블명 DROP CONSTRAINT 제약조건명	*/
+
+ALTER TABLE member ADD UNIQUE(mem_nickname);
+
+
+ALTER TABLE errand ADD CONSTRAINT errand_mem_nickname_req_fk FOREIGN KEY (
+	mem_nickname_req
+)
+REFERENCES member (
+	mem_nickname
+);
+
+ALTER TABLE errand ADD CONSTRAINT errand_mem_nickname_nds_fk FOREIGN KEY (
+	mem_nickname_nds
+)
+REFERENCES member (
+	mem_nickname
+);
+
+
+
+ALTER TABLE coin_trans ADD CONSTRAINT coin_trans_mem_nickname_fk FOREIGN KEY (
+	mem_nickname
+)
+REFERENCES member (
+	mem_nickname
+);
+
+
+ALTER TABLE board_master ADD CONSTRAINT board_master_sel_nickname_fk FOREIGN KEY (
+	seller_nickname
+)
+REFERENCES member (
+	mem_nickname
+);
+
+ALTER TABLE board_master ADD CONSTRAINT board_master_buy_nickname_fk FOREIGN KEY (
+	buyer_nickname
+)
+REFERENCES member (
+	mem_nickname
+);
+
+ALTER TABLE board_master ADD CONSTRAINT board_master_category_name_fk FOREIGN KEY (
+	category_name
+)
+REFERENCES category (
+	category_name
+);
+
+
+ALTER TABLE board_img ADD CONSTRAINT board_img_bm_no_fk FOREIGN KEY (
+    bm_no
+)
+REFERENCES board_master (
+    bm_no
+);
+
+ALTER TABLE report_board ADD CONSTRAINT report_board_mem_email_fk FOREIGN KEY (
+    mem_email
+)
+REFERENCES member (
+    mem_email
+);
+
+ALTER TABLE report_board ADD CONSTRAINT report_board_report_type_fk FOREIGN KEY (
+    report_type
+)
+REFERENCES report_board_type (
+    report_type
+);
+
+ALTER TABLE board_like ADD CONSTRAINT board_like_bm_no_fk FOREIGN KEY (
+    bm_no
+)
+REFERENCES board_master (
+    bm_no
+);
+
+ALTER TABLE my_like ADD CONSTRAINT my_like_mem_email_fk FOREIGN KEY (
+    mem_email
+)
+REFERENCES member (
+    mem_email
+);
+
+ALTER TABLE my_like ADD CONSTRAINT my_like_bm_no_fk FOREIGN KEY (
+    bm_no
+)
+REFERENCES board_master (
+    bm_no
+);
+
+ALTER TABLE room ADD CONSTRAINT room_MEM_NICKNAME_M_fk foreign key(MEM_NICKNAME_M) 
+references MEMBER(MEM_NICKNAME);
+
+ALTER TABLE room ADD CONSTRAINT room_MEM_NICKNAME_S_fk foreign key(MEM_NICKNAME_S) references MEMBER(MEM_NICKNAME);
+
+ALTER TABLE Conversation ADD CONSTRAINT Conversation_room_no_fk FOREIGN KEY (
+    room_no
+)
+REFERENCES room (
+    room_no
+);
+
+ALTER TABLE Conversation ADD CONSTRAINT Conversation_mem_nickname_fk FOREIGN KEY (
+    mem_nickname
+)
+REFERENCES member (
+    mem_nickname
+);
+
+ALTER TABLE comments ADD CONSTRAINT comment_mem_nickname_fk FOREIGN KEY (
+    mem_nickname
+)
+REFERENCES member (
+    mem_nickname
+);
+
+ALTER TABLE comments ADD CONSTRAINT comment_bm_no_fk FOREIGN KEY (
+    bm_no
+)
+REFERENCES board_master (
+    bm_no
+);
+
+ALTER TABLE report_mem ADD CONSTRAINT report_mem_mem_email_from_fk FOREIGN KEY (
+    mem_email_from
+)
+REFERENCES member (
+    mem_email
+);
+
+ALTER TABLE report_mem ADD CONSTRAINT report_mem_mem_email_to_fk FOREIGN KEY (
+    mem_email_to
+)
+REFERENCES member (
+    mem_email
+);
+
+ALTER TABLE report_mem ADD CONSTRAINT report_mem_report_type_fk FOREIGN KEY (
+    report_type
+)
+REFERENCES report_mem_type (
+    report_type
+);
+
+ALTER TABLE errand_info ADD CONSTRAINT errand_info_errand_no_fk FOREIGN KEY (
+    errand_no
+)
+REFERENCES errand (
+    errand_no
+);
+
+ALTER TABLE his_board_del ADD CONSTRAINT his_board_del_seller_email_fk FOREIGN KEY (
+    seller_email
+)
+REFERENCES member (
+    mem_email
+);
+
+ALTER TABLE message_img ADD CONSTRAINT message_img_room_no_fk FOREIGN KEY (
+    room_no
+)
+REFERENCES room (
+    room_no
+);
+
+ALTER TABLE message_img ADD CONSTRAINT message_img_mem_nickname_fk FOREIGN KEY (
+    mem_nickname
+)
+REFERENCES member (
+    mem_nickname
+);
+
+ALTER TABLE board_info ADD CONSTRAINT board_info_bm_no_fk FOREIGN KEY (
+    bm_no
+)
+REFERENCES board_master (
+    bm_no
+);
+
+ALTER TABLE board_info ADD CONSTRAINT board_info_room_no_fk FOREIGN KEY (
+    room_no
+)
+REFERENCES room (
+    room_no
+);
+
+ALTER TABLE report_mem_img ADD CONSTRAINT report_mem_img_report_no_fk FOREIGN KEY (
+    report_no
+)
+REFERENCES report_mem (
+    report_no
+);
+
+ALTER TABLE report_board_img ADD CONSTRAINT report_board_img_report_no_fk FOREIGN KEY (
+    report_no
+)
+REFERENCES report_board (
+    report_no
+);
+
+commit
+
