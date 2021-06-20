@@ -13,7 +13,7 @@ CREATE TABLE errand (
 	errand_status	char(1)	NULL,
 	errand_deny	varchar2(200)	NULL,
 	mem_nickname_req	VARCHAR2(30)	NOT NULL,
-	mem_nickname_nds	VARCHAR2(30)	NOT NULL,
+	mem_nickname_nds	VARCHAR2(30)	NULL,
 	errand_lat	number(10,7)	NULL,
 	errand_lon	number(10,7)	NULL,
 	req_isShow	char(1)	NULL,
@@ -30,11 +30,12 @@ CREATE TABLE member (
 	mem_create_date	VARCHAR2(50)	NOT NULL,
 	isSocial	char(1)	NULL,	
 	mem_active	char(1)	NULL,
-	mem_star	number(2,1)	NULL,
+	mem_star	number(5,1)	NULL,
 	coin_remain	number(7)	NULL,
 	mem_phone	VARCHAR2(11)	NULL,
 	mem_payPW	VARCHAR2(80)	NULL,
-	mem_errand_mode	char(1)	NULL
+	mem_errand_mode	char(1)	NULL,
+	mem_star_num	number(5) NULL
 );
 
 CREATE TABLE coin_trans (
