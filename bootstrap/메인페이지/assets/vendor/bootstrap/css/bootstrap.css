@@ -6335,6 +6335,8 @@ a.close.disabled {
   height: 100%;
   overflow: hidden;
   outline: 0;
+  /**/
+  text-align: center;
 }
 
 .modal-dialog {
@@ -6342,6 +6344,10 @@ a.close.disabled {
   width: auto;
   margin: 0.5rem;
   pointer-events: none;
+  /**/
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
 }
 
 .modal.fade .modal-dialog {

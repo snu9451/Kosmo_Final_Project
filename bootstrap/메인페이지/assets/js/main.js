@@ -174,29 +174,41 @@
     }
   });
 
-  // Search Rank
+  // Search__Rank Visible Controll
   $(document).ready(function () {
-    const product = $("#product").offset().top;
-    let search__rank = $("#search__rank").offset().top;
-    $(window).scroll(function () {
-      let scroll_top = $(this).scrollTop();
-      console.log(product);
-      console.log(search__rank);
-      if (scroll_top > product) {
-        $(window).on("wheel", function (event) {
-          const scrolly_value = event.originalEvent.deltaY;
-          console.log(event.originalEvent.deltaY);
+    const product = document.querySelector("#product");
+    let product_top = product.getBoundingClientRect().top;
+    //현재 스크롤 위치값
+    let scroll_top = $(this).scrollTop();
 
-          if (event.originalEvent.deltaY < 0) {
-            console.log("scroll up");
-          } else {
-            console.log("scroll down");
-            search__rank + scrolly_value;
-            // wheeled down
-          }
-        });
+    //스크롤 이동시 이벤트
+    $(window).scroll(function () {
+      //console.log(product.getBoundingClientRect().top);
+
+      //현재 스크롤 위치가 상품 섹션보다 내려갔을 때
+      if (product.getBoundingClientRect().top < scroll_top) {
+        $("#search__rank").addClass("search__visible");
+        $("#search__rank").removeClass("search__invisible");
+      } else {
+        $("#search__rank").removeClass("search__visible");
+        $("#search__rank").addClass("search__invisible");
       }
     });
+
+    const form = document.querySelector(".needs-validation");
+    form.addEventListener(
+      "submit",
+      function (event) {
+        if (form.checkValidity() == false) {
+          event.preventDefault();
+          event.stopPropagation();
+          form.classList.add("was-validated");
+        }
+
+        // 서버 연동 처리
+      },
+      false
+    );
   });
 
   $(".back-to-top").click(function () {
