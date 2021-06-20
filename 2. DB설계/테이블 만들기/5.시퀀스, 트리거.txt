@@ -1,0 +1,160 @@
+//////////////////////////////////////////////시퀀스
+
+CREATE SEQUENCE seq_report_mem
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 999999
+NOCYCLE
+NOCACHE;
+
+
+CREATE SEQUENCE seq_errand
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 99999
+NOCYCLE
+NOCACHE;
+
+CREATE SEQUENCE seq_coin_trans
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 99999
+NOCYCLE
+NOCACHE;
+
+
+CREATE SEQUENCE seq_board_master
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 999999
+NOCYCLE
+NOCACHE;
+
+CREATE SEQUENCE seq_board_img
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 9999999
+NOCYCLE
+NOCACHE;
+
+CREATE SEQUENCE seq_comment
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 999999
+NOCYCLE
+NOCACHE;
+
+
+CREATE SEQUENCE seq_his_board_del
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 999999
+NOCYCLE
+NOCACHE;
+
+
+
+CREATE SEQUENCE seq_report_board
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 999999
+NOCYCLE
+NOCACHE;
+
+CREATE SEQUENCE seq_room
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 99999
+NOCYCLE
+NOCACHE;
+
+
+CREATE SEQUENCE seq_Conversation
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 99999
+NOCYCLE
+NOCACHE;
+
+CREATE SEQUENCE seq_comment_group
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 999
+NOCYCLE
+NOCACHE;
+
+
+
+///////////////////////////////////////////////////////////////트리거
+
+
+--닉네임 변경 시에
+CREATE OR REPLACE TRIGGER trg_nickname_change
+    AFTER UPDATE OF MEM_NICKNAME ON MEMBER
+    for each row
+    declare
+    begin
+            update errand
+        set mem_nickname_req= :NEW.MEM_NICKNAME
+        where mem_nickname_req= :OLD.MEM_NICKNAME;
+            update errand
+        set mem_nickname_nds = :NEW.MEM_NICKNAME
+        where mem_nickname_nds = :OLD.MEM_NICKNAME;
+            update coin_trans
+        set mem_nickname = :NEW.MEM_NICKNAME
+        where mem_nickname = :OLD.MEM_NICKNAME;
+            update ROOM
+        set MEM_NICKNAME_M = :NEW.MEM_NICKNAME
+        where MEM_NICKNAME_M = :OLD.MEM_NICKNAME;
+            update ROOM
+        set MEM_NICKNAME_S = :NEW.MEM_NICKNAME
+        where MEM_NICKNAME_S = :OLD.MEM_NICKNAME;
+            update BOARD_MASTER 
+        set  SELLER_NICKNAME = :NEW.MEM_NICKNAME
+        where SELLER_NICKNAME  = :OLD.MEM_NICKNAME;
+            update BOARD_MASTER 
+        set  BUYER_NICKNAME = :NEW.MEM_NICKNAME
+        where BUYER_NICKNAME  = :OLD.MEM_NICKNAME;
+            update comments
+        set  mem_nickname = :NEW.MEM_NICKNAME
+        where mem_nickname  = :OLD.MEM_NICKNAME;
+                update Conversation
+        set  mem_nickname = :NEW.MEM_NICKNAME
+        where mem_nickname  = :OLD.MEM_NICKNAME;
+                update message_img
+        set  mem_nickname = :NEW.MEM_NICKNAME
+        where mem_nickname  = :OLD.MEM_NICKNAME;
+END;
+/
+
+
+--상품이 아예 삭제시
+CREATE OR REPLACE TRIGGER trg_BOARD_delete
+    AFTER DELETE ON BOARD_MASTER 
+    for each row
+    declare
+    begin
+            DELETE FROM board_img
+        where bm_no = :OLD.bm_no;
+            DELETE FROM board_like
+        where bm_no = :OLD.bm_no;
+            DELETE FROM my_like
+        where bm_no = :OLD.bm_no;
+            DELETE FROM comments
+        where bm_no = :OLD.bm_no;
+            DELETE FROM board_info
+        where bm_no = :OLD.bm_no;                                
+END;
+/
+
