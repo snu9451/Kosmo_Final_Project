@@ -823,7 +823,7 @@ section {
 }
 
 .search__visible {
-  animation: search__visible 1000ms ease-in forwards;
+  animation: search__visible 800ms ease-in forwards;
 }
 
 @keyframes search__visible {
@@ -839,7 +839,7 @@ section {
 }
 
 .search__invisible {
-  animation: search__invisible 300ms ease-in forwards;
+  animation: search__invisible 200ms ease-in forwards;
 }
 
 @keyframes search__invisible {
