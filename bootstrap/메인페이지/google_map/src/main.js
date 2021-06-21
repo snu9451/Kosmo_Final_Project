@@ -1,7 +1,5 @@
 // Initialize and add the map
 function initMap() {
-  // The location
-
   // The map, centered
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 16,
@@ -13,9 +11,16 @@ function initMap() {
   //Marker 초기화
   let marker = new google.maps.Marker({ map: map });
 
+  //Marker 말풍선
+  const errand_regist = document.createElement("span");
+  //errand_regist.setAttribute("href", "#errand");
+  errand_regist.textContent = "What do you want!!??";
+  errand_regist.classList.add("errand_regist");
+
   navigator.geolocation.getCurrentPosition(onSuccessGeolocation);
 
   function onSuccessGeolocation(position) {
+    //메인 페이지 로드시, 현재 내 위치 위도, 경도
     let myPosition = new google.maps.LatLng(
       position.coords.latitude,
       position.coords.longitude
@@ -23,8 +28,16 @@ function initMap() {
 
     map.setCenter(myPosition);
     marker.setPosition(myPosition);
-    infoWindow.setContent("Click here");
+    infoWindow.setContent(errand_regist);
     infoWindow.open(map, marker);
+
+    //마커 클릭시 이벤트
+    marker.addListener("click", () => {
+      map.setZoom(15);
+      infoWindow.setContent(errand_regist);
+      infoWindow.open(map, marker);
+      map.setCenter(marker.getPosition());
+    });
   }
 
   /* =======================[[ 동일 위도, 경도 집합체 표시 ]]========================= */
@@ -67,17 +80,9 @@ function initMap() {
             lng: position.coords.longitude,
           };
           marker.setPosition(pos);
-          infoWindow.setContent("Click here");
+          infoWindow.setContent(errand_regist);
           infoWindow.open(map, marker);
-          // infoWindow.setContent("Location found.");
-          //infoWindow.open(map);
           map.setCenter(pos);
-
-          //마커 클릭시 이벤트
-          marker.addListener("click", () => {
-            map.setZoom(15);
-            map.setCenter(marker.getPosition());
-          });
         },
         () => {
           handleLocationError(true, infoWindow, map.getCenter());

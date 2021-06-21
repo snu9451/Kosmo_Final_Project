@@ -18,56 +18,6 @@
     }
   });
 
-  // Smooth scroll for the navigation menu and links with .scrollto classes
-  let scrolltoOffset = $("#header").outerHeight() - 21;
-  if (window.matchMedia("(max-width: 991px)").matches) {
-    scrolltoOffset += 20;
-  }
-  $(document).on(
-    "click",
-    ".nav-menu a, .mobile-nav a, .scrollto",
-    function (e) {
-      if (
-        location.pathname.replace(/^\//, "") ==
-          this.pathname.replace(/^\//, "") &&
-        location.hostname == this.hostname
-      ) {
-        let target = $(this.hash);
-        if (target.length) {
-          e.preventDefault();
-
-          let scrollto = target.offset().top - scrolltoOffset;
-
-          if ($(this).attr("href") == "#header") {
-            scrollto = 0;
-          }
-
-          $("html, body").animate(
-            {
-              scrollTop: scrollto,
-            },
-            1500,
-            "easeInOutExpo"
-          );
-
-          if ($(this).parents(".nav-menu, .mobile-nav").length) {
-            $(".nav-menu .active, .mobile-nav .active").removeClass("active");
-            $(this).closest("li").addClass("active");
-          }
-
-          if ($("body").hasClass("mobile-nav-active")) {
-            $("body").removeClass("mobile-nav-active");
-            $(".mobile-nav-toggle i").toggleClass(
-              "icofont-navigation-menu icofont-close"
-            );
-            $(".mobile-nav-overly").fadeOut();
-          }
-          return false;
-        }
-      }
-    }
-  );
-
   // Activate smooth scroll on page load with hash links in the url
   $(document).ready(function () {
     if (window.location.hash) {
@@ -177,16 +127,16 @@
   // Search__Rank Visible Controll
   $(document).ready(function () {
     const product = document.querySelector("#product");
-    let product_top = product.getBoundingClientRect().top;
-    //현재 스크롤 위치값
-    let scroll_top = $(this).scrollTop();
 
     //스크롤 이동시 이벤트
     $(window).scroll(function () {
-      //console.log(product.getBoundingClientRect().top);
+      //중고상품 섹션 top 위치값
+      let product_top = product.getBoundingClientRect().top;
+      //현재 스크롤 위치값
+      let scroll_top = $(window).scrollTop();
 
       //현재 스크롤 위치가 상품 섹션보다 내려갔을 때
-      if (product.getBoundingClientRect().top < scroll_top) {
+      if (product_top < scroll_top) {
         $("#search__rank").addClass("search__visible");
         $("#search__rank").removeClass("search__invisible");
       } else {
@@ -195,6 +145,7 @@
       }
     });
 
+    //회원가입 - 입력창 유효값 확인 이벤트
     const form = document.querySelector(".needs-validation");
     form.addEventListener(
       "submit",
@@ -211,6 +162,20 @@
     );
   });
 
+  //지도 말풍선 클릭시 이벤트
+  $(window).on("load", function () {
+    console.log(3, "window.onload");
+    if ($(".errand_regist").length) {
+      $(document).on("click", ".errand_regist", function () {
+        console.log("errand!!!!!!!");
+        const modal = document.querySelector("#errand_modal");
+        console.log(modal);
+        $(modal).modal("show");
+      });
+    }
+  });
+
+  //버튼 누르면 top으로 이동
   $(".back-to-top").click(function () {
     $("html, body").animate(
       {
@@ -281,13 +246,15 @@
   // Init AOS
   function aos_init() {
     AOS.init({
-      duration: 1000,
+      duration: 1500,
       once: true,
     });
   }
+
   $(window).on("load", function () {
     aos_init();
   });
+
   $(document).ready(function () {
     $(".each").each(function (index) {
       console.log(index);
