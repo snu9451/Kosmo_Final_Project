@@ -39,3 +39,22 @@
     color: rgb(24, 24, 24);
   }
 }
+
+/* 경고표시 반짝이는 애니메이션 */
+
+.warn {
+  color: red;
+  animation: warn_animate 1000ms ease-in infinite;
+}
+
+@keyframes warn_animate {
+  0% {
+    color: rgb(255, 163, 163);
+  }
+  50% {
+    color: rgb(255, 94, 94);
+  }
+  100% {
+    color: rgb(255, 59, 59);
+  }
+}

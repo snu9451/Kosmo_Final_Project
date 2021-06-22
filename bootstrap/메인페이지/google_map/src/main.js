@@ -11,21 +11,20 @@ function initMap() {
   //Marker 초기화
   let marker = new google.maps.Marker({ map: map });
 
-  //Marker 말풍선
+  //Marker 말풍선만들기
   const errand_regist = document.createElement("span");
-  //errand_regist.setAttribute("href", "#errand");
   errand_regist.textContent = "What do you want!!??";
   errand_regist.classList.add("errand_regist");
 
   navigator.geolocation.getCurrentPosition(onSuccessGeolocation);
 
   function onSuccessGeolocation(position) {
-    //메인 페이지 로드시, 현재 내 위치 위도, 경도
+    //메인 페이지 로드시, 내 위치 바로 맵에 띄워줌.
     let myPosition = new google.maps.LatLng(
       position.coords.latitude,
       position.coords.longitude
     );
-
+    console.log(position.coords.latitude + ", " + position.coords.longitude);
     map.setCenter(myPosition);
     marker.setPosition(myPosition);
     infoWindow.setContent(errand_regist);
@@ -79,6 +78,7 @@ function initMap() {
             lat: position.coords.latitude,
             lng: position.coords.longitude,
           };
+
           marker.setPosition(pos);
           infoWindow.setContent(errand_regist);
           infoWindow.open(map, marker);
