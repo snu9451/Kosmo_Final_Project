@@ -1,3 +1,10 @@
+/* 헤더 내동생 이미지 로고 */
+.myBro__logo {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+
 /* 모달 가운데 정렬 */
 
 .modal.modal-center {
@@ -57,4 +64,57 @@
   100% {
     color: rgb(255, 59, 59);
   }
+}
+
+/* 인기상품 왕관 로고 */
+#top__rank {
+  font-size: 1rem;
+  color: yellow;
+  animation: top__rank__animate 2000ms ease-in-out infinite;
+}
+
+@keyframes top__rank__animate {
+  0% {
+    color: rgb(255, 229, 158);
+  }
+  50% {
+    color: rgb(255, 212, 93);
+  }
+  100% {
+    color: rgb(255, 187, 0);
+  }
+}
+
+/* 중고상품 이미지 부분 */
+.pImgBox {
+  height: 320px;
+}
+
+.pImgBox > img {
+  width: auto;
+  height: auto;
+}
+
+/* 중고상품 좋아요 버튼 */
+#likeBtn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+#likeBtn > i {
+  transition: all 0.2s ease-out;
+}
+
+#likeBtn:hover > i {
+  transform: scale(1.2);
+  color: red;
+}
+
+#likeBtn:active > i {
+  color: rgb(255, 139, 139);
+}
+
+.fa-heart {
+  font-size: 2rem;
 }

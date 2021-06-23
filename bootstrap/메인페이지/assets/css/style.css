@@ -31,6 +31,11 @@ label {
   font-weight: bold;
 }
 
+/* img {
+  width: 310px;
+  height: 310px;
+} */
+
 a {
   color: #222222;
   text-decoration: none;
@@ -71,14 +76,6 @@ h6 {
     format("woff");
   font-weight: normal;
   font-style: normal;
-}
-
-.test__img {
-  margin-right: 5px;
-}
-
-.msg__font {
-  font-size: 10px;
 }
 
 /*--------------------------------------------------------------
@@ -759,7 +756,7 @@ section {
 .product .product__box {
   text-align: center;
   border: 1px solid #e2eefd;
-  padding: 80px 20px;
+  padding: 20px 10px;
   transition: all ease-in-out 0.3s;
   background: white;
 }
