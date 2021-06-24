@@ -52,7 +52,7 @@
           <div>
             <li><a href="#" data-toggle="modal" data-target="#logIn">로그인</a></li>
             <li><a href="#" data-toggle="modal" data-target="#signInForm">회원가입</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#errand_modal">모달test</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#report_board">모달test</a></li>
           </div>
 
           <!-- 회원 로그인시 나타나는 nav bar -->
@@ -104,8 +104,6 @@
           <h4 class="mb-0">나이키 샌달</h4>
         </div>
       </div>
-
-
       <div class="container" data-aos="fade-up">
         <div class="product__title d-flex flex-column justify-content-center align-items-center mb-4">
           <h2>지금 거래중인</h2>
@@ -427,14 +425,14 @@
             </div>
             <div class="form-group">
               <label for="inputAge">연령대</label>
-              <select class="form-control" id="inputAge" required>
-                <option>고객님의 연령대를 선택해주세요.</option>
-                <option>10대</option>
-                <option>20대</option>
-                <option>30대</option>
-                <option>40대</option>
-                <option>50대</option>
-                <option>60대이상</option>
+              <select class="form-control custom-select" id="inputAge" required>
+                <option selected>고객님의 연령대를 선택해주세요.</option>
+                <option value="1">10대</option>
+                <option value="2">20대</option>
+                <option value="3">30대</option>
+                <option value="4">40대</option>
+                <option value="5">50대</option>
+                <option value="6">60대이상</option>
               </select>
               <div class="valid-feedback">
                 Good
@@ -476,7 +474,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form class="">
+          <form id="coinCost" class="">
             <div class="form-group">
               <label for="inputCost">코인 충전</label>
               <input type="text" class="form-control" id="inputCost" placeholder="최소 충전 금액은 1,000원 입니다 : )">
@@ -560,6 +558,69 @@
     </div>
   </div>
 
+  <!-- report_board Modal -->
+  <div class="modal modal-center fade" id="report_board" tabindex="-1" role="dialog" aria-labelledby="report_board"
+    aria-hidden="true">
+    <div class="modal-dialog modal-center" role="document">
+      <div class="modal-content"  style="width: 650px;">
+        <div class="modal-header">
+          <div class="d-flex justify-content-center align-items-center">
+            <i class="fas fa-exclamation-circle" style="font-size: 2rem; color: rgb(255, 39, 39);"></i>
+            <h2 class="modal-title" id="exampleModalLongTitle">
+              게시물신고
+            </h2>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="report_content" class="">
+            <div class="form-group">
+              <h4 style="font-weight: bold;">신고분류</h4>
+              <select class="form-control custom-select" id="report_category">
+                <option selected>분류</option>
+                <option value="1">욕설 또는 비방</option>
+                <option value="2">홍보 및 영리</option>
+                <option value="3">불법 및 도박</option>
+                <option value="4">음란 및 유해</option>
+                <option value="5">도배</option>
+                <option value="6">기타</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <h4 style="font-weight: bold;">신고내용 상세 입력</h4>
+              <div class="form-row">
+                <div class="col-7">
+                  <label class="mr-2">신고대상 게시글 번호:</label>
+                  <span class="mr-2">No.</span><span id="report_num">100000</span>
+                </div>
+                <div class="col-5">
+                  <label class="mr-2">신고날짜:</label><span id="report_date">2021-06-24</span>  
+                </div>
+              </div>
+              <textarea type="text" class="form-control" id="report_detail" placeholder="상세 내용을 입력해주세요." rows="5"></textarea>
+            </div>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="report_file">Upload</label>
+              </div>
+              <div class="custom-file">
+                <input type="file" class="custom-file-input" id="report_file" aria-describedby="inputGroupFileAddon01">
+                <label class="custom-file-label" id="report_file_name" for="report_file">
+                  파일은 최대 10MB까지 가능합니다.
+                </label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">신고하기</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- ============================= End Modal Part ========================= -->
 
   <!-- ============================= Script part [[ 스크립트 위치 변경하지 말것!!!! ]]========================= -->

@@ -187,17 +187,23 @@
     return false;
   });
 
-  // Skills section
-  $(".skills-content").waypoint(
-    function () {
-      $(".progress .progress-bar").each(function () {
-        $(this).css("width", $(this).attr("aria-valuenow") + "%");
-      });
-    },
-    {
-      offset: "80%",
-    }
-  );
+  //파일 이름 가져오기 & 파일용량 제한
+  $(document).ready(function () {
+    $("#report_file").on("change", function () {
+      const file = $(this)[0].files[0];
+      const fileName = $(this)[0].files[0].name;
+      if (file) {
+        console.log(file);
+        const fileSize = file.size;
+        if (fileSize > 1024 * 1024 * 10) {
+          alert("10MB 이하 파일만 등록할 수 있습니다.");
+          $("#report_file").next()[0].innerHTML = "Choose file";
+          return;
+        }
+      }
+      $("#report_file").next()[0].innerHTML = fileName;
+    });
+  });
 
   // jQuery counterUp
   $('[data-toggle="counter-up"]').counterUp({
