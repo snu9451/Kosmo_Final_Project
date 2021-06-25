@@ -220,36 +220,36 @@ $setRows.submit(function (e) {
 
 
     $('#nav').remove();
-    var $products = $('#products');
+    var $panel = $('#panel');
 
-    $products.after('<div id="nav">');
+    $panel.after('<div id="nav">');
 
 /////////////////////////////////////////////////////////////////
-    // var $tr = $($products).find('tbody tr');
-    // var rowTotals = $tr.length;
+    var $tr = $($panel).find('tbody tr');
+    var rowTotals = $tr.length;
 
-    // var pageTotal = Math.ceil(rowTotals / rowPerPage);
-    // var i = 0;
+    var pageTotal = Math.ceil(rowTotals / rowPerPage);
+    var i = 0;
 
-    // for (; i < pageTotal; i++) {
-    // $('<a href="#"></a>')
-    //     .attr('rel', i)
-    //     .html(i + 1)
-    //     .appendTo('#nav');
-    // }
-    // $tr.addClass('off-screen')
-    // .slice(0, rowPerPage)
-	// .removeClass('off-screen');
+    for (; i < pageTotal; i++) {
+    $('<a href="#"></a>')
+        .attr('rel', i)
+        .html(i + 1)
+        .appendTo('#nav');
+    }
+    $tr.addClass('off-screen')
+    .slice(0, rowPerPage)
+	.removeClass('off-screen');
 
-    // var $pagingLink = $('#nav a');
-    // $pagingLink.on('click', function (evt) {
-    // evt.preventDefault();
-    // var $this = $(this);
-    // if ($this.hasClass('active')) {
-    //     return;
-	// }
-    // $pagingLink.removeClass('active');
-    // $this.addClass('active');
+    var $pagingLink = $('#nav a');
+    $pagingLink.on('click', function (evt) {
+    evt.preventDefault();
+    var $this = $(this);
+    if ($this.hasClass('active')) {
+        return;
+	}
+    $pagingLink.removeClass('active');
+    $this.addClass('active');
 /////////////////////////////////////////////////////////////////
       // 0 => 0(0*4), 4(0*4+4)
       // 1 => 4(1*4), 8(1*4+4)
