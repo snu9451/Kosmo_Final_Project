@@ -118,3 +118,9 @@
 .fa-heart {
   font-size: 2rem;
 }
+
+/* 신고 모달창 파일 input 부분 */
+/* lable 태그의 for 속성을 이용해서 cursor pointer 추가 */
+.custom-file-label {
+  cursor: pointer;
+}
