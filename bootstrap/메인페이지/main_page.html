@@ -52,7 +52,8 @@
           <div>
             <li><a href="#" data-toggle="modal" data-target="#logIn">로그인</a></li>
             <li><a href="#" data-toggle="modal" data-target="#signInForm">회원가입</a></li>
-            <li><a href="#" data-toggle="modal" data-target="#report_board">모달test</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#report_user">모달test</a></li>
+            <button type="button" class="btn btn-outline-light btnTest">BtnTest</button>
           </div>
 
           <!-- 회원 로그인시 나타나는 nav bar -->
@@ -562,7 +563,7 @@
   <div class="modal modal-center fade" id="report_board" tabindex="-1" role="dialog" aria-labelledby="report_board"
     aria-hidden="true">
     <div class="modal-dialog modal-center" role="document">
-      <div class="modal-content"  style="width: 650px;">
+      <div class="modal-content" style="width: 650px;">
         <div class="modal-header">
           <div class="d-flex justify-content-center align-items-center">
             <i class="fas fa-exclamation-circle" style="font-size: 2rem; color: rgb(255, 39, 39);"></i>
@@ -575,10 +576,10 @@
           </button>
         </div>
         <div class="modal-body">
-          <form id="report_content" class="">
+          <form id="report_content_board" class="">
             <div class="form-group">
               <h4 style="font-weight: bold;">신고분류</h4>
-              <select class="form-control custom-select" id="report_category">
+              <select class="form-control custom-select" id="report_category_board">
                 <option selected>분류</option>
                 <option value="1">욕설 또는 비방</option>
                 <option value="2">홍보 및 영리</option>
@@ -593,37 +594,110 @@
               <div class="form-row">
                 <div class="col-7">
                   <label class="mr-2">신고대상 게시글 번호:</label>
-                  <span class="mr-2">No.</span><span id="report_num">100000</span>
+                  <span class="mr-2">No.</span><span id="report_num_board">100000</span>
                 </div>
                 <div class="col-5">
-                  <label class="mr-2">신고날짜:</label><span id="report_date">2021-06-24</span>  
+                  <label class="mr-2">신고날짜:</label><span id="report_date_board">2021-06-24</span>  
                 </div>
               </div>
-              <textarea type="text" class="form-control" id="report_detail" placeholder="상세 내용을 입력해주세요." rows="5"></textarea>
+              <textarea type="text" class="form-control" id="report_detail_board" placeholder="상세 내용을 입력해주세요." rows="5"></textarea>
             </div>
             <div class="input-group">
               <div class="input-group-prepend">
-                <label class="input-group-text" for="report_file">Upload</label>
+                <label class="input-group-text" for="report_file_board">Upload</label>
               </div>
               <div class="custom-file">
-                <input type="file" class="custom-file-input" id="report_file" aria-describedby="inputGroupFileAddon01">
-                <label class="custom-file-label" id="report_file_name" for="report_file">
+                <input type="file" class="report_file" id="report_file_board" aria-describedby="inputGroupFileAddon01">
+                <label class="custom-file-label" id="report_file_name_board" for="report_file_board">
                   파일은 최대 10MB까지 가능합니다.
                 </label>
               </div>
             </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">신고하기</button>
-              <button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
-            </div>
           </form>
+          <div class="modal-footer">
+            <button type="button" id="report_btn" class="btn btn-primary">신고하기</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- report_user Modal -->
+  <div class="modal modal-center fade" id="report_user" tabindex="-1" role="dialog" aria-labelledby="report_user"
+    aria-hidden="true">
+    <div class="modal-dialog modal-center" role="document">
+      <div class="modal-content" style="width: 650px;">
+        <div class="modal-header">
+          <div class="d-flex justify-content-center align-items-center">
+            <i class="fas fa-exclamation-circle" style="font-size: 2rem; color: rgb(255, 39, 39);"></i>
+            <h2 class="modal-title" id="exampleModalLongTitle">
+              회원신고
+            </h2>
+          </div>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="report_content_user" class="">
+            <div class="form-group">
+              <div class="form-row">
+                <div class="col-5">
+                  <label class="mr-2">신고자:</label><span id="report_user">라이언</span>
+                </div>
+                <div class="col-5">
+                  <label class="mr-2">신고 대상:</label><span id="report_bad_user">무지</span>
+                </div>
+              </div>
+            <div class="dropdown-divider"></div>
+            <div class="form-group">
+              <h4 style="font-weight: bold;">신고분류</h4>
+              <select class="form-control custom-select" id="report_category_user">
+                <option selected>분류</option>
+                <option value="1">전문판매업자</option>
+                <option value="2">비매너 사용자</option>
+                <option value="3">욕설 및 성희롱</option>
+                <option value="4">기타</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <h4 style="font-weight: bold;">신고내용 상세 입력</h4>
+              <div class="form-row">
+                <div class="col-5">
+                  <label class="mr-2">신고날짜:</label><span id="report_date_user">2021-06-25</span>
+                </div>
+              </div>
+              <textarea type="text" class="form-control" id="report_detail_user" placeholder="상세 내용을 입력해주세요."
+                rows="5"></textarea>
+            </div>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="report_file_user">Upload</label>
+              </div>
+              <div class="custom-file">
+                <input type="file" class="report_file" id="report_file_user" aria-describedby="inputGroupFileAddon01">
+                <label class="custom-file-label" id="report_file_name_user" for="report_file_user">
+                  파일은 최대 10MB까지 가능합니다.
+                </label>
+              </div>
+            </div>
+          </form>
+          <div class="modal-footer">
+            <button type="button" id="report_btn" class="btn btn-primary sweet">신고하기</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ============================= End Modal Part ========================= -->
 
   <!-- ============================= Script part [[ 스크립트 위치 변경하지 말것!!!! ]]========================= -->
+
+  <!-- sweet Alert -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
   <!-- ver 4.0 v -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -640,8 +714,7 @@
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Vendor JS Files -->
-  <!--
-    -->
+
   <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
@@ -656,10 +729,10 @@
 
   <!-- Google Map Script -->
   <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-  <script
+  <!-- <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4pd9w90oFRuCZOILRd07MBwVAthwIbIA&callback=initMap&region=kr"
     async></script>
-  <script src="./google_map/src/main.js"></script>
+  <script src="./google_map/src/main.js"></script> -->
 
 </body>
 
