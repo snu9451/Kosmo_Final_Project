@@ -113,86 +113,160 @@
     <!-- ============================= End Header Section ========================= -->
 
     <!-- ============================= Product Description Section ========================= -->
-    <section id="product__description" class="product__description p-lg-5">
-      <div class="" id="pd__top" data-aos="fade-up">
-        <div class="row h-100 justify-content-around" id="pd__box">
-          <div class="col-lg-4" id="pd__img">
-            <img src="./assets/img/nike_shoe.png" alt="nike_shoe" />
-          </div>
-          <div class="col-lg-8 h-auto" id="pd__content">
-            <div class="d-flex justify-content-between align-items-baseline">
-              <div class="d-flex align-items-baseline">
-                <h1>nike 데이브레이크</h1>
-                <div class="ml-3">
-                  <span>조회수</span><span>50</span><span>회</span>
+    <main class="pd__main" id="main">
+      <section id="product__description" class="product__description h-100">
+        <div
+          class="container position-relative h-auto mt-5"
+          id="pd__top"
+          data-aos="fade-up"
+        >
+          <div class="row h-100 justify-content-around p-1" id="pd__box">
+            <div class="col-lg-4 position-relative" id="pd__img">
+              <img src="./assets/img/nike_shoe.png" alt="nike_shoe" />
+            </div>
+            <div class="col-lg-8" id="pd__content">
+              <div class="d-flex justify-content-between align-items-end">
+                <div class="d-flex align-items-end">
+                  <span class="" id="pd__title">nike 데이브레이크</span>
+                  <div class="ml-3">
+                    <span>조회수</span><span>50</span><span>회</span>
+                  </div>
+                </div>
+                <div>
+                  <ul class="d-flex align-items-end mb-0">
+                    <li>
+                      <button>수정</button>
+                    </li>
+                    <li>
+                      <button>삭제</button>
+                    </li>
+                    <li>
+                      <button>
+                        게시물 신고
+                        <i
+                          class="fas fa-exclamation warn"
+                          style="color: red; font-size: 20px; font-weight: bold"
+                        ></i>
+                      </button>
+                    </li>
+                  </ul>
                 </div>
               </div>
-              <div>
-                <ul class="d-flex">
-                  <li>
-                    <button>수정</button>
-                  </li>
-                  <li>
-                    <button>삭제</button>
-                  </li>
-                  <li>
-                    <button>
-                      게시물 신고
-                      <i
-                        class="fas fa-exclamation warn"
-                        style="color: red; font-size: 20px; font-weight: bold"
-                      ></i>
+              <div class="pd__divider"></div>
+              <div class="mt-3" id="pd__middle">
+                <p>
+                  나이키 데이브레이크 5번밖에 안신었어요 더 예쁜거 사게되서
+                  팝니당 사이즈 260
+                </p>
+              </div>
+              <div class="position-relative">
+                <div
+                  class="d-flex justify-content-between mt-3"
+                  id="pd__bottom"
+                >
+                  <div class="d-flex align-items-baseline">
+                    <h3>판매가격</h3>
+                  </div>
+                  <div class="d-flex align-items-baseline">
+                    <h2>45,000</h2>
+                    <span>원</span>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between" id="pd__bottom">
+                  <div
+                    class="d-flex justify-content-around align-items-baseline"
+                  >
+                    <h3>판매자</h3>
+                    <div class="ml-3">
+                      <a class="" id="pd__seller">우아한 남매들</a>
+                    </div>
+                    <div class="ml-3">
+                      <a id="pd__seller__chat">
+                        대화하기
+                        <i class="far fa-comments"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-baseline">
+                    <h2>찜하기</h2>
+                    <button type="button" id="likeBtn">
+                      <i class="far fa-heart"></i>
                     </button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="pd__divider"></div>
-            <div class="mt-3" id="pd__middle">
-              <p>
-                나이키 데이브레이크 5번밖에 안신었어요 더 예쁜거 사게되서 팝니당
-                사이즈 260
-              </p>
-            </div>
-            <div class="d-flex justify-content-between" id="pd__bottom">
-              <div class="d-flex align-items-baseline">
-                <h3>판매가격</h3>
-                <div>
-                  <span>현재 판매중입니다.</span>
+                  </div>
                 </div>
-              </div>
-              <div class="d-flex align-items-baseline">
-                <h2>45,000</h2>
-                <span>원</span>
-              </div>
-            </div>
-            <div class="d-flex justify-content-between" id="pd__bottom">
-              <div class="d-flex align-items-baseline">
-                <h3>판매자</h3>
-                <div>
-                  <span>우아한 남매들</span>
-                </div>
-                <div>
-                  <a href="">
-                    대화하기
-                    <i class="far fa-comments"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="d-flex align-items-baseline">
-                <h2>45,000</h2>
-                <span>원</span>
               </div>
             </div>
           </div>
+          <!-- ============================= Comment Section ========================= -->
+          <div class="mt-5">
+            <div class="row">
+              <div class="col-lg-12 col-12">
+                <span id="pd__comment__start">댓글시작</span>
+                <div id="pd__comment__divider"></div>
+              </div>
+            </div>
+            <div class="w-100" id="pd__comment__list">
+              <div class="w-100 mt-3" id="comment__box">
+                <div
+                  class="d-flex justify-content-between align-items-end"
+                  id=""
+                >
+                  <div>
+                    <span id="comment__user__origin">우아한남매들</span>
+                    <span id="comment__date">2021-06-26</span>
+                    <span id="comment__time">17:25:55</span>
+                  </div>
+                  <div>
+                    <ul class="d-flex align-items-end mb-0">
+                      <li>
+                        <button>수정</button>
+                      </li>
+                      <li>
+                        <button>삭제</button>
+                      </li>
+                      <li>
+                        <button>
+                          유저신고
+                          <i
+                            class="fas fa-exclamation warn"
+                            style="
+                              color: red;
+                              font-size: 20px;
+                              font-weight: bold;
+                            "
+                          ></i>
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div id="comment_txt">
+                  <p>"댓글 내용 따라라라라"</p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-3">
+              <form action="">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">댓글 작성란</span>
+                  </div>
+                  <textarea
+                    class="form-control"
+                    aria-label="댓글 작성란"
+                  ></textarea>
+                  <div class="input-group-prepend">
+                    <button type="button" class="btn btn-primary">
+                      댓글등록
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="container" id="pd__comment" data-aos="fade-up">
-        <div class="row">
-          <div class="col-lg-12 col-12">"댓글 위치 예정"</div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
     <!-- ============================= End Product Description Section ========================= -->
 
     <!-- ============================= Script part [[ 스크립트 위치 변경하지 말것!!!! ]]========================= -->
