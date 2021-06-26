@@ -2,7 +2,7 @@
 <html lang="en">
 
     <head>
-        <title>Tables | Klorofil - Free Bootstrap Dashboard Template</title>
+        <title>내동생 - 관리자페이지</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta
@@ -33,7 +33,7 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css"/>
         <link rel="stylesheet" href="test.css"/>
         <script src="test.js"></script>
-
+		<script src="https://kit.fontawesome.com/ce3585cab0.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -42,10 +42,11 @@
             <!-- NAVBAR -->
             <nav class="navbar navbar-default navbar-fixed-top">
                 <div class="brand">
-                    <a href="index.html"><img
-                        src="assets/img/logo-dark.png"
-                        alt="Klorofil Logo"
-                        class="img-responsive logo"></a>
+                    <a href="#"><img
+                        src="assets/img/mybro_favicon.png"
+                        alt="nds Logo"
+                        style="width: 120px;"></a>
+						<p style="color: rgb(88, 88, 88); font-size: 40px; padding-top: 15px;"><b>내 동생.</b></p>
                 </div>
                 <div class="container-fluid">
                     <!-- <div class="navbar-btn"> <button type="button"
@@ -71,53 +72,10 @@
                             request has been approved</a> </li> <li> <a href="#" class="more">See all
                             notifications</a> </li> </ul> </li> -->
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="lnr lnr-question-circle"></i>
-                                    <span>Help</span>
-                                    <i class="icon-submenu lnr lnr-chevron-down"></i>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="#">Basic Use</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Working With Data</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Security</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Troubleshooting</a>
-                                    </li>
-                                </ul>
+                                    <span style="font-size:20px;color:rgb(131, 122, 111);"><b>관리자&nbsp&nbsp</b></span>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/user.png" class="img-circle" alt="Avatar">
-                                    <span>Samuel</span>
-                                    <i class="icon-submenu lnr lnr-chevron-down"></i>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="#">
-                                            <i class="lnr lnr-user"></i>
-                                            <span>My Profile</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="lnr lnr-envelope"></i>
-                                            <span>Message</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="lnr lnr-cog"></i>
-                                            <span>Settings</span></a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="lnr lnr-exit"></i>
-                                            <span>Logout</span></a>
-                                    </li>
-                                </ul>
+								<span style="font-size:20px;color:rgb(131, 122, 111);"><b>로그아웃&nbsp</b></span><i style="font-size:20px;color:rgb(131, 122, 111);" class="fas fa-sign-out-alt"></i>
                             </li>
                             <!-- <li> <a class="update-pro"
                             href="https://www.themeineed.com/downloads/klorofil-pro-bootstrap-admin-dashboard-template/?utm_source=klorofil&utm_medium=template&utm_campaign=KlorofilPro"
@@ -153,27 +111,27 @@
                 <!-- MAIN CONTENT -->
                 <div class="main-content">
                     <div class="container-fluid">
-                        <h3 class="page-title">회원관리페이지 - 회원목록</h3>
+                        <h3>회원관리페이지 - 회원목록</h3>
                         <div class="row centerAlign">
                             <div class="col-lg-12">
                                 <!-- 페이지 당 보여줄 로우의 수를 선택할 수 있는 콤보박스 생성 -->
                                 <div class="form-group">
                                     <!-- Show Numbers Of Rows -->
                                     <select class="form-control my-form-control" name="state" id="maxRows">
-                                        <option value="5000">ROW</option>
-                                        <option value="5">5</option>
+                                        <!-- <option value="5000">ROW</option> -->
+                                        <!-- <option value="5">5</option> -->
                                         <option value="10">10</option>
                                         <option value="15">15</option>
                                         <option value="20">20</option>
                                         <option value="50">50</option>
-                                        <option value="70">70</option>
-                                        <option value="100">100</option>
+                                        <!-- <option value="70">70</option> -->
+                                        <!-- <option value="100">100</option> -->
                                     </select>
                                 </div>
                                 <!-- BASIC TABLE -->
                                 <div class="panel">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title">Basic Table</h3>
+                                        <h3 class="panel-title"><label><i class="far fa-check-circle"></i></label> &nbsp신고된 회원만 보기</h3>
                                     </div>
                                     <div class="panel-body">
                                         <table class="table" id="products">
@@ -182,13 +140,13 @@
                                             </form>
                                             <thead>
                                                 <tr>
-                                                    <th style="text-align: center;">체크</th>
-                                                    <th style="text-align: center;">가입일</th>
-                                                    <th style="text-align: center;">이메일</th>
-                                                    <th style="text-align: center;">닉네임</th>
-                                                    <th style="text-align: center;">성별</th>
-                                                    <th style="text-align: center;">연령대</th>
-                                                    <th style="text-align: center;">신고횟수</th>
+                                                    <th style="text-align: center;" width="8%">체크</th>
+                                                    <th style="text-align: center;" width="8%">가입일</th>
+                                                    <th style="text-align: center;" width="26%">이메일</th>
+                                                    <th style="text-align: center;" width="22%">닉네임</th>
+                                                    <th style="text-align: center;" width="10%">성별</th>
+                                                    <th style="text-align: center;" width="10%">연령대</th>
+                                                    <th style="text-align: center;" width="10%">신고횟수</th>
                                                 </tr>
                                             </thead>
                                             <tbody style="text-align: center;">
@@ -198,9 +156,35 @@
                                                     </td>
                                                     <td>2021.06.25</td>
                                                     <td>
+                                                        <a href="javasctipt:testfn()" data-toggle="modal" data-target=".bd-example-modal-lg">as97164@naver.com</a>
+                                                    </td>
+                                                    <td>호롤롤로아줌마</td>
+                                                    <td>아줌마</td>
+                                                    <td>60이상</td>
+                                                    <td>9999+</td>
+                                                </tr>
+                                                <tr >
+                                                    <td>
+                                                        <label><input type="checkbox"></label>
+                                                    </td>
+                                                    <td>2021.06.25</td>
+                                                    <td>
                                                         <a href="javasctipt:testfn()">as97164@naver.com</a>
                                                     </td>
                                                     <td>코스모코딩왕</td>
+                                                    <td>남</td>
+                                                    <td>20~30</td>
+                                                    <td>3</td>
+                                                </tr>
+                                                <tr >
+                                                    <td>
+                                                        <label><input type="checkbox"></label>
+                                                    </td>
+                                                    <td>2021.06.25</td>
+                                                    <td>
+                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
+                                                    </td>
+                                                    <td>코스모코딩왕신우형</td>
                                                     <td>남</td>
                                                     <td>20~30</td>
                                                     <td>3</td>
@@ -278,33 +262,7 @@
                                                     <td>
                                                         <a href="javasctipt:testfn()">as97164@naver.com</a>
                                                     </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
+                                                    <td>코스모코딩왕22</td>
                                                     <td>남</td>
                                                     <td>20~30</td>
                                                     <td>3</td>
@@ -894,6 +852,14 @@
                 <div class="container-fluid"></div>
             </footer>
         </div>
+		<!-- Modal -->
+		<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+			  <div class="modal-content">
+				  asdfasdfasdfsafd
+			  </div>
+			</div>
+		  </div>
         <!-- END WRAPPER -->
         <!-- Javascript -->
         <script src="assets/vendor/jquery/jquery.min.js"></script>

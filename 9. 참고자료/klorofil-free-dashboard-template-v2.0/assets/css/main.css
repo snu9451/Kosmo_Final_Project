@@ -42,7 +42,7 @@ th {
 }
 
 .page-title {
-  margin-top: 0;
+  margin-top: 50;
   margin-bottom: 30px;
   font-weight: 300;
 }
@@ -202,7 +202,7 @@ html.fullscreen-bg #wrapper {
   padding: 0;
   margin: 0;
   border: none;
-  background-color: #fff;
+  background-color: #e9e8d4;
 }
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
@@ -216,8 +216,10 @@ html.fullscreen-bg #wrapper {
 }
 .navbar-default .brand {
   float: left;
-  padding: 30px 39px;
-  background-color: #fff;
+  display: flex !important;
+  align-items: center;
+  /* padding: 30px 39px; */
+  padding-left: 10px;
 }
 @media screen and (max-width: 1024px) {
   .navbar-default .brand {
@@ -816,8 +818,8 @@ fieldset[disabled] .btn {
 }
 .panel .panel-heading .panel-title {
   margin: 0;
-  font-size: 18px;
-  font-weight: 300;
+  font-size: 24px;
+  font-weight: bold;
 }
 .panel .panel-heading button {
   padding: 0;
@@ -2390,6 +2392,14 @@ ul.activity-timeline > li:last-child:after {
   margin: 0px !important;
   padding: 0px !important;
 }
+.fa-check-circle {
+  opacity: 0.5;
+}
+.fa-check-circle:hover {
+  cursor: pointer;
+  color: #337ab7;
+  opacity: 1;
+}
 .my-buttons {
   color: #337ab7;
   text-decoration: none;
@@ -2403,9 +2413,24 @@ ul.activity-timeline > li:last-child:after {
 .my-search-select {
   width: 120px;
 }
+.panel-heading {
+  text-align: right;
+}
 .my-form-control {
   width: 100px;
 }
+.navbar-right {
+  margin-top: 30px;
+}
+.table{
+  table-layout: fixed;
+}
+.table td{
+  overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 #nav {
   width: auto;
   text-align: center;
