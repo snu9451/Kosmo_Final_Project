@@ -25,6 +25,7 @@ body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 label {
@@ -1042,20 +1043,50 @@ section {
 # Product Description
 --------------------------------------------------------------*/
 
-#product__description {
+.pd__main {
+  height: 100vh;
+}
+
+.product__description {
   background-color: #8aaee2;
+  width: 100%;
 }
 
 #pd__top {
   background-color: white;
   padding: 1rem;
-  height: 55vh;
 }
 
-#pd__img > img {
+#pd__img__box {
   position: relative;
+}
+
+#pd__img__carousel {
+  padding: 5px;
+}
+
+.owl-stage {
+  display: flex;
+  align-items: center;
+  max-height: 360px;
+}
+
+.owl-nav {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 30px;
+}
+
+/* #pd__img__box img {
   width: 100%;
-  height: 100%;
+  object-fit: contain;
+} */
+
+.items img {
+  max-width: 360px;
+  max-height: 360px;
+  object-fit: contain;
 }
 
 .pd__divider {
@@ -1064,17 +1095,26 @@ section {
   background-color: #222222;
 }
 
+#pd__content {
+  height: 55vh;
+}
+
 #pd__content button {
   outline: none;
   border: none;
   background-color: transparent;
 }
 
+#pd__title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 45px;
+}
+
 #pd__middle {
-  border: 1px solid blueviolet;
   position: relative;
   width: 100%;
-  height: 60%;
+  height: 50%;
 }
 
 #pd__middle p {
@@ -1083,11 +1123,46 @@ section {
   width: 100%;
 }
 
-#pd__bottom {
-  border: 1px solid red;
+#pd__bottom a {
+  cursor: pointer;
 }
 
-#pd__comment {
-  text-align: center;
-  font-size: 5rem;
+#pd__bottom h2,
+h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#pd__seller {
+  font-size: 2rem;
+}
+
+/* ============================= [[ 댓글 영역]] =========================== */
+#pd__comment__start {
+  color: white;
+  font-size: 2.5rem;
+}
+
+#pd__comment__divider {
+  background-color: white;
+  width: 100%;
+  height: 2px;
+}
+
+#comment__box {
+  background-color: rgb(246, 246, 246);
+}
+
+#comment__box button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+#comment__user__origin {
+  font-size: 2rem;
+}
+
+#comment_txt {
+  font-size: 20px;
 }
