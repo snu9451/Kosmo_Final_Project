@@ -112,8 +112,8 @@ CREATE OR REPLACE TRIGGER trg_nickname_change
         set mem_nickname_nds = :NEW.MEM_NICKNAME
         where mem_nickname_nds = :OLD.MEM_NICKNAME;
             update coin_trans
-        set mem_nickname = :NEW.MEM_NICKNAME
-        where mem_nickname = :OLD.MEM_NICKNAME;
+        set mem_email = :NEW.MEM_EMAIL
+        where mem_email = :OLD.MEM_EMAIL;
             update ROOM
         set MEM_NICKNAME_M = :NEW.MEM_NICKNAME
         where MEM_NICKNAME_M = :OLD.MEM_NICKNAME;

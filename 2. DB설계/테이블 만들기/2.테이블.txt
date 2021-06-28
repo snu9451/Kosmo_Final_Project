@@ -40,7 +40,7 @@ CREATE TABLE member (
 
 CREATE TABLE coin_trans (
 	trans_no	number(5)	NOT NULL,
-	mem_nickname	VARCHAR2(50)	NOT NULL,
+	mem_email	VARCHAR2(50)	NOT NULL,
 	trans_date	VARCHAR2(50)	NULL,
 	trans_content	varchar2(200)	NULL,
 	trans_price	number(6)	NULL,
