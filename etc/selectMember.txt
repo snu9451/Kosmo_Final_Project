@@ -1,0 +1,46 @@
+	// 마이페이지를 위한 회원 정보 조회
+	public ModelAndView selectMember(HttpServletRequest req, HttpServletResponse res) {
+		ModelAndView mav = new ModelAndView();
+		// 세션에 담긴 회운정보(이메일) 가져오기
+		HttpSession session = req.getSession();
+		Map<String, Object> pmap = new HashMap<String, Object>();
+		MemberVO mvo = (MemberVO)session.getAttribute("login");
+		String mem_email = mvo.getMem_email();
+		pmap.put("mem_email", mem_email);
+		Map<String, Object> rmap = memberLogic.selectMember(pmap);
+		mav.addObject("memberMap", rmap);
+		mav.setViewName("/my_page/myinfo.jsp");
+		return mav;
+	}
+
+
+
+
+
+
+
+	// 마이페이지를 위한 회원 정보 조회
+	public void selectMember(HttpServletRequest req, HttpServletResponse res) {
+//		ModelAndView mav = new ModelAndView();
+		// 세션에 담긴 회운정보(이메일) 가져오기
+		HttpSession session = req.getSession();
+		Map<String, Object> pmap = new HashMap<String, Object>();
+		MemberVO mvo = (MemberVO)session.getAttribute("login");
+		String mem_email = mvo.getMem_email();
+		pmap.put("mem_email", mem_email);
+		Map<String, Object> rmap = memberLogic.selectMemberAdmin(pmap);
+		req.setAttribute("memberMap", rmap);
+		RequestDispatcher rd = req.getRequestDispatcher("/myinfo/myInfo.jsp");
+		try {
+			rd.forward(req, res);
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+//		mav.addObject("memberMap", rmap);
+//		mav.setViewName("/myinfo/myInfo.jsp");
+//		return mav;
+	}
