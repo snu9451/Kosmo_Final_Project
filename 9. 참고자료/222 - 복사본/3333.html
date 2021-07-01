@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="/assets/vendor/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="3333.css"/>
+    <title>Document</title>
+</head>
+<body>
+
+
+<a href="javascript:open()"> ffff</a>
+
+<div class="modal hidden">
+  <div class="bg"></div>
+  <div class="modalBox">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur quam nobis quis corrupti amet maxime neque, optio, in illo, voluptatibus consequuntur! Rerum quo ea nulla qui, maxime consectetur magni soluta!</p>
+    <button class="closeBtn">확인</button>
+  </div>
+</div>
+
+<script>
+
+    
+    
+    function open() {
+        $(".modal").removeClass("hidden");
+        // document.querySelector(".modal").classList.remove("hidden");
+        
+    }
+    
+    function close() {
+      $(".modal").addClass("hidden");
+    // document.querySelector(".modal").classList.add("hidden");
+  }
+
+//   document.querySelector(".openBtn").addEventListener("click", open);
+//   document.querySelector(".closeBtn").addEventListener("click", close);
+//   document.querySelector(".bg").addEventListener("click", close);
+  $(".closeBtn").click(close);
+  $(".bg").click(close);
+  
+</script>
+    
+
+
+
+
+
+</body>
+</html>

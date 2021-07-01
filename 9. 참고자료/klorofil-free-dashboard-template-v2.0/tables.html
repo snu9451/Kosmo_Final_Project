@@ -31,8 +31,12 @@
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css"/>
+            <!-- <link rel="stylesheet" href="/assets/css/bootstrap.min.css"/>bootstrap기본 css -->
+            <!-- <script src="/assets/vendor/jquery/jquery.min.js"></script>이게 있어야 jquery사용 가능(오류메세지:$ is not defined, jQuery is not defined)     -->
         <link rel="stylesheet" href="test.css"/>
         <script src="test.js"></script>
+        <!-- <link rel="stylesheet" href="modalpaging.css"/> -->
+        <!-- <script src="modalpaging.js"></script> -->
 		<script src="https://kit.fontawesome.com/ce3585cab0.js" crossorigin="anonymous"></script>
     </head>
 
@@ -141,7 +145,7 @@
                                             <thead>
                                                 <tr>
                                                     <th style="text-align: center;" width="8%">체크</th>
-                                                    <th style="text-align: center;" width="8%">가입일</th>
+                                                    <th style="text-align: center;" width="10%">가입일</th>
                                                     <th style="text-align: center;" width="26%">이메일</th>
                                                     <th style="text-align: center;" width="22%">닉네임</th>
                                                     <th style="text-align: center;" width="10%">성별</th>
@@ -156,7 +160,8 @@
                                                     </td>
                                                     <td>2021.06.25</td>
                                                     <td>
-                                                        <a href="javasctipt:testfn()" data-toggle="modal" data-target=".bd-example-modal-lg">as97164@naver.com</a>
+                                                        <a href="" onClick="window.open('admin_madal.html', '', 'width=1350, height=690, scrollbars=no, resizable=no, toolbars=no, menubar=no')">as97164@naver.com</a>
+                                                        <!-- <a href="admin_madal.html">as97164@naver.com</a> -->
                                                     </td>
                                                     <td>호롤롤로아줌마</td>
                                                     <td>아줌마</td>
@@ -171,7 +176,7 @@
                                                     <td>
                                                         <a href="javasctipt:testfn()">as97164@naver.com</a>
                                                     </td>
-                                                    <td>코스모코딩왕</td>
+                                                    <td>머리안감는오경택</td>
                                                     <td>남</td>
                                                     <td>20~30</td>
                                                     <td>3</td>
@@ -184,7 +189,7 @@
                                                     <td>
                                                         <a href="javasctipt:testfn()">as97164@naver.com</a>
                                                     </td>
-                                                    <td>코스모코딩왕신우형</td>
+                                                    <td>코스모코딩신우형</td>
                                                     <td>남</td>
                                                     <td>20~30</td>
                                                     <td>3</td>
@@ -371,422 +376,7 @@
                                                     <td>20~30</td>
                                                     <td>3</td>
                                                 </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr >
-                                                    <td>
-                                                        <label><input type="checkbox"></label>
-                                                    </td>
-                                                    <td>2021.06.25</td>
-                                                    <td>
-                                                        <a href="javasctipt:testfn()">as97164@naver.com</a>
-                                                    </td>
-                                                    <td>코스모코딩왕</td>
-                                                    <td>남</td>
-                                                    <td>20~30</td>
-                                                    <td>3</td>
-                                                </tr>
+                                     
                                             </tbody>
                                         </table>
                                     </div>
@@ -801,21 +391,21 @@
                                         <nav class="pagination-nav">
                                             <ul class="pagination">
                                                 <li data-page="prev">
-                                                    <span>
+                                                    <span >
                                                         «
                                                         <span class="sr-only">(current)</span></span>
-                                                </li>
+                                                </li>                               
                                                 <!-- Here the JS Function Will Add the Rows -->
                                                 <li data-page="next" id="prev">
                                                     <span>
                                                         »
-                                                        <span class="sr-only">(current)</span></span>
+                                                        <span type="button" class="sr-only">(current)</span></span>
                                                 </li>
                                             </ul>
                                         </nav>
                                     </div>
                                     <div>
-                                      <button class="my-buttons">선택회원 탈퇴</button>
+                                      <button  class="my-buttons">선택회원 탈퇴</button>
                                       <button class="my-buttons">신고횟수 초기화</button>
                                     </div>
                                   </div>
@@ -833,7 +423,7 @@
                                                   class="form-control"
                                                   placeholder="검색어를 입력하세요.">
                                               <span class="input-group-btn">
-                                                  <button type="button" class="btn btn-primary">Go</button>
+                                                  <button type="button" class="btn btn-primary">검색</button>
                                               </span>
                                           </div>
                                       </form>
@@ -851,12 +441,10 @@
             <footer>
                 <div class="container-fluid"></div>
             </footer>
-        </div>
-		<!-- Modal -->
-		<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-lg">
-			  <div class="modal-content">
-				  asdfasdfasdfsafd
+
+            <!-- Modal -->
+       
+				
 			  </div>
 			</div>
 		  </div>

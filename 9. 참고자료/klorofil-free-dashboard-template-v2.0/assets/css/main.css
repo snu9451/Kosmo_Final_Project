@@ -750,13 +750,13 @@ ul.list-justify > li span {
 }
 
 .btn-primary {
-  background-color: #00aaff;
-  border-color: #00a0f0;
+  background-color: #404c5e;
+  border-color: #477085;
 }
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: #00a0f0;
-  border-color: #00a0f0;
+  background-color: #7aaac2;
+  border-color: #5fb6e2;
 }
 
 .btn-warning {
@@ -2375,7 +2375,10 @@ ul.activity-timeline > li:last-child:after {
   justify-content: center !important;
   align-items: center !important;
 }
+/* 여긴 버튼 바깥인데..? */
 .paging-buttons {
+  
+  color: #000;
   margin: 0px;
   padding: 0px;
   display: flex;
@@ -2383,6 +2386,8 @@ ul.activity-timeline > li:last-child:after {
   align-items: center !important;
 }
 .pagination-container {
+  
+  
   margin: 0px !important;
   padding: 0px !important;
   padding-left: 300px !important;
@@ -2392,6 +2397,7 @@ ul.activity-timeline > li:last-child:after {
   margin: 0px !important;
   padding: 0px !important;
 }
+
 .fa-check-circle {
   opacity: 0.5;
 }
@@ -2450,4 +2456,27 @@ ul.activity-timeline > li:last-child:after {
 }
 .off-screen {
   display: none;
+}
+
+#sibal{
+  background-color: #000;
+  color: #000;
+}
+
+.modal-body {
+  width: 1350px;
+  height: 700px;
+  overflow:auto;
+}
+.btn_box{
+  display: flex;
+  width: 100%;
+}
+.btn_close{
+  margin-left: 1100px;
+}
+
+#exampleModalCenter{
+  height: 400px;
+  
 }
