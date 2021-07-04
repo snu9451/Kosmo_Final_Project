@@ -1,0 +1,140 @@
+-- ■ ■ ■ ■ ■ ■ ■ 자동완성을 위한 검색어 insert ■ ■ ■ ■ ■ ■ ■
+-- Ignore all
+
+INSERT INTO search_words VALUES('테크 세제',    392    ,    164    );
+INSERT INTO search_words VALUES('홈데코용 소품',    157    ,    44    );
+INSERT INTO search_words VALUES('악세서리류',    581    ,    118    );
+INSERT INTO search_words VALUES('굿즈 뭐 있지',    124    ,    9    );
+INSERT INTO search_words VALUES('스킨세트',    499    ,    323    );
+INSERT INTO search_words VALUES('로션세트',    829    ,    645    );
+INSERT INTO search_words VALUES('에센스세트',    20    ,    19    );
+INSERT INTO search_words VALUES('수분크림세트',    906    ,    148    );
+INSERT INTO search_words VALUES('추천미스트',    495    ,    33    );
+INSERT INTO search_words VALUES('추천오일',    565    ,    226    );
+INSERT INTO search_words VALUES('인기 많은 마스크팩',    746    ,    232    );
+INSERT INTO search_words VALUES('클렌징오일',    459    ,    56    );
+INSERT INTO search_words VALUES('선케어 추천',    124    ,    11    );
+INSERT INTO search_words VALUES('바디케어 추천',    730    ,    389    );
+INSERT INTO search_words VALUES('바디케어 세트',    730    ,    389    );
+INSERT INTO search_words VALUES('요즘 뜨는 위생용품',    142    ,    22   );
+INSERT INTO search_words VALUES('운동 뭐하지',    45    ,    33    );
+INSERT INTO search_words VALUES('요즘 뜨는 마사지용품',    913    ,    238    );
+INSERT INTO search_words VALUES('인기 많은 물티슈',    256    ,    34    );
+INSERT INTO search_words VALUES('인기 많은 손소독티슈',    747    ,    686    );
+INSERT INTO search_words VALUES('요즘 뜨는 강아지 식품',    472    ,    63    );
+INSERT INTO search_words VALUES('요즘 뜨는 강아지 용품',    302    ,    44    );
+INSERT INTO search_words VALUES('요즘 뜨는 고양이 식품',    231    ,    35    );
+INSERT INTO search_words VALUES('요즘 뜨는 고양이 용품',    645    ,    43    );
+INSERT INTO search_words VALUES('요즘 뜨는 공간방향제',    174    ,    22    );
+INSERT INTO search_words VALUES('요즘 뜨는 제습용품',    591    ,    123    );
+INSERT INTO search_words VALUES('요즘 뜨는 홈 클리닝',    418    ,    11    );
+INSERT INTO search_words VALUES('요즘 뜨는 생활용품',    553    ,    42    );
+
+INSERT INTO search_words VALUES('요리용품',    645    ,    123    );
+INSERT INTO search_words VALUES('요리추천',    174    ,    23    );
+INSERT INTO search_words VALUES('요리학원',    591    ,    443    );
+INSERT INTO search_words VALUES('요리책',    418    ,    11    );
+INSERT INTO search_words VALUES('테크 세제',    392    ,    164    );
+INSERT INTO search_words VALUES('홈데코용 소품',    157    ,    44    );
+INSERT INTO search_words VALUES('악세서리류',    581    ,    118    );
+INSERT INTO search_words VALUES('굿즈 뭐 있지',    124    ,    9    );
+INSERT INTO search_words VALUES('스킨세트',    499    ,    323    );
+INSERT INTO search_words VALUES('로션세트',    829    ,    645    );
+INSERT INTO search_words VALUES('에센스세트',    20    ,    19    );
+INSERT INTO search_words VALUES('수분크림세트',    906    ,    148    );
+INSERT INTO search_words VALUES('추천미스트',    495    ,    33    );
+INSERT INTO search_words VALUES('추천오일',    565    ,    226    );
+INSERT INTO search_words VALUES('인기 많은 마스크팩',    746    ,    232    );
+INSERT INTO search_words VALUES('클렌징오일',    459    ,    56    );
+INSERT INTO search_words VALUES('선케어 추천',    124    ,    11    );
+INSERT INTO search_words VALUES('바디케어 추천',    730    ,    389    );
+INSERT INTO search_words VALUES('바디케어 세트',    730    ,    389    );
+INSERT INTO search_words VALUES('요즘 뜨는 위생용품',    142    ,    22   );
+INSERT INTO search_words VALUES('운동 뭐하지',    45    ,    33    );
+INSERT INTO search_words VALUES('요즘 뜨는 마사지용품',    913    ,    238    );
+INSERT INTO search_words VALUES('인기 많은 물티슈',    256    ,    34    );
+INSERT INTO search_words VALUES('인기 많은 손소독티슈',    747    ,    686    );
+INSERT INTO search_words VALUES('요즘 뜨는 강아지 식품',    472    ,    63    );
+INSERT INTO search_words VALUES('요즘 뜨는 강아지 용품',    302    ,    44    );
+INSERT INTO search_words VALUES('요즘 뜨는 고양이 식품',    231    ,    35    );
+INSERT INTO search_words VALUES('요즘 뜨는 고양이 용품',    645    ,    43    );
+INSERT INTO search_words VALUES('요즘 뜨는 공간방향제',    174    ,    22    );
+INSERT INTO search_words VALUES('요즘 뜨는 제습용품',    591    ,    123    );
+INSERT INTO search_words VALUES('요즘 뜨는 홈 클리닝',    418    ,    11    );
+INSERT INTO search_words VALUES('요즘 뜨는 생활용품',    553    ,    42    );
+
+INSERT INTO search_words VALUES('요리용품',    645    ,    123    );
+INSERT INTO search_words VALUES('요리추천',    174    ,    23    );
+INSERT INTO search_words VALUES('요리학원',    591    ,    443    );
+INSERT INTO search_words VALUES('요리책',    418    ,    11    );
+
+INSERT INTO search_words VALUES('사무용문구류',    322    ,    146    );
+INSERT INTO search_words VALUES('서류용 가방',    110    ,    35    );
+INSERT INTO search_words VALUES('색깔바인더',    188    ,    65    );
+INSERT INTO search_words VALUES('사무용지A4',    961    ,    450    );
+INSERT INTO search_words VALUES('복사지A4',    247    ,    229    );
+INSERT INTO search_words VALUES('데스크정리소품',    149    ,    35    );
+INSERT INTO search_words VALUES('전자보드',    128    ,    14    );
+INSERT INTO search_words VALUES('전자칠판',    77    ,    34    );
+INSERT INTO search_words VALUES('광고용 소품',    326    ,    15    );
+INSERT INTO search_words VALUES('색깔봉투',    186    ,    66    );
+INSERT INTO search_words VALUES('포장용품',    491    ,    255    );
+INSERT INTO search_words VALUES('요즘 뜨는 디지털',    936    ,    678    );
+INSERT INTO search_words VALUES('요즘 뜨는 사무기기',    266    ,    35    );
+INSERT INTO search_words VALUES('사무용가구 목록',    623    ,    22    );
+INSERT INTO search_words VALUES('수납가구',    669    ,    491    );
+INSERT INTO search_words VALUES('미술용품',    725    ,    235    );
+INSERT INTO search_words VALUES('학생화방용품',    430    ,    45    );
+INSERT INTO search_words VALUES('캐릭터 문구',    55    ,    42    );
+INSERT INTO search_words VALUES('학용품',    409    ,    128    );
+INSERT INTO search_words VALUES('수업준비',    292    ,    151    );
+
+
+
+
+
+
+-- ■ ■ ■ ■ ■ ■ ■ ERRAND TABLE CREATE ■ ■ ■ ■ ■ ■ ■
+
+CREATE TABLE errand
+(
+   errandKey               VARCHAR2 (20) PRIMARY KEY,
+   errand_item             VARCHAR2 (50) NOT NULL,
+   errand_request_date     VARCHAR2 (50) NOT NULL,
+   errand_start_date       VARCHAR2 (50) NULL,
+   errand_finish_date      VARCHAR2 (50) NULL,
+   errand_item_price_req   NUMBER (6) NOT NULL,
+   errand_item_price_nds   NUMBER (6) NOT NULL,
+   errand_item_price_fin   NUMBER (6) NOT NULL,
+   errand_price            NUMBER (6) NOT NULL,
+   errand_total_price      NUMBER (6) NOT NULL,
+   errand_content          VARCHAR2 (200) NULL,
+   errand_status           CHAR (1) NOT NULL,
+   mem_email_req           VARCHAR2 (50) NOT NULL,
+   mem_email_nds           VARCHAR2 (50) NULL,
+   errand_lat              NUMBER (10, 7) NULL,
+   errand_lon              NUMBER (10, 7) NULL,
+   req_isShow              CHAR (1) NULL,
+   nds_isShow              CHAR (1) NULL,
+   FOREIGN KEY (mem_email_req) REFERENCES member(mem_email),
+   FOREIGN KEY (mem_email_nds) REFERENCES member(mem_email)
+);
+
+
+drop table errand;
+
+drop table errand_info;
+
+
+
+
+
+-- ■ ■ ■ ■ ■ ■ ■ HIS_ERRAND_DENIED TABLE CREATE ■ ■ ■ ■ ■ ■ ■
+
+CREATE TABLE his_errand_denied
+(
+   errandKey               VARCHAR2 (20) NOT NULL,
+   errand_denied_date     VARCHAR2 (50) NOT NULL,
+   errand_deny_msg         VARCHAR2(200) NULL,
+   CONSTRAINT PK_HIS_ERRAND_DENIED PRIMARY KEY(errandKey, errand_denied_date)
+);
