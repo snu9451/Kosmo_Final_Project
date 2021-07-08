@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>거래영수증</title>
+</head>
+<style>
+  .receipt_wrapper {
+    border: 1px solid black;
+    width: 500px;
+    text-align: center;
+  }
+
+  .receipt_trade_detail,
+  .receipt_coin_detail {
+    width: 450px;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+  .receipt_container {
+    display: flex;
+    justify-content: center;
+  }
+</style>
+
+<body>
+  <div class="receipt_container">
+    <div class="receipt_wrapper">
+      <h2 style="letter-spacing: 6px;">NeDongSang</h2>
+      <p style="line-height: 8px;">Address: 서울특별시 금천구 가산동 월드메르디앙벤처2차</p>
+      <p style="line-height: 8px;">Tel: 02)123-4567</p>
+      <p>*******************************************************************</p>
+      <p style="margin: 0px; line-height: 0px; font-size: 25px; letter-spacing: 6px;">Receipt</p>
+      <p style="margin-bottom: 0px;">*******************************************************************</p>
+      <!-- 거래 상세 내역 표시 -->
+      <table class="receipt_trade_detail">
+        <th>
+          <tr>
+            <td style="width: 300px; text-align: left; font-weight: bold;">Description</td>
+            <td style="width: 150px; text-align: right; font-weight: bold;">Price</td>
+          </tr>
+        </th>
+        <tbody>
+          <tr>
+            <td style="width: 300px; text-align: left;"">요청된 상품금액</td>
+            <td id=" receipt_errand_price" style="width: 100px; text-align: right;">5000 원</td>
+          </tr>
+          <tr>
+            <td style="width: 300px; text-align: left;">심부름 비용</td>
+            <td id="receipt_errand_price" style="width: 100px; text-align: right;">1500 원</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="margin-bottom: 0px;">*******************************************************************</p>
+      <!-- 코인 입출금 내역 표시 -->
+      <table class="receipt_coin_detail">
+        <tbody>
+          <tr>
+            <td style="width: 300px; text-align: left;"><b>Total Price</b></td>
+            <td id=" receipt_errand_price" style="width: 150px; text-align: right;">5000 원</td>
+          </tr>
+          <tr>
+            <td style="width: 300px; text-align: left;"><b>코인 입출금</b></td>
+            <td id="receipt_errand_price" style="width: 150px; text-align: right;">(부호)1500 원</td>
+          </tr>
+          <tr>
+            <td style="width: 300px; text-align: left;"><b>잔여 코인</b></td>
+            <td id="receipt_errand_price" style="width: 150px; text-align: right;">4,5000 원</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>*******************************************************************</p>
+      <p style="letter-spacing: 3px;">THANK YOU!</p>
+      <img src="qr.png" alt="큐알코드" style="width: 100px;">
+    </div>
+  </div>
+</body>
+
+</html>
