@@ -1,0 +1,473 @@
+INSERT INTO member(mem_email, mem_img, mem_nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,mem_star,coin_remain,mem_phone,mem_payPW,mem_errand_mode,mem_star_num)
+values ('banana@good.com','1.png','바나나','123','F',20,'2018-04-29 09:33:51','F','F',0,20500,'01012340000','1234','R',0);
+INSERT INTO member(mem_email, mem_img, mem_nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,mem_star,coin_remain,mem_phone,mem_payPW,mem_errand_mode,mem_star_num)
+values ('apple@good.com','1.png','사과','123','M',10,'2014-06-22 13:56:52','F','F',0,8500,'01012340001','1234','R',0);
+INSERT INTO member(mem_email, mem_img, mem_nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,mem_star,coin_remain,mem_phone,mem_payPW,mem_errand_mode,mem_star_num)
+values ('straw@good.com','1.png','딸기','123','F',20,'2016-06-15 17:31:59','F','F',0,0,'01012340002','1234','R',0);
+INSERT INTO member(mem_email, mem_img, mem_nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,mem_star,coin_remain,mem_phone,mem_payPW,mem_errand_mode,mem_star_num)
+values ('pine@good.com','1.png','파인애플','123','M',30,'2018-02-06 20:44:02','F','F',0,23000,'01012340003','1234','R',0);
+INSERT INTO member(mem_email, mem_img, mem_nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,mem_star,coin_remain,mem_phone,mem_payPW,mem_errand_mode,mem_star_num)
+values ('grape@good.com','1.png','포도','123','F',40,'2018-08-03 18:40:20','F','F',0,24900,'01012340004','1234','R',0);
+INSERT INTO member(mem_email, mem_img, mem_nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,mem_star,coin_remain,mem_phone,mem_payPW,mem_errand_mode,mem_star_num)
+values ('orange@good.com','1.png','귤','123','M',50,'2017-07-17 20:57:17','F','F',0,5100,'01012340005','1234','R',0);
+INSERT INTO member(mem_email, mem_img, mem_nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,mem_star,coin_remain,mem_phone,mem_payPW,mem_errand_mode,mem_star_num)
+values ('tomato@good.com','1.png','토마토','123','F',60,'2016-04-04 17:40:51','F','F',0,0,'01012340006','1234','R',0);
+INSERT INTO member(mem_email, mem_img, mem_nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,mem_star,coin_remain,mem_phone,mem_payPW,mem_errand_mode,mem_star_num)
+values ('melon@good.com','1.png','멜론','123','M',70,'2015-07-02 05:32:32','F','F',0,0,'01012340007','1234','R',0);
+INSERT INTO member(mem_email, mem_img, mem_nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,mem_star,coin_remain,mem_phone,mem_payPW,mem_errand_mode,mem_star_num)
+values ('blue@good.com','1.png','블루베리','123','F',30,'2016-04-15 08:44:48','F','F',0,20000,'01012340008','1234','R',0);
+INSERT INTO member(mem_email, mem_img, mem_nickname, mem_pw, mem_gender, mem_age, mem_create_date,isSocial,mem_active,mem_star,coin_remain,mem_phone,mem_payPW,mem_errand_mode,mem_star_num)
+values ('water@good.com','1.png','수박','123','M',30,'2015-02-12 00:02:21','F','F',0,0,'01012340009','1234','R',0);
+
+INSERT INTO report_mem_type(report_type)
+values ('전문판매업자');
+INSERT INTO report_mem_type(report_type)
+values ('비매너 사용자');
+INSERT INTO report_mem_type(report_type)
+values ('욕설');
+INSERT INTO report_mem_type(report_type)
+values ('성희롱');
+INSERT INTO report_mem_type(report_type)
+values ('기타');
+commit;
+
+INSERT INTO report_mem(report_no,mem_email_from,mem_email_to,report_msg,report_date,report_type,report_isHandle)
+values (1,'grape@good.com','melon@good.com','욕을 해서 기분이 나쁘네요','2020-06-17 18:56:41','욕설','T');
+INSERT INTO report_mem(report_no,mem_email_from,mem_email_to,report_msg,report_date,report_type,report_isHandle)
+values (2,'straw@good.com','water@good.com','메세지로 이런거 보내는 거 너무 싫네요~','2020-06-19 16:56:41','전문판매업자','T');
+INSERT INTO report_mem(report_no,mem_email_from,mem_email_to,report_msg,report_date,report_type,report_isHandle)
+values (3,'grape@good.com','water@good.com','다른 사람 물건 파는 곳까지와서 왜 저렇게 시비터는지 모르겠네요;','2020-06-21 16:50:41','비매너 사용자','T');
+commit;
+
+INSERT INTO report_mem_img(report_no,img_real_name,img_sys_name,file_size)
+values (1,'1.PNG','1.PNG',50);
+INSERT INTO report_mem_img(report_no,img_real_name,img_sys_name,file_size)
+values (2,'2.PNG','2.PNG',50);
+INSERT INTO report_mem_img(report_no,img_real_name,img_sys_name,file_size)
+values (3,'3.PNG','3.PNG',50);
+commit;
+
+INSERT INTO category(category_name)
+values ('디지털기기');
+INSERT INTO category(category_name)
+values ('가구');
+INSERT INTO category(category_name)
+values ('화장품');
+INSERT INTO category(category_name)
+values ('유아동');
+INSERT INTO category(category_name)
+values ('의류');
+INSERT INTO category(category_name)
+values ('도서');
+INSERT INTO category(category_name)
+values ('식물');
+INSERT INTO category(category_name)
+values ('스포츠');
+INSERT INTO category(category_name)
+values ('반려동물용품');
+INSERT INTO category(category_name)
+values ('기타');
+commit;
+
+INSERT INTO board_master(bm_no,bm_title,bm_hit,bm_date,bm_like,bm_content,bm_price,bm_status,seller_nickname,category_name,buyer_nickname,seller_isShow,buyer_isShow,buyer_payDate)
+values(1,'핸드폰',20,'2020-06-17 15:46:41',2,'쓰던 핸드폰 팔아요',200000,'N','바나나','디지털기기',NULL,'T','T',NULL);
+INSERT INTO board_master(bm_no,bm_title,bm_hit,bm_date,bm_like,bm_content,bm_price,bm_status,seller_nickname,category_name,buyer_nickname,seller_isShow,buyer_isShow,buyer_payDate)
+values(2,'장인이 만든 책상',50,'2020-06-18 15:46:41',1,'싸게 팝니다 2개월 밖에 안쓴 책상이에요',30000,'N','사과','가구',NULL,'T','T',NULL);
+INSERT INTO board_master(bm_no,bm_title,bm_hit,bm_date,bm_like,bm_content,bm_price,bm_status,seller_nickname,category_name,buyer_nickname,seller_isShow,buyer_isShow,buyer_payDate)
+values(3,'샤넬 향수 새거 팔아요',200,'2020-06-19 15:46:41',2,'선물 받았는데 있어서 팔아요',120000,'N','딸기','화장품',NULL,'T','T',NULL);
+INSERT INTO board_master(bm_no,bm_title,bm_hit,bm_date,bm_like,bm_content,bm_price,bm_status,seller_nickname,category_name,buyer_nickname,seller_isShow,buyer_isShow,buyer_payDate)
+values(4,'카라티 팝니다',20,'2020-06-20 15:46:41',1,'자취 방 빼서 옷 내놔요',5000,'N','포도','의류',NULL,'T','T',NULL);
+INSERT INTO board_master(bm_no,bm_title,bm_hit,bm_date,bm_like,bm_content,bm_price,bm_status,seller_nickname,category_name,buyer_nickname,seller_isShow,buyer_isShow,buyer_payDate)
+values(5,'에디션 어린왕자 책 팔아요',12,'2020-06-21 15:46:41',1,'에디션이라 이제 못 구해요',23000,'N','귤','도서',NULL,'T','T',NULL);
+INSERT INTO board_master(bm_no,bm_title,bm_hit,bm_date,bm_like,bm_content,bm_price,bm_status,seller_nickname,category_name,buyer_nickname,seller_isShow,buyer_isShow,buyer_payDate)
+values(6,'알로에 화분 나눔이요~',302,'2020-06-22 15:46:41',1,'알로에 너무 귀여워요 무료로 나눠 드려요~',0,'N','멜론','식물',NULL,'T','T',NULL);
+INSERT INTO board_master(bm_no,bm_title,bm_hit,bm_date,bm_like,bm_content,bm_price,bm_status,seller_nickname,category_name,buyer_nickname,seller_isShow,buyer_isShow,buyer_payDate)
+values(7,'골프채 팔아요',123,'2020-06-23 15:46:41',0,'',200000,'N','수박','스포츠',NULL,'T','T',NULL);
+INSERT INTO board_master(bm_no,bm_title,bm_hit,bm_date,bm_like,bm_content,bm_price,bm_status,seller_nickname,category_name,buyer_nickname,seller_isShow,buyer_isShow,buyer_payDate)
+values(8,'엘지 노트북 17인치 팝니다',420,'2020-06-24 15:46:41',2,'2년 썼어요',800000,'N','귤','디지털기기',NULL,'T','T',NULL);
+INSERT INTO board_master(bm_no,bm_title,bm_hit,bm_date,bm_like,bm_content,bm_price,bm_status,seller_nickname,category_name,buyer_nickname,seller_isShow,buyer_isShow,buyer_payDate)
+values(9,'원피스 팝니다',23,'2020-06-25 15:46:41',5,'줄무늬 원피스 팔아요',20000,'C','블루베리','의류','포도','T','T','2020-06-26 15:46:41');
+INSERT INTO board_master(bm_no,bm_title,bm_hit,bm_date,bm_like,bm_content,bm_price,bm_status,seller_nickname,category_name,buyer_nickname,seller_isShow,buyer_isShow,buyer_payDate)
+values(10,'장식용 무드등',20,'2020-06-26 15:46:41',0,'완전 존예에요',2000,'N','파인애플','기타',NULL,'T','T',NULL);
+INSERT INTO board_master(bm_no,bm_title,bm_hit,bm_date,bm_like,bm_content,bm_price,bm_status,seller_nickname,category_name,buyer_nickname,seller_isShow,buyer_isShow,buyer_payDate)
+values(11,'의자팝니다',40,'2020-06-27 15:46:41',0,'완전 존예에요',200000,'N','토마토','가구',NULL,'T','T',NULL);
+INSERT INTO board_master(bm_no,bm_title,bm_hit,bm_date,bm_like,bm_content,bm_price,bm_status,seller_nickname,category_name,buyer_nickname,seller_isShow,buyer_isShow,buyer_payDate)
+values(12,'목걸이팔아요',60,'2020-06-27 16:46:41',0,'완전 존예에요',120000,'N','토마토','의류',NULL,'T','T',NULL);
+INSERT INTO board_master(bm_no,bm_title,bm_hit,bm_date,bm_like,bm_content,bm_price,bm_status,seller_nickname,category_name,buyer_nickname,seller_isShow,buyer_isShow,buyer_payDate)
+values(13,'책팔요',34,'2020-06-27 17:46:41',0,'낚였죠~~',80000,'N','토마토','도서',NULL,'T','T',NULL);
+commit;
+
+INSERT INTO board_img(bi_no,bi_file,bm_no,bi_size)
+values (1,'1.png',1,50);
+INSERT INTO board_img(bi_no,bi_file,bm_no,bi_size)
+values (2,'2.png',1,50);
+INSERT INTO board_img(bi_no,bi_file,bm_no,bi_size)
+values (3,'3.png',2,50);
+INSERT INTO board_img(bi_no,bi_file,bm_no,bi_size)
+values (4,'4.png',3,50);
+INSERT INTO board_img(bi_no,bi_file,bm_no,bi_size)
+values (5,'5.png',4,50);
+INSERT INTO board_img(bi_no,bi_file,bm_no,bi_size)
+values (6,'6.png',4,50);
+INSERT INTO board_img(bi_no,bi_file,bm_no,bi_size)
+values (7,'7.png',5,50);
+INSERT INTO board_img(bi_no,bi_file,bm_no,bi_size)
+values (8,'8.png',6,50);
+INSERT INTO board_img(bi_no,bi_file,bm_no,bi_size)
+values (9,'9.png',7,50);
+INSERT INTO board_img(bi_no,bi_file,bm_no,bi_size)
+values (10,'10.png',8,50);
+INSERT INTO board_img(bi_no,bi_file,bm_no,bi_size)
+values (11,'11.png',8,50);
+INSERT INTO board_img(bi_no,bi_file,bm_no,bi_size)
+values (12,'12.png',9,50);
+INSERT INTO board_img(bi_no,bi_file,bm_no,bi_size)
+values (13,'13.png',10,50);
+INSERT INTO board_img(bi_no,bi_file,bm_no,bi_size)
+values (14,'14.png',11,50);
+INSERT INTO board_img(bi_no,bi_file,bm_no,bi_size)
+values (15,'15.png',12,50);
+INSERT INTO board_img(bi_no,bi_file,bm_no,bi_size)
+values (16,'16.png',13,50);
+commit;
+
+INSERT INTO board_like(bm_no,like10s,like20s,like30s,like40s,like50s,like60s)
+values (1,1,0,1,0,0,0);
+INSERT INTO board_like(bm_no,like10s,like20s,like30s,like40s,like50s,like60s)
+values (2,0,0,1,0,0,0);
+INSERT INTO board_like(bm_no,like10s,like20s,like30s,like40s,like50s,like60s)
+values (3,1,0,1,0,0,0);
+INSERT INTO board_like(bm_no,like10s,like20s,like30s,like40s,like50s,like60s)
+values (4,0,0,1,0,0,0);
+INSERT INTO board_like(bm_no,like10s,like20s,like30s,like40s,like50s,like60s)
+values (5,0,0,0,1,0,0);
+INSERT INTO board_like(bm_no,like10s,like20s,like30s,like40s,like50s,like60s)
+values (6,0,0,0,1,0,0);
+INSERT INTO board_like(bm_no,like10s,like20s,like30s,like40s,like50s,like60s)
+values (7,0,0,0,0,0,0);
+INSERT INTO board_like(bm_no,like10s,like20s,like30s,like40s,like50s,like60s)
+values (8,0,0,2,0,0,0);
+INSERT INTO board_like(bm_no,like10s,like20s,like30s,like40s,like50s,like60s)
+values (9,0,0,0,0,0,0);
+INSERT INTO board_like(bm_no,like10s,like20s,like30s,like40s,like50s,like60s)
+values (10,0,0,0,0,0,0);
+commit;
+
+INSERT INTO his_board_del(bm_no,seller_email,category_name,bm_title,bm_date,bm_price)
+values (14,'apple@good.com','식물','장식용 장미 팔아요','2020-06-28 18:46:41',3000);
+INSERT INTO his_board_del(bm_no,seller_email,category_name,bm_title,bm_date,bm_price)
+values (15,'blue@good.com','유아동','귀여운 얘기 양말 팔아요','2020-06-29 13:26:41',6000);
+INSERT INTO his_board_del(bm_no,seller_email,category_name,bm_title,bm_date,bm_price)
+values (16,'banana@good.com','의류','긴 빨간색 후드티 팔아요','2020-06-29 20:46:41',9000);
+INSERT INTO his_board_del(bm_no,seller_email,category_name,bm_title,bm_date,bm_price)
+values (17,'water@good.com','가구','접의식 의자 팔아요','2020-07-02 18:46:41',13000);
+INSERT INTO his_board_del(bm_no,seller_email,category_name,bm_title,bm_date,bm_price)
+values (18,'orange@good.com','화장품','한 번 쓴 퍼프','2020-07-09 13:56:41',6000);
+INSERT INTO his_board_del(bm_no,seller_email,category_name,bm_title,bm_date,bm_price)
+values (19,'apple@good.com','반려동물용품','소고기 개 껌','2020-07-12 20:46:41',7000);
+commit;
+
+INSERT INTO my_like(bm_no,mem_email)
+values(1,'apple@good.com');
+INSERT INTO my_like(bm_no,mem_email)
+values(1,'blue@good.com');
+INSERT INTO my_like(bm_no,mem_email)
+values(2,'water@good.com');
+INSERT INTO my_like(bm_no,mem_email)
+values(3,'apple@good.com');
+INSERT INTO my_like(bm_no,mem_email)
+values(3,'pine@good.com');
+INSERT INTO my_like(bm_no,mem_email)
+values(4,'pine@good.com');
+INSERT INTO my_like(bm_no,mem_email)
+values(5,'grape@good.com');
+INSERT INTO my_like(bm_no,mem_email)
+values(6,'grape@good.com');
+INSERT INTO my_like(bm_no,mem_email)
+values(8,'blue@good.com');
+INSERT INTO my_like(bm_no,mem_email)
+values(8,'water@good.com');
+commit;
+
+INSERT INTO report_board_type(report_type)
+values ('욕설,비방');
+INSERT INTO report_board_type(report_type)
+values ('불법,도박');
+INSERT INTO report_board_type(report_type)
+values ('홍보,영리목적');
+INSERT INTO report_board_type(report_type)
+values ('음란,유해');
+INSERT INTO report_board_type(report_type)
+values ('도배');
+INSERT INTO report_board_type(report_type)
+values ('기타');
+commit;
+
+INSERT INTO report_board(report_no,mem_email,report_msg,report_date,bm_no,report_type,report_isHandle)
+values (1,'orange@good.com','도배 해대네요;;','2020-06-27 18:46:41',13,'도배','T');
+INSERT INTO report_board(report_no,mem_email,report_msg,report_date,bm_no,report_type,report_isHandle)
+values (2,'apple@good.com','도배 게시물 신고요!','2020-06-27 18:56:41',12,'도배','T');
+INSERT INTO report_board(report_no,mem_email,report_msg,report_date,bm_no,report_type,report_isHandle)
+values (3,'grape@good.com','도배요~','2020-06-27 19:46:41',13,'도배','T');
+commit;
+
+INSERT INTO report_board_img(report_no,img_real_name,img_sys_name,file_size)
+values (1,'1.PNG','1.PNG',50);
+INSERT INTO report_board_img(report_no,img_real_name,img_sys_name,file_size)
+values (2,'2.PNG','2.PNG',50);
+INSERT INTO report_board_img(report_no,img_real_name,img_sys_name,file_size)
+values (3,'3.PNG','3.PNG',50);
+commit;
+
+INSERT INTO Room(room_no,mem_nickname_m,mem_nickname_s,room_date)
+values(1,'수박','딸기','2020-06-19 15:55:41');
+INSERT INTO Room(room_no,mem_nickname_m,mem_nickname_s,room_date)
+values(2,'포도','귤','2020-06-20 13:00:37');
+INSERT INTO Room(room_no,mem_nickname_m,mem_nickname_s,room_date)
+values(3,'바나나','사과','2020-06-20 16:05:37');
+INSERT INTO Room(room_no,mem_nickname_m,mem_nickname_s,room_date)
+values(4,'바나나','파인애플','2020-06-21 14:00:37');
+INSERT INTO Room(room_no,mem_nickname_m,mem_nickname_s,room_date)
+values(5,'포도','블루베리','2020-06-26 15:40:41');
+commit;
+
+INSERT INTO Conversation(conver_no,conver_time,room_no,mem_nickname,conver_text,isRead)
+values (1,'2020-06-19 15:56:41',1,'수박','신세계상품권 3만원 증정, 최대58%할인, 100% 추가적립. 먼저쓰고 익월납부, 매일 100%당첨 룰렛이벤트, 21년 랭키닷컴 1위. 문자업계 독보적 1위. 개인정보 보호마크 획득.','T');
+INSERT INTO Conversation(conver_no,conver_time,room_no,mem_nickname,conver_text,isRead)
+values (2,'2020-06-19 16:46:41',1,'딸기','ㅡㅡ','T');
+INSERT INTO Conversation(conver_no,conver_time,room_no,mem_nickname,conver_text,isRead)
+values (3,'2020-06-20 13:10:37',2,'귤','4100원 인증이요','T');
+INSERT INTO Conversation(conver_no,conver_time,room_no,mem_nickname,conver_text,isRead)
+values (4,'2020-06-20 13:13:37',2,'포도','오 감사합니다~!','T');
+INSERT INTO Conversation(conver_no,conver_time,room_no,mem_nickname,conver_text,isRead)
+values (5,'2020-06-20 16:06:37',3,'바나나','광진구 00동00아파트00번에 걸어주세요','T');
+INSERT INTO Conversation(conver_no,conver_time,room_no,mem_nickname,conver_text,isRead)
+values (6,'2020-06-20 16:08:37',3,'사과','알겠습니다~','T');
+INSERT INTO Conversation(conver_no,conver_time,room_no,mem_nickname,conver_text,isRead)
+values (7,'2020-06-20 16:25:37',3,'사과','가격은 7500원이고, 인증이요','T');
+INSERT INTO Conversation(conver_no,conver_time,room_no,mem_nickname,conver_text,isRead)
+values (8,'2020-06-20 16:45:37',3,'바나나','늦게 봤네요ㅠㅠ감사합니다~','T');
+INSERT INTO Conversation(conver_no,conver_time,room_no,mem_nickname,conver_text,isRead)
+values (9,'2020-06-21 14:10:37',4,'파인애플','인증보냅니다~!','T');
+INSERT INTO Conversation(conver_no,conver_time,room_no,mem_nickname,conver_text,isRead)
+values (10,'2020-06-21 14:12:37',4,'바나나','네넵~기다리고 있습니다!','T');
+commit;
+
+INSERT INTO message_img(conver_no,conver_time,room_no,mem_nickname,img_real_name,img_sys_name,isRead,file_size)
+values (1,'2020-06-20 13:09:37',2,'귤','1.jpg','1.jpg','T',50);
+INSERT INTO message_img(conver_no,conver_time,room_no,mem_nickname,img_real_name,img_sys_name,isRead,file_size)
+values (2,'2020-06-20 16:24:07',3,'사과','2.jpg','2.jpg','T',50);
+INSERT INTO message_img(conver_no,conver_time,room_no,mem_nickname,img_real_name,img_sys_name,isRead,file_size)
+values (3,'2020-06-20 16:25:07',3,'사과','3.PNG','3.PNG','T',50);
+INSERT INTO message_img(conver_no,conver_time,room_no,mem_nickname,img_real_name,img_sys_name,isRead,file_size)
+values (4,'2020-06-21 14:09:37',4,'파인애플','4.jpg','4.jpg','T',50);
+commit;
+
+INSERT INTO board_info(bm_no,room_no)
+values (9,5);
+commit;
+
+INSERT INTO comments(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+values (1,'네고 가능한가요?',1,0,'포도','2020-06-17 16:46:41',1);
+INSERT INTO comments(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+values (2,'안됩니다.',1,1,'바나나','2020-06-17 17:46:41',1);
+INSERT INTO comments(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+values (3,'ㅋㅋ븅신 그지 새끼냐?',1,1,'멜론','2020-06-17 17:56:41',1);
+INSERT INTO comments(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+values (4,'용량은 얼마나 돼나요?',2,0,'수박','2020-06-18 17:46:41',1);
+INSERT INTO comments(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+values (5,'짝퉁 향수 아니에요?ㅋㅋ',3,0,'블루베리','2020-06-19 17:46:41',3);
+INSERT INTO comments(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+values (6,'진품입니다!품질 보증서 있어요~',3,1,'딸기','2020-06-19 18:46:41',3);
+INSERT INTO comments(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+values (7,'이걸 누가사ㅋㅋㅋㅋㅋ',4,0,'수박','2020-06-20 16:46:41',4);
+INSERT INTO comments(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+values (8,'골프채가 원래 이렇게 비싼가요?',5,0,'사과','2020-06-21 16:46:41',7);
+INSERT INTO comments(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+values (9,'ㅜㅠㅠㅠ좋은 골프채라서 비싸요.',5,1,'수박','2020-06-21 16:59:41',7);
+INSERT INTO comments(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+values (10,'무나라도 안받을 듯 ㅋㅋㅋㅋ',6,0,'딸기','2020-06-22 16:46:41',6);
+INSERT INTO comments(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+values (11,'시비는 꺼지세요.',6,1,'멜론','2020-06-22 16:56:41',6);
+INSERT INTO comments(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+values (12,'ㅋㅋㅋ시비 오지네.',6,1,'바나나','2020-06-22 17:26:41',6);
+INSERT INTO comments(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+values (13,'오 저 무료나눔 받고 싶네요!',7,0,'포도','2020-06-23 16:48:41',6);
+INSERT INTO comments(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+values (14,'2년이나 썼는데 너무 비싸게 파는거아닌가요?',8,0,'멜론','2020-06-24 16:46:41',8);
+INSERT INTO comments(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+values (15,'깨끗이 사용했습니다!',8,1,'귤','2020-06-24 17:46:41',8);
+INSERT INTO comments(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+values (16,'헐 개 예쁜데 너무 싸게 파는거 아닌가요?',9,0,'귤','2020-06-25 16:46:41',10);
+INSERT INTO comments(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+values (17,'그쵸?ㅠㅠ근데 이사를 가서 다 정리하려고요:)',9,1,'파인애플','2020-06-25 17:16:41',10);
+INSERT INTO comments(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+values (18,'아 메세지 남길게요!',9,1,'귤','2020-06-25 18:46:41',10);
+INSERT INTO comments(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+values (19,'저 살게요!',10,0,'사과','2020-06-25 19:46:41',10);
+INSERT INTO comments(comment_step,comment_msg,comment_group,commnet_pos,mem_nickname,comment_date,bm_no)
+values (20,'이미 거래중이라서요~죄송해요',10,1,'파인애플','2020-06-25 19:56:41',10);
+commit;
+
+
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+values (1,'grape@good.com','2020-05-20 12:50:37','충전',50000,50000,'i');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+values (2,'grape@good.com','2020-06-20 12:50:37','심부름주문',5000,45000,'o');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+values (3,'grape@good.com','2020-06-20 12:50:37','심부름값제공',1000,44000,'o');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+values (4,'orange@good.com','2020-06-20 13:18:37','심부름완료',5100,5100,'i');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+values (5,'grape@good.com','2020-06-20 13:18:37','심부름남은금액',900,44900,'i');
+
+
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+values (6,'banana@good.com','2020-06-20 14:50:37','충전',50000,50000,'i');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+values (7,'banana@good.com','2020-06-20 15:50:37','심부름주문',8000,42000,'o');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+values (8,'banana@good.com','2020-06-20 15:50:37','심부름값제공',1000,43000,'o');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+values (9,'apple@good.com','2020-06-20 16:30:37','심부름완료',8500,8500,'i');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+values (10,'banana@good.com','2020-06-20 15:50:37','심부름남은금액',500,43500,'i');
+
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+values (12,'banana@good.com','2020-06-21 13:50:37','심부름주문',20000,23500,'o');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+values (13,'banana@good.com','2020-06-21 13:50:37','심부름값제공',3000,20500,'o');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+values (14,'pine@good.com','2020-06-21 14:10:37','심부름완료',23000,23000,'i');
+
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+values (15,'grape@good.com','2020-06-26 15:46:41','안전거래구매',44900,24900,'o');
+INSERT INTO coin_trans(trans_no, mem_email,trans_date,trans_content,trans_price,trans_remain,trans_io)
+values (16,'blue@good.com','2020-06-26 15:56:41','안전거래판매',0,20000,'i');
+commit;
+
+
+INSERT INTO errand(errandKey,errand_item,errand_request_date,errand_start_date,errand_finish_date,
+errand_item_price_req,errand_item_price_nds,errand_item_price_fin,
+errand_price,errand_total_price,errand_content,errand_status,
+mem_email_req,mem_email_nds,errand_lat,errand_lon,req_isShow,nds_isShow)
+values (1,'스타벅스 아이스아메리카노','2020-06-20 12:50:37','2020-06-20 13:00:37','2020-06-20 13:20:37',
+5000,4100,4100,
+1000,5100,'tall사이즈로 부탁해요~30분이내로 가능하면 받아주세요ㅜㅜ점심시간 전에 들어가야 해서요','S',
+'grape@good.com','orange@good.com',0,0,'T','T');
+
+INSERT INTO errand(errandKey,errand_item,errand_request_date,errand_start_date,errand_finish_date,
+errand_item_price_req,errand_item_price_nds,errand_item_price_fin,
+errand_price,errand_total_price,errand_content,errand_status,
+mem_email_req,mem_email_nds,errand_lat,errand_lon,req_isShow,nds_isShow)
+values (2,'상추,오이,가지','2020-06-20 15:50:37','2020-06-20 16:05:37','2020-06-20 16:50:37',
+8000,7500,7500,
+1000,8500,'집 문고리에 걸어주시면 좋겠는데 저희 집 위치는 제가 매칭 돼면 알려드릴게요~','S',
+'banana@good.com','apple@good.com',0,0,'T','T');
+
+INSERT INTO errand(errandKey,errand_item,errand_request_date,errand_start_date,errand_finish_date,
+errand_item_price_req,errand_item_price_nds,errand_item_price_fin,
+errand_price,errand_total_price,errand_content,errand_status,
+mem_email_req,mem_email_nds,errand_lat,errand_lon,req_isShow,nds_isShow)
+values (3,'오구오구쌀3kg','2020-06-21 13:50:37','2020-06-21 14:00:37','2020-06-21 14:20:37',
+20000,20000,20000,
+3000,23000,'쌀 좀 부탁합니다.','S',
+'banana@good.com','pine@good.com',0,0,'T','T');
+commit;
+
+INSERT INTO errand_info(errandKey,check_first,check_second,check_first_time,check_second_time,room_no)
+values(1,'T','T','2020-06-20 13:12:37','2020-06-20 13:21:37',2);
+INSERT INTO errand_info(errandKey,check_first,check_second,check_first_time,check_second_time,room_no)
+values(2,'T','T','2020-06-20 16:27:37','2020-06-20 16:51:37',3);
+INSERT INTO errand_info(errandKey,check_first,check_second,check_first_time,check_second_time,room_no)
+values(3,'T','T','2020-06-21 14:16:37','2020-06-21 14:21:37',4);
+commit;
+
+--ignore all
+INSERT INTO search_words VALUES('테크 세제',    392    ,    164    );
+INSERT INTO search_words VALUES('홈데코용 소품',    157    ,    44    );
+INSERT INTO search_words VALUES('악세서리류',    581    ,    118    );
+INSERT INTO search_words VALUES('굿즈 뭐 있지',    124    ,    9    );
+INSERT INTO search_words VALUES('스킨세트',    499    ,    323    );
+INSERT INTO search_words VALUES('로션세트',    829    ,    645    );
+INSERT INTO search_words VALUES('에센스세트',    20    ,    19    );
+INSERT INTO search_words VALUES('수분크림세트',    906    ,    148    );
+INSERT INTO search_words VALUES('추천미스트',    495    ,    33    );
+INSERT INTO search_words VALUES('추천오일',    565    ,    226    );
+INSERT INTO search_words VALUES('인기 많은 마스크팩',    746    ,    232    );
+INSERT INTO search_words VALUES('클렌징오일',    459    ,    56    );
+INSERT INTO search_words VALUES('선케어 추천',    124    ,    11    );
+INSERT INTO search_words VALUES('바디케어 추천',    730    ,    389    );
+INSERT INTO search_words VALUES('바디케어 세트',    730    ,    389    );
+INSERT INTO search_words VALUES('요즘 뜨는 위생용품',    142    ,    22   );
+INSERT INTO search_words VALUES('운동 뭐하지',    45    ,    33    );
+INSERT INTO search_words VALUES('요즘 뜨는 마사지용품',    913    ,    238    );
+INSERT INTO search_words VALUES('인기 많은 물티슈',    256    ,    34    );
+INSERT INTO search_words VALUES('인기 많은 손소독티슈',    747    ,    686    );
+INSERT INTO search_words VALUES('요즘 뜨는 강아지 식품',    472    ,    63    );
+INSERT INTO search_words VALUES('요즘 뜨는 강아지 용품',    302    ,    44    );
+INSERT INTO search_words VALUES('요즘 뜨는 고양이 식품',    231    ,    35    );
+INSERT INTO search_words VALUES('요즘 뜨는 고양이 용품',    645    ,    43    );
+INSERT INTO search_words VALUES('요즘 뜨는 공간방향제',    174    ,    22    );
+INSERT INTO search_words VALUES('요즘 뜨는 제습용품',    591    ,    123    );
+INSERT INTO search_words VALUES('요즘 뜨는 홈 클리닝',    418    ,    11    );
+INSERT INTO search_words VALUES('요즘 뜨는 생활용품',    553    ,    42    );
+
+INSERT INTO search_words VALUES('요리용품',    645    ,    123    );
+INSERT INTO search_words VALUES('요리추천',    174    ,    23    );
+INSERT INTO search_words VALUES('요리학원',    591    ,    443    );
+INSERT INTO search_words VALUES('요리책',    418    ,    11    );
+INSERT INTO search_words VALUES('홈데코용 소품',    157    ,    44    );
+INSERT INTO search_words VALUES('악세서리류',    581    ,    118    );
+INSERT INTO search_words VALUES('굿즈 뭐 있지',    124    ,    9    );
+INSERT INTO search_words VALUES('스킨세트',    499    ,    323    );
+INSERT INTO search_words VALUES('로션세트',    829    ,    645    );
+INSERT INTO search_words VALUES('에센스세트',    20    ,    19    );
+INSERT INTO search_words VALUES('수분크림세트',    906    ,    148    );
+INSERT INTO search_words VALUES('추천미스트',    495    ,    33    );
+INSERT INTO search_words VALUES('추천오일',    565    ,    226    );
+INSERT INTO search_words VALUES('인기 많은 마스크팩',    746    ,    232    );
+INSERT INTO search_words VALUES('클렌징오일',    459    ,    56    );
+INSERT INTO search_words VALUES('선케어 추천',    124    ,    11    );
+INSERT INTO search_words VALUES('바디케어 추천',    730    ,    389    );
+INSERT INTO search_words VALUES('바디케어 세트',    730    ,    389    );
+INSERT INTO search_words VALUES('요즘 뜨는 위생용품',    142    ,    22   );
+INSERT INTO search_words VALUES('운동 뭐하지',    45    ,    33    );
+INSERT INTO search_words VALUES('요즘 뜨는 마사지용품',    913    ,    238    );
+INSERT INTO search_words VALUES('인기 많은 물티슈',    256    ,    34    );
+INSERT INTO search_words VALUES('인기 많은 손소독티슈',    747    ,    686    );
+INSERT INTO search_words VALUES('요즘 뜨는 강아지 식품',    472    ,    63    );
+INSERT INTO search_words VALUES('요즘 뜨는 강아지 용품',    302    ,    44    );
+INSERT INTO search_words VALUES('요즘 뜨는 고양이 식품',    231    ,    35    );
+INSERT INTO search_words VALUES('요즘 뜨는 고양이 용품',    645    ,    43    );
+INSERT INTO search_words VALUES('요즘 뜨는 공간방향제',    174    ,    22    );
+INSERT INTO search_words VALUES('요즘 뜨는 제습용품',    591    ,    123    );
+INSERT INTO search_words VALUES('요즘 뜨는 홈 클리닝',    418    ,    11    );
+INSERT INTO search_words VALUES('요즘 뜨는 생활용품',    553    ,    42    );
+
+INSERT INTO search_words VALUES('요리용품',    645    ,    123    );
+INSERT INTO search_words VALUES('요리추천',    174    ,    23    );
+INSERT INTO search_words VALUES('요리학원',    591    ,    443    );
+INSERT INTO search_words VALUES('요리책',    418    ,    11    );
+
+INSERT INTO search_words VALUES('사무용문구류',    322    ,    146    );
+INSERT INTO search_words VALUES('서류용 가방',    110    ,    35    );
+INSERT INTO search_words VALUES('색깔바인더',    188    ,    65    );
+INSERT INTO search_words VALUES('사무용지A4',    961    ,    450    );
+INSERT INTO search_words VALUES('복사지A4',    247    ,    229    );
+INSERT INTO search_words VALUES('데스크정리소품',    149    ,    35    );
+INSERT INTO search_words VALUES('전자보드',    128    ,    14    );
+INSERT INTO search_words VALUES('전자칠판',    77    ,    34    );
+INSERT INTO search_words VALUES('광고용 소품',    326    ,    15    );
+INSERT INTO search_words VALUES('색깔봉투',    186    ,    66    );
+INSERT INTO search_words VALUES('포장용품',    491    ,    255    );
+INSERT INTO search_words VALUES('요즘 뜨는 디지털',    936    ,    678    );
+INSERT INTO search_words VALUES('요즘 뜨는 사무기기',    266    ,    35    );
+INSERT INTO search_words VALUES('사무용가구 목록',    623    ,    22    );
+INSERT INTO search_words VALUES('수납가구',    669    ,    491    );
+INSERT INTO search_words VALUES('미술용품',    725    ,    235    );
+INSERT INTO search_words VALUES('학생화방용품',    430    ,    45    );
+INSERT INTO search_words VALUES('캐릭터 문구',    55    ,    42    );
+INSERT INTO search_words VALUES('학용품',    409    ,    128    );
+INSERT INTO search_words VALUES('수업준비',    292    ,    151    );
+commit;

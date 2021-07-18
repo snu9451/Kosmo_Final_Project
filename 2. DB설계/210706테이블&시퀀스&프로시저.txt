@@ -1,0 +1,1281 @@
+
+CREATE TABLE member (
+    mem_email    VARCHAR2(50)    NOT NULL,
+    mem_img    varchar2(100)    NULL,
+    mem_nickname    varchar2(50)    NOT NULL,
+    mem_pw    varchar2(80)    NULL,
+    mem_gender    char(1)    NOT NULL,
+    mem_age    number(2)    NOT NULL,
+    mem_create_date    VARCHAR2(50)    NOT NULL,
+    isSocial    char(1)    NULL,    
+    mem_active    char(1)    NULL,
+    mem_star    number(5,1)    NULL,
+    coin_remain    number(7)    NULL,
+    mem_phone    VARCHAR2(11)    NULL,
+    mem_payPW    VARCHAR2(80)    NULL,
+    mem_errand_mode    char(1)    NULL,
+    mem_star_num    number(5) NULL
+);
+
+ALTER TABLE member ADD CONSTRAINT PK_MEMBER PRIMARY KEY (
+    mem_email
+);
+
+
+CREATE TABLE errand
+(
+   errandKey               VARCHAR2 (20) PRIMARY KEY,
+   errand_item             VARCHAR2 (50) NOT NULL,
+   errand_request_date     VARCHAR2 (50) NOT NULL,
+   errand_start_date       VARCHAR2 (50) NULL,
+   errand_finish_date      VARCHAR2 (50) NULL,
+   errand_item_price_req   NUMBER (6) NOT NULL,
+   errand_item_price_nds   NUMBER (6) NOT NULL,
+   errand_item_price_fin   NUMBER (6) NOT NULL,
+   errand_price            NUMBER (6) NOT NULL,
+   errand_total_price      NUMBER (6) NOT NULL,
+   errand_content          VARCHAR2 (200) NULL,
+   errand_status           CHAR (1) NOT NULL,
+   mem_email_req           VARCHAR2 (50) NOT NULL,
+   mem_email_nds           VARCHAR2 (50) NULL,
+   errand_lat              NUMBER (10, 7) NULL,
+   errand_lon              NUMBER (10, 7) NULL,
+   req_isShow              CHAR (1) NULL,
+   nds_isShow              CHAR (1) NULL,
+   FOREIGN KEY (mem_email_req) REFERENCES member(mem_email),
+   FOREIGN KEY (mem_email_nds) REFERENCES member(mem_email)
+);
+
+
+CREATE TABLE his_errand_denied
+(
+   errandKey               VARCHAR2 (20) NOT NULL,
+   errand_denied_date     VARCHAR2 (50) NOT NULL,
+   errand_deny_msg         VARCHAR2(200) NULL,
+   CONSTRAINT PK_HIS_ERRAND_DENIED PRIMARY KEY(errandKey, errand_denied_date)
+);
+
+
+CREATE TABLE coin_trans (
+    trans_no    number(5)    NOT NULL,
+    mem_email    VARCHAR2(50)    NOT NULL,
+    trans_date    VARCHAR2(50)    NULL,
+    trans_content    varchar2(200)    NULL,
+    trans_price    number(6)    NULL,
+    trans_remain    number(6)    NULL,
+    trans_io    char(1)    NULL
+);
+
+CREATE TABLE board_master (
+    bm_no    number(6)    NOT NULL,
+    bm_title    varchar2(100)    NULL,
+    bm_hit    number(3)    NULL,
+    bm_date    VARCHAR2(50)    NULL,
+    bm_like    number(3)    NULL,
+    bm_content    varchar2(200)    NULL,
+    bm_price    number(9)    NULL,
+    bm_status    char(1)    NOT NULL,
+    seller_nickname    VARCHAR2(30)    NOT NULL,
+    category_name    VARCHAR2(50)    NOT NULL,
+    buyer_nickname    VARCHAR2(30)    NULL,
+    seller_isShow    char(1)    NULL,
+    buyer_isShow    char(1)    NULL,
+    buyer_payDate    VARCHAR2(50)    NULL
+);
+
+CREATE TABLE board_img (
+    bi_no    number(7)    NOT NULL,
+    bm_no    number(6)    NOT NULL,
+    bi_file    varchar2(100)    NULL,
+    bi_size    NUMBER(8)    NULL
+);
+
+CREATE TABLE category (
+    category_name    VARCHAR2(50)    NOT NULL
+);
+
+CREATE TABLE report_board (
+    report_no    number(6)    NOT NULL,
+    mem_email    VARCHAR2(50)    NOT NULL,
+    report_msg    varchar2(200)    NULL,
+    report_date    VARCHAR2(50)    NULL,
+    report_type    VARCHAR2(50)    NOT NULL,
+    bm_no    number(6)    NULL,
+    report_isHandle    char(1)    NULL
+);
+
+CREATE TABLE bank_mem (
+    account_no    number(13)    NOT NULL,
+    bmem_name    varchar2(20)    NULL,
+    bmem_deposit    number(7)    NULL,
+    account_pw    number(4)    NULL,
+    mem_IDnum    number(13)    NULL
+);
+
+CREATE TABLE board_like (
+    bm_no    number(6)    NOT NULL,
+    like10s    number(3)    NULL,
+    like20s    number(3)    NULL,
+    like30s    number(3)    NULL,
+    like40s    number(3)    NULL,
+    like50s    number(3)    NULL,
+    like60s    number(3)    NULL
+);
+
+CREATE TABLE my_like (
+    mem_email    VARCHAR2(50)    NOT NULL,
+    bm_no    number(6)    NOT NULL
+);
+
+CREATE TABLE room (
+    room_no    NUMBER(5)    NOT NULL,
+    mem_nickname_m    VARCHAR2(50)    NOT NULL,
+    mem_nickname_s    VARCHAR2(50)    NOT NULL,
+    room_date    VARCHAR2(50)    NULL
+);
+
+CREATE TABLE Conversation (
+    conver_no    NUMBER(5)    NOT NULL,
+    conver_time    VARCHAR2(50)    NULL,
+    room_no    NUMBER(3)    NOT NULL,
+    mem_nickname    VARCHAR2(50)    NOT NULL,
+    conver_text    VARCHAR2(200)    NULL,
+    isRead    char(1)    NULL
+);
+
+CREATE TABLE search_words (
+    keyword    varchar2(50)    NOT NULL,
+    word_total    number(7)    NULL,
+    word_day    number(5)    NULL
+);
+
+--comment라는 명령어가 존재하는거같다. 그래서 테이블이름으로 사용 안됨
+CREATE TABLE comments (
+    comment_step    NUMBER(6)    NOT NULL,
+    comment_msg    varchar2(200)    NULL,
+    comment_group    NUMBER(3)    NULL,
+    commnet_pos    NUMBER(1)    NULL,
+    mem_nickname    VARCHAR2(50)    NOT NULL,
+    comment_date    VARCHAR2(50)    NULL,
+    bm_no    NUMBER(6)    NOT NULL
+);
+
+CREATE TABLE report_mem (
+    report_no    number(6)    NOT NULL,
+    mem_email_from    VARCHAR2(50)    NOT NULL,
+    mem_email_to    VARCHAR2(50)    NOT NULL,
+    report_msg    varchar2(200)    NULL,
+    report_date    VARCHAR2(50)    NULL,
+    report_type    VARCHAR2(50)    NOT NULL,
+    report_isHandle    char(1)    NULL
+);
+
+CREATE TABLE errand_info (
+    errandKey    VARCHAR2(20)    NULL,
+    check_first    char(1)    NOT NULL,
+    check_second    char(1)    NOT NULL,
+    check_first_time    VARCHAR2(50)    NULL,
+    check_second_time    VARCHAR2(50)    NULL,
+    room_no    NUMBER(3)    NOT NULL
+);
+
+CREATE TABLE report_mem_type (
+    report_type    VARCHAR2(50)    NOT NULL
+);
+
+CREATE TABLE report_board_type (
+    report_type    VARCHAR2(50)    NOT NULL
+);
+
+CREATE TABLE his_board_del (
+    bm_no    number(6)    NOT NULL,
+    seller_email    VARCHAR2(50)    NOT NULL,
+    category_name    VARCHAR2(50)    NULL,
+    bm_title    varchar2(100)    NULL,
+    bm_date    VARCHAR2(50)    NULL,
+    bm_price    number(9)    NULL
+);
+
+CREATE TABLE message_img (
+    conver_no    NUMBER(5)    NOT NULL,
+    conver_time    VARCHAR2(50)    NULL,
+    room_no    NUMBER(3)    NOT NULL,
+    mem_nickname    VARCHAR2(50)    NOT NULL,
+    img_real_name    varchar2(100)    NULL,
+    img_sys_name    varchar2(100)    NULL,
+    isRead    char(1)    NULL,
+    file_size    number(8)    NULL
+);
+
+CREATE TABLE board_info (
+    bm_no    number(6)    NOT NULL,
+    room_no    NUMBER(3)    NOT NULL
+);
+
+CREATE TABLE report_mem_img (
+    report_no    number(3)    NOT NULL,
+    img_real_name    varchar2(100)    NULL,
+    img_sys_name    varchar2(100)    NULL,
+    file_size    number(8)    NULL
+);
+
+CREATE TABLE report_board_img (
+    report_no    number(6)    NOT NULL,
+    img_real_name    varchar2(100)    NULL,
+    img_sys_name    varchar2(100)    NULL,
+    file_size    number(8)    NULL
+);
+
+
+ALTER TABLE coin_trans ADD CONSTRAINT PK_COIN_TRANS PRIMARY KEY (
+    trans_no
+);
+
+ALTER TABLE board_master ADD CONSTRAINT PK_BOARD_MASTER PRIMARY KEY (
+    bm_no
+);
+
+ALTER TABLE board_img ADD CONSTRAINT PK_BOARD_IMG PRIMARY KEY (
+    bi_no
+);
+
+ALTER TABLE category ADD CONSTRAINT PK_CATEGORY PRIMARY KEY (
+    category_name
+);
+
+ALTER TABLE report_board ADD CONSTRAINT PK_REPORT_BOARD PRIMARY KEY (
+    report_no
+);
+
+ALTER TABLE bank_mem ADD CONSTRAINT PK_BANK_MEM PRIMARY KEY (
+    account_no
+);
+
+ALTER TABLE board_like ADD CONSTRAINT PK_BOARD_LIKE PRIMARY KEY (
+    bm_no
+);
+
+ALTER TABLE my_like ADD CONSTRAINT PK_MY_LIKE PRIMARY KEY (
+    mem_email,
+    bm_no
+);
+
+ALTER TABLE room ADD CONSTRAINT PK_ROOM PRIMARY KEY (
+    room_no
+);
+
+ALTER TABLE Conversation ADD CONSTRAINT PK_CONVERSATION PRIMARY KEY (
+    conver_no
+);
+
+ALTER TABLE search_words ADD CONSTRAINT PK_SEARCH_WORDS PRIMARY KEY (
+    keyword
+);
+
+ALTER TABLE comments ADD CONSTRAINT PK_COMMENT PRIMARY KEY (
+    comment_step
+);
+
+ALTER TABLE report_mem ADD CONSTRAINT PK_REPORT_MEM PRIMARY KEY (
+    report_no
+);
+
+ALTER TABLE errand_info ADD CONSTRAINT PK_ERRAND_INFO PRIMARY KEY (
+    errand_no
+);
+
+ALTER TABLE report_mem_type ADD CONSTRAINT PK_REPORT_MEM_TYPE PRIMARY KEY (
+    report_type
+);
+
+ALTER TABLE report_board_type ADD CONSTRAINT PK_REPORT_BOARD_TYPE PRIMARY KEY (
+    report_type
+);
+
+ALTER TABLE his_board_del ADD CONSTRAINT PK_HIS_BOARD_DEL PRIMARY KEY (
+    bm_no
+);
+
+ALTER TABLE message_img ADD CONSTRAINT PK_MESSAGE_IMG PRIMARY KEY (
+    conver_no
+);
+
+ALTER TABLE board_info ADD CONSTRAINT PK_BOARD_INFO PRIMARY KEY (
+    bm_no,
+    room_no
+);
+
+ALTER TABLE report_mem_img ADD CONSTRAINT PK_REPORT_MEM_IMG PRIMARY KEY (
+    report_no
+);
+
+ALTER TABLE report_board_img ADD CONSTRAINT PK_REPORT_BOARD_IMG PRIMARY KEY (
+    report_no
+);
+
+/* 제약조건 삭제
+    > ALTER TABLE 테이블명 DROP CONSTRAINT 제약조건명    */
+
+ALTER TABLE member ADD UNIQUE(mem_nickname);
+
+ALTER TABLE coin_trans ADD CONSTRAINT coin_trans_mem_nickname_fk FOREIGN KEY (
+    mem_email
+)
+REFERENCES member (
+    mem_email
+);
+
+ALTER TABLE board_master ADD CONSTRAINT board_master_sel_nickname_fk FOREIGN KEY (
+    seller_nickname
+)
+REFERENCES member (
+    mem_nickname
+);
+
+ALTER TABLE board_master ADD CONSTRAINT board_master_buy_nickname_fk FOREIGN KEY (
+    buyer_nickname
+)
+REFERENCES member (
+    mem_nickname
+);
+
+ALTER TABLE board_master ADD CONSTRAINT board_master_category_name_fk FOREIGN KEY (
+    category_name
+)
+REFERENCES category (
+    category_name
+);
+
+
+ALTER TABLE board_img ADD CONSTRAINT board_img_bm_no_fk FOREIGN KEY (
+    bm_no
+)
+REFERENCES board_master (
+    bm_no
+);
+
+ALTER TABLE report_board ADD CONSTRAINT report_board_mem_email_fk FOREIGN KEY (
+    mem_email
+)
+REFERENCES member (
+    mem_email
+);
+
+ALTER TABLE report_board ADD CONSTRAINT report_board_report_type_fk FOREIGN KEY (
+    report_type
+)
+REFERENCES report_board_type (
+    report_type
+);
+
+ALTER TABLE board_like ADD CONSTRAINT board_like_bm_no_fk FOREIGN KEY (
+    bm_no
+)
+REFERENCES board_master (
+    bm_no
+);
+
+ALTER TABLE my_like ADD CONSTRAINT my_like_mem_email_fk FOREIGN KEY (
+    mem_email
+)
+REFERENCES member (
+    mem_email
+);
+
+ALTER TABLE my_like ADD CONSTRAINT my_like_bm_no_fk FOREIGN KEY (
+    bm_no
+)
+REFERENCES board_master (
+    bm_no
+);
+
+ALTER TABLE room ADD CONSTRAINT room_MEM_NICKNAME_M_fk foreign key(MEM_NICKNAME_M) 
+references MEMBER(MEM_NICKNAME);
+
+ALTER TABLE room ADD CONSTRAINT room_MEM_NICKNAME_S_fk foreign key(MEM_NICKNAME_S) references MEMBER(MEM_NICKNAME);
+
+ALTER TABLE Conversation ADD CONSTRAINT Conversation_room_no_fk FOREIGN KEY (
+    room_no
+)
+REFERENCES room (
+    room_no
+);
+
+ALTER TABLE Conversation ADD CONSTRAINT Conversation_mem_nickname_fk FOREIGN KEY (
+    mem_nickname
+)
+REFERENCES member (
+    mem_nickname
+);
+
+ALTER TABLE comments ADD CONSTRAINT comment_mem_nickname_fk FOREIGN KEY (
+    mem_nickname
+)
+REFERENCES member (
+    mem_nickname
+);
+
+ALTER TABLE comments ADD CONSTRAINT comment_bm_no_fk FOREIGN KEY (
+    bm_no
+)
+REFERENCES board_master (
+    bm_no
+);
+
+ALTER TABLE report_mem ADD CONSTRAINT report_mem_mem_email_from_fk FOREIGN KEY (
+    mem_email_from
+)
+REFERENCES member (
+    mem_email
+);
+
+ALTER TABLE report_mem ADD CONSTRAINT report_mem_mem_email_to_fk FOREIGN KEY (
+    mem_email_to
+)
+REFERENCES member (
+    mem_email
+);
+
+ALTER TABLE report_mem ADD CONSTRAINT report_mem_report_type_fk FOREIGN KEY (
+    report_type
+)
+REFERENCES report_mem_type (
+    report_type
+);
+
+ALTER TABLE errand_info ADD CONSTRAINT errand_info_errand_no_fk FOREIGN KEY (
+    errandKey
+)
+REFERENCES errand (
+    errandKey
+);
+
+ALTER TABLE his_board_del ADD CONSTRAINT his_board_del_seller_email_fk FOREIGN KEY (
+    seller_email
+)
+REFERENCES member (
+    mem_email
+);
+
+ALTER TABLE message_img ADD CONSTRAINT message_img_room_no_fk FOREIGN KEY (
+    room_no
+)
+REFERENCES room (
+    room_no
+);
+
+ALTER TABLE message_img ADD CONSTRAINT message_img_mem_nickname_fk FOREIGN KEY (
+    mem_nickname
+)
+REFERENCES member (
+    mem_nickname
+);
+
+ALTER TABLE board_info ADD CONSTRAINT board_info_bm_no_fk FOREIGN KEY (
+    bm_no
+)
+REFERENCES board_master (
+    bm_no
+);
+
+ALTER TABLE board_info ADD CONSTRAINT board_info_room_no_fk FOREIGN KEY (
+    room_no
+)
+REFERENCES room (
+    room_no
+);
+
+ALTER TABLE report_mem_img ADD CONSTRAINT report_mem_img_report_no_fk FOREIGN KEY (
+    report_no
+)
+REFERENCES report_mem (
+    report_no
+);
+
+ALTER TABLE report_board_img ADD CONSTRAINT report_board_img_report_no_fk FOREIGN KEY (
+    report_no
+)
+REFERENCES report_board (
+    report_no
+);
+
+commit
+
+CREATE TABLE FINALTEST.BANK_ACCOUNT(
+    ACCOUNT_NUM VARCHAR2(50) PRIMARY KEY,
+    MEM_EMAIL   VARCHAR2(50) NOT NULL UNIQUE,
+    FOREIGN KEY(MEM_EMAIL) REFERENCES MEMBER(MEM_EMAIL)
+)
+
+CREATE TABLE FINALTEST.BANK_ACCOUNT_HIS(
+    ACCOUNT_NUM VARCHAR2(50),
+    IO_MONEY   NUMBER(7) NOT NULL,
+    IO_TYPE CHAR(1) NOT NULL,
+    TRANS_DATE  VARCHAR2(50) NOT NULL,
+    DEPOSIT NUMBER(7) NOT NULL,
+    CONSTRAINT PK_BAH PRIMARY KEY(ACCOUNT_NUM, TRANS_DATE),
+    FOREIGN KEY(ACCOUNT_NUM) REFERENCES BANK_ACCOUNT(ACCOUNT_NUM)
+)
+
+CREATE TABLE NDS_SESSION
+(
+   MEM_EMAIL       VARCHAR2 (50) PRIMARY KEY,
+   MEM_SESSIONID   VARCHAR2 (50) NOT NULL,
+   SID_EXPIRED     VARCHAR2 (50) NOT NULL,
+   AUTH_RANGE      CHAR (1) NOT NULL,
+   FOREIGN KEY (MEM_EMAIL) REFERENCES MEMBER (MEM_EMAIL)
+)
+
+-- 자동로그인 설정하는 프로시저
+CREATE OR REPLACE PROCEDURE PROC_SESSION_MGR (
+   PR_MEM_EMAIL       IN     VARCHAR2,
+   PR_MEM_SESSIONID   IN     VARCHAR2,
+   A_OR_S             IN     CHAR)
+IS
+   CNT        NUMBER (1);
+BEGIN
+
+
+      -- session 테이블에 해당 이메일을 가진 사용자의 row가 있으면 세션아이디의 만료일을 갱신해주고
+      -- 존재하지 않으면 insert한다.
+      SELECT COUNT (*)
+        INTO cnt
+        FROM NDS_SESSION
+       WHERE mem_email = pr_mem_email;
+
+      IF cnt = 1
+      THEN
+         --UPDATE
+         UPDATE NDS_SESSION
+            SET sid_expired =
+                   TO_CHAR (SYSDATE + (INTERVAL '1' MONTH),
+                            'YYYY-MM-DD HH24:MI:SS'),
+                auth_range = A_OR_S
+          WHERE mem_email = pr_mem_email;
+      ELSE
+         --INSERT
+         INSERT INTO NDS_SESSION
+              VALUES (
+                        PR_MEM_EMAIL,
+                        PR_MEM_SESSIONID,
+                        TO_CHAR (SYSDATE + (INTERVAL '1' MONTH),
+                                 'YYYY-MM-DD HH24:MI:SS'),
+                        A_OR_S);
+      END IF;
+
+   COMMIT;
+END;
+
+CREATE OR REPLACE PROCEDURE FINALTEST.PROC_SESSION_MGR (
+   PR_MEM_EMAIL           IN     VARCHAR2,
+   PR_MEM_PW              IN     VARCHAR2,
+   PR_SESSIONVALUE        IN     VARCHAR2,
+   PR_IMSI_SESSIONVALUE   IN     VARCHAR2,
+   PR_AUTH_RANGE          IN     CHAR,
+   RESULT                    OUT NUMBER)
+IS
+   MEM_CNT       NUMBER (1);
+   SESSION_CNT   NUMBER (1);
+BEGIN
+   -- MEMBER 테이블에 해당 회원이 있는지, 그리고 그 회원의 ACTIVE 상태가 TRUE인지 조회한다.
+   SELECT COUNT (*)
+     INTO MEM_CNT
+     FROM MEMBER
+    WHERE     MEM_EMAIL = PR_MEM_EMAIL
+          AND MEM_PW = PR_MEM_PW
+          AND MEM_ACTIVE = 'T';
+
+   -- 활동 중인 회원이라면,
+   IF MEM_CNT = 1
+   THEN
+      -- 아이디 저장 혹은 자동 로그인 선택 회원이니?
+      -- 'A': 자동 로그인, 'S': 아이디 저장, 'N': 아무것도 선택하지 않음
+      IF PR_AUTH_RANGE = 'A' OR PR_AUTH_RANGE = 'S'
+      THEN
+         SELECT COUNT (*)
+           INTO SESSION_CNT
+           FROM NDS_SESSION
+          WHERE MEM_EMAIL = PR_MEM_EMAIL AND MEM_SESSIONID = PR_SESSIONVALUE;
+
+         -- PR_MEM_EMAIL과 PR_SESSIONVALUE로 NDS_SESSION 테이블에서 조회한다.
+         -- ROW가 존재하면,
+         IF SESSION_CNT = 1
+         THEN
+            -- 세션값의 만료일을 갱신해준다.
+            UPDATE NDS_SESSION
+               SET SID_EXPIRED = TO_CHAR(SYSDATE+(INTERVAL '1' MONTH), 'YYYY-MM-DD HH24:MI:SS'),
+                   AUTH_RANGE = PR_AUTH_RANGE
+             WHERE     MEM_EMAIL = PR_MEM_EMAIL
+                   AND MEM_SESSIONID = PR_SESSIONVALUE;
+
+            -- 결과(RESULT)는 1로 셋팅
+            RESULT := 1;
+         ELSE
+            -- (변경된/새)세션값과 이메일에 해당하는 ROW를 INSERT한다.
+            INSERT INTO NDS_SESSION
+                 VALUES (PR_MEM_EMAIL,
+                         PR_IMSI_SESSIONVALUE,
+                         TO_CHAR(SYSDATE+(INTERVAL '1' MONTH), 'YYYY-MM-DD HH24:MI:SS'),
+                         PR_AUTH_RANGE);
+
+            -- 이전 세션값에 해당하는 ROW는 DELETE한다.
+            DELETE FROM NDS_SESSION
+                  WHERE MEM_SESSIONID = PR_SESSIONVALUE;
+
+            -- 결과(RESULT)는 2로 셋팅
+            RESULT := 2;
+         END IF;
+      ELSE
+         -- 존재하는 회원이지만 아이디 저장 또는 자동 로그인을 선택하지 않았음
+         -- 이전 세션값에 해당하는 ROW는 DELETE한다.
+         DELETE FROM NDS_SESSION
+          WHERE MEM_SESSIONID = PR_SESSIONVALUE;
+         RESULT := -1;
+      END IF;
+   ELSE
+      -- 존재하지 않는 회원 즉, ID(EMAIL) 또는 PW 일치하지 않음
+      -- 결과(RESULT)는 0으로 셋팅
+      RESULT := 0;
+   END IF;
+
+   COMMIT;
+END;
+/
+
+CREATE OR REPLACE PROCEDURE FINALTEST.proc_mem_pw(PR_MEM_EMAIL IN VARCHAR2
+                                      , PR_MEM_PW IN VARCHAR2
+                                      , PR_CHANGE_PW IN VARCHAR2
+                                      , RESULT OUT NUMBER)
+IS
+    P_RESULT VARCHAR2(15); 
+BEGIN
+    SELECT DECODE(count(*)
+        , 1
+        , 'true'
+        , 'false')
+         INTO P_RESULT
+      FROM MEMBER 
+     WHERE MEM_EMAIL=PR_MEM_EMAIL
+       AND MEM_PW=PR_MEM_PW;
+    IF P_RESULT = 'true' THEN
+                UPDATE MEMBER
+                SET MEM_PW=PR_CHANGE_PW
+                WHERE MEM_EMAIL=PR_MEM_EMAIL;
+                COMMIT;
+            RESULT := 1;
+    ELSIF P_RESULT = 'false' THEN
+        RESULT := 0;
+    END IF;
+END proc_mem_pw;
+/
+
+CREATE OR REPLACE PROCEDURE proc_mem_active (PR_MEM_EMAIL   IN     VARCHAR2,
+                                             PR_MEM_PW      IN     VARCHAR2,
+                                             PROC_RESULT       OUT VARCHAR2)
+IS
+   PR_MEM_NICKNAME   VARCHAR2 (50);
+   P_RESULT          VARCHAR2 (15);
+BEGIN
+   SELECT MEM_NICKNAME
+     INTO PR_MEM_NICKNAME
+     FROM MEMBER
+    WHERE MEM_EMAIL = PR_MEM_EMAIL;
+
+   --비밀번호가가 일치하면
+   SELECT DECODE (COUNT (*), 1, 'true', 'false')
+     INTO P_RESULT
+     FROM MEMBER
+    WHERE MEM_EMAIL = PR_MEM_EMAIL AND MEM_PW = PR_MEM_PW;
+
+   IF P_RESULT = 'true'
+   THEN
+      --진행중인 심부름 있는지 확인
+      SELECT DECODE (COUNT (*), 0, 'true', 'errand')
+        INTO P_RESULT
+        FROM ERRAND
+       WHERE     (ERRAND_STATUS = 'W' OR ERRAND_STATUS = 'P')
+             AND (   MEM_EMAIL_REQ = PR_MEM_EMAIL
+                  OR MEM_EMAIL_NDS = PR_MEM_EMAIL);
+   END IF;
+
+   IF P_RESULT = 'true'
+   THEN
+      UPDATE MEMBER
+         SET mem_active = 'F'
+       WHERE MEM_EMAIL = PR_MEM_EMAIL;
+
+      PROC_RESULT := 1;
+   ELSIF P_RESULT = 'false'
+   THEN
+      PROC_RESULT := 0;
+   ELSIF P_RESULT = 'errand'
+   THEN
+      PROC_RESULT := -1;
+   END IF;
+
+   COMMIT;
+END proc_mem_active;
+
+CREATE OR REPLACE PROCEDURE proc_mem_active (PR_MEM_EMAIL   IN     VARCHAR2,
+                                             PR_MEM_PW      IN     VARCHAR2,
+                                             PROC_RESULT       OUT VARCHAR2)
+IS
+   PR_MEM_NICKNAME   VARCHAR2 (50);
+   P_RESULT          VARCHAR2 (15);
+BEGIN
+   SELECT MEM_NICKNAME
+     INTO PR_MEM_NICKNAME
+     FROM MEMBER
+    WHERE MEM_EMAIL = PR_MEM_EMAIL;
+
+   --비밀번호가가 일치하면
+   SELECT DECODE (COUNT (*), 1, 'true', 'false')
+     INTO P_RESULT
+     FROM MEMBER
+    WHERE MEM_EMAIL = PR_MEM_EMAIL AND MEM_PW = PR_MEM_PW;
+
+   IF P_RESULT = 'true'
+   THEN
+      --진행중인 심부름 있는지 확인
+      SELECT DECODE (COUNT (*), 0, 'true', 'errand')
+        INTO P_RESULT
+        FROM ERRAND
+       WHERE     (ERRAND_STATUS = 'W' OR ERRAND_STATUS = 'P')
+             AND (   MEM_EMAIL_REQ = PR_MEM_EMAIL
+                  OR MEM_EMAIL_NDS = PR_MEM_EMAIL);
+   END IF;
+
+   IF P_RESULT = 'true'
+   THEN
+      UPDATE MEMBER
+         SET mem_active = 'F'
+       WHERE MEM_EMAIL = PR_MEM_EMAIL;
+
+      PROC_RESULT := 1;
+   ELSIF P_RESULT = 'false'
+   THEN
+      PROC_RESULT := 0;
+   ELSIF P_RESULT = 'errand'
+   THEN
+      PROC_RESULT := -1;
+   END IF;
+
+   COMMIT;
+END proc_mem_active;
+
+
+CREATE SEQUENCE seq_report_mem
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 999999
+NOCYCLE
+NOCACHE;
+
+
+CREATE SEQUENCE seq_errand
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 99999
+NOCYCLE
+NOCACHE;
+
+CREATE SEQUENCE seq_coin_trans
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 99999
+NOCYCLE
+NOCACHE;
+
+
+CREATE SEQUENCE seq_board_master
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 999999
+NOCYCLE
+NOCACHE;
+
+CREATE SEQUENCE seq_board_img
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 9999999
+NOCYCLE
+NOCACHE;
+
+CREATE SEQUENCE seq_comment
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 999999
+NOCYCLE
+NOCACHE;
+
+
+CREATE SEQUENCE seq_his_board_del
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 999999
+NOCYCLE
+NOCACHE;
+
+
+
+CREATE SEQUENCE seq_report_board
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 999999
+NOCYCLE
+NOCACHE;
+
+CREATE SEQUENCE seq_room
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 99999
+NOCYCLE
+NOCACHE;
+
+
+CREATE SEQUENCE seq_Conversation
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 99999
+NOCYCLE
+NOCACHE;
+
+CREATE SEQUENCE seq_comment_group
+INCREMENT BY 1
+START WITH 20
+MINVALUE  1
+MAXVALUE 999
+NOCYCLE
+NOCACHE;
+
+
+
+--트리거
+
+
+--닉네임 변경 시에
+CREATE OR REPLACE TRIGGER trg_nickname_change
+    AFTER UPDATE OF MEM_NICKNAME ON MEMBER
+    for each row
+    declare
+    begin
+            update coin_trans
+        set mem_email = :NEW.MEM_EMAIL
+        where mem_email = :OLD.MEM_EMAIL;
+            update ROOM
+        set MEM_NICKNAME_M = :NEW.MEM_NICKNAME
+        where MEM_NICKNAME_M = :OLD.MEM_NICKNAME;
+            update ROOM
+        set MEM_NICKNAME_S = :NEW.MEM_NICKNAME
+        where MEM_NICKNAME_S = :OLD.MEM_NICKNAME;
+            update BOARD_MASTER 
+        set  SELLER_NICKNAME = :NEW.MEM_NICKNAME
+        where SELLER_NICKNAME  = :OLD.MEM_NICKNAME;
+            update BOARD_MASTER 
+        set  BUYER_NICKNAME = :NEW.MEM_NICKNAME
+        where BUYER_NICKNAME  = :OLD.MEM_NICKNAME;
+            update comments
+        set  mem_nickname = :NEW.MEM_NICKNAME
+        where mem_nickname  = :OLD.MEM_NICKNAME;
+                update Conversation
+        set  mem_nickname = :NEW.MEM_NICKNAME
+        where mem_nickname  = :OLD.MEM_NICKNAME;
+                update message_img
+        set  mem_nickname = :NEW.MEM_NICKNAME
+        where mem_nickname  = :OLD.MEM_NICKNAME;
+END;
+/
+
+
+--상품이 아예 삭제시
+CREATE OR REPLACE TRIGGER trg_BOARD_delete
+    AFTER DELETE ON BOARD_MASTER 
+    for each row
+    declare
+    begin
+            DELETE FROM board_img
+        where bm_no = :OLD.bm_no;
+            DELETE FROM board_like
+        where bm_no = :OLD.bm_no;
+            DELETE FROM my_like
+        where bm_no = :OLD.bm_no;
+            DELETE FROM comments
+        where bm_no = :OLD.bm_no;
+            DELETE FROM board_info
+        where bm_no = :OLD.bm_no;                                
+END;
+/
+
+DROP SEQUENCE FINALTEST.SEQ_COIN_TRANS;
+
+CREATE SEQUENCE FINALTEST.SEQ_COIN_TRANS
+  START WITH 1
+  MAXVALUE 99999
+  MINVALUE 1
+  NOCYCLE
+  NOCACHE
+  NOORDER;
+
+CREATE OR REPLACE PROCEDURE FINALTEST.PROC_COINTRANS (
+   PR_MEM_EMAIL       IN     VARCHAR2,
+   PR_TRANS_CONTENT   IN     VARCHAR2,
+   PR_TRANS_PRICE     IN     NUMBER,
+   PR_TRANS_IO        IN     CHAR,
+   PROC_RESULT           OUT NUMBER)
+IS
+   O_COIN_REMAIN    NUMBER (7);                                  -- 거래 전 코인 잔액
+   N_COIN_REMAIN    NUMBER (6);                                  -- 거래 후 코인 잔액
+   O_BANK_DEPOSIT   NUMBER (7);
+   N_BANK_DEPOSIT   NUMBER (7);                                       -- 은행 잔고
+   P_ACCOUNT_NUM    VARCHAR2 (50);
+   BANK_TRANS_IO    CHAR (1);                    -- 은행 기준 출금인지 입금인지 (코인이랑은 반대)
+BEGIN
+   SELECT COIN_REMAIN
+     INTO O_COIN_REMAIN
+     FROM MEMBER
+    WHERE MEM_EMAIL = PR_MEM_EMAIL;
+
+   -- 가장 최근 은행 거래 내역의 잔고 가져오기
+
+   SELECT DEPOSIT
+     INTO O_BANK_DEPOSIT
+     FROM (  SELECT *
+               FROM BANK_ACCOUNT_HIS
+              WHERE ACCOUNT_NUM = P_ACCOUNT_NUM
+           ORDER BY TRANS_DATE DESC)
+    WHERE ROWNUM = 1;
+
+   --나가는 돈인지 들어오는 돈인지
+   IF PR_TRANS_IO = 'I'                                  --코인 충전인 경우(계좌에서는 출금)
+   THEN
+      SELECT 'O' INTO BANK_TRANS_IO FROM DUAL;
+
+      SELECT (O_COIN_REMAIN + PR_TRANS_PRICE) INTO N_COIN_REMAIN FROM DUAL;
+
+      SELECT (O_BANK_DEPOSIT - PR_TRANS_PRICE) INTO N_BANK_DEPOSIT FROM DUAL;
+   ELSIF PR_TRANS_IO = 'O'                              --계좌로 출금인 경우(계좌에는 입금됨)
+   THEN
+      SELECT 'I' INTO BANK_TRANS_IO FROM DUAL;
+
+      SELECT (O_COIN_REMAIN - PR_TRANS_PRICE) INTO N_COIN_REMAIN FROM DUAL;
+
+      SELECT (O_BANK_DEPOSIT + PR_TRANS_PRICE) INTO N_BANK_DEPOSIT FROM DUAL;
+   END IF;
+
+   --사용자 돈 남은금액 업데이트
+
+   UPDATE MEMBER
+      SET COIN_REMAIN = N_COIN_REMAIN
+    WHERE MEM_EMAIL = PR_MEM_EMAIL;
+
+   --돈 이력관리에 inset해주기
+
+   INSERT INTO COIN_TRANS (TRANS_NO,
+                           MEM_EMAIL,
+                           TRANS_DATE,
+                           TRANS_CONTENT,
+                           TRANS_PRICE,
+                           TRANS_REMAIN,
+                           TRANS_IO)
+        VALUES (SEQ_COIN_TRANS.NEXTVAL,
+                PR_MEM_EMAIL,
+                TO_CHAR (SYSDATE, 'YYYY/MM/DD HH24:MI:SS'),
+                PR_TRANS_CONTENT,
+                PR_TRANS_PRICE,
+                N_COIN_REMAIN,
+                PR_TRANS_IO);
+
+
+
+   --은행 입출금 내역 테이블에 INSERT
+   --파라미터로 전달받은 이메일을 통해 회원의 계좌번호 조회
+
+   SELECT ACCOUNT_NUM
+     INTO P_ACCOUNT_NUM
+     FROM BANK_ACCOUNT
+    WHERE MEM_EMAIL = PR_MEM_EMAIL;
+
+   INSERT INTO BANK_ACCOUNT_HIS (ACCOUNT_NUM,
+                                 IO_MONEY,
+                                 IO_TYPE,
+                                 TRANS_DATE,
+                                 DEPOSIT)
+        VALUES (P_ACCOUNT_NUM,
+                PR_TRANS_PRICE,
+                BANK_TRANS_IO,
+                TO_CHAR (SYSDATE, 'YYYY/MM/DD HH24:MI:SS'),
+                N_BANK_DEPOSIT);
+
+   COMMIT;
+END PROC_COINTRANS;
+/
+
+DROP TRIGGER FINALTEST.TRG_NICKNAME_CHANGE;
+
+CREATE OR REPLACE TRIGGER FINALTEST.TRG_NICKNAME_CHANGE
+    AFTER UPDATE OF MEM_NICKNAME ON FINALTEST.MEMBER
+    for each row
+declare
+    begin
+            update ROOM
+        set MEM_NICKNAME_M = :NEW.MEM_NICKNAME
+        where MEM_NICKNAME_M = :OLD.MEM_NICKNAME;
+            update ROOM
+        set MEM_NICKNAME_S = :NEW.MEM_NICKNAME
+        where MEM_NICKNAME_S = :OLD.MEM_NICKNAME;
+            update BOARD_MASTER 
+        set  SELLER_NICKNAME = :NEW.MEM_NICKNAME
+        where SELLER_NICKNAME  = :OLD.MEM_NICKNAME;
+            update BOARD_MASTER 
+        set  BUYER_NICKNAME = :NEW.MEM_NICKNAME
+        where BUYER_NICKNAME  = :OLD.MEM_NICKNAME;
+            update comments
+        set  mem_nickname = :NEW.MEM_NICKNAME
+        where mem_nickname  = :OLD.MEM_NICKNAME;
+                update Conversation
+        set  mem_nickname = :NEW.MEM_NICKNAME
+        where mem_nickname  = :OLD.MEM_NICKNAME;
+                update message_img
+        set  mem_nickname = :NEW.MEM_NICKNAME
+        where mem_nickname  = :OLD.MEM_NICKNAME;
+END;
+/
+
+CREATE OR REPLACE PROCEDURE FINALTEST.PROC_COINTRANS (
+   PR_MEM_EMAIL       IN     VARCHAR2,
+   PR_TRANS_CONTENT   IN     VARCHAR2,
+   PR_TRANS_PRICE     IN     NUMBER,
+   PR_TRANS_IO        IN     CHAR,
+   PROC_RESULT           OUT NUMBER)
+IS
+   OLD_COUNT         NUMBER (5);
+   NEW_COUNT         NUMBER (5);
+   OLD_COIN_REMAIN   NUMBER (7);
+   NEW_COIN_REMAIN   NUMBER (7);
+   P_COIN_REMAIN     NUMBER (7);
+   PR_TRANS_REMAIN   NUMBER (6);
+BEGIN
+   --업데이트가 발생하기 이전의 보유코인을 담는다.
+   SELECT COIN_REMAIN
+     INTO P_COIN_REMAIN
+     FROM MEMBER
+    WHERE MEM_EMAIL = PR_MEM_EMAIL;
+
+   --INSERT가 발생하기 전 해당 사용자의 거래 총 건수를 담는다.
+   SELECT COUNT (*)
+     INTO OLD_COUNT
+     FROM COIN_TRANS
+    WHERE MEM_EMAIL = PR_MEM_EMAIL;
+
+   --나가는 돈인지 들어오는 돈인지
+   IF PR_TRANS_IO = 'I'
+   THEN
+      SELECT (P_COIN_REMAIN + PR_TRANS_PRICE) INTO PR_TRANS_REMAIN FROM DUAL;
+   ELSIF PR_TRANS_IO = 'O'
+   THEN
+      SELECT (P_COIN_REMAIN - PR_TRANS_PRICE) INTO PR_TRANS_REMAIN FROM DUAL;
+   END IF;
+
+   --사용자 돈 남은금액 업데이트
+   UPDATE MEMBER
+      SET COIN_REMAIN = PR_TRANS_REMAIN
+    WHERE MEM_EMAIL = PR_MEM_EMAIL;
+
+   SELECT COIN_REMAIN
+     INTO NEW_COIN_REMAIN
+     FROM MEMBER
+    WHERE MEM_EMAIL = PR_MEM_EMAIL;
+
+   IF P_COIN_REMAIN = NEW_COIN_REMAIN
+   THEN
+      PROC_RESULT := 0;
+   ELSE
+      PROC_RESULT := 1;
+   END IF;
+
+   --돈 이력관리에 inset해주기
+   INSERT INTO COIN_TRANS (TRANS_NO,
+                           MEM_EMAIL,
+                           TRANS_DATE,
+                           TRANS_CONTENT,
+                           TRANS_PRICE,
+                           TRANS_REMAIN,
+                           TRANS_IO)
+        VALUES (SEQ_COIN_TRANS.NEXTVAL,
+                PR_MEM_EMAIL,
+                TO_CHAR (SYSDATE, 'YYYY/MM/DD HH24:MI:SS'),
+                PR_TRANS_CONTENT,
+                PR_TRANS_PRICE,
+                PR_TRANS_REMAIN,
+                PR_TRANS_IO);
+
+   COMMIT;
+
+   SELECT COUNT (*)
+     INTO NEW_COUNT
+     FROM COIN_TRANS
+    WHERE MEM_EMAIL = PR_MEM_EMAIL;
+
+   IF OLD_COUNT + 1 = NEW_COUNT
+   THEN
+      PROC_RESULT := PROC_RESULT + 1;
+   ELSE
+      PROC_RESULT := PROC_RESULT;
+   END IF;
+END PROC_COINTRANS;
+/
+
+
+CREATE OR REPLACE PROCEDURE proc_mem_pw(PR_MEM_EMAIL IN VARCHAR2
+                      , PR_MEM_PW IN VARCHAR2
+                                      , PR_CHANGE_PW IN VARCHAR2
+                                      , PR_RESULT OUT NUMBER)
+IS
+    P_RESULT VARCHAR2(15); 
+BEGIN
+    SELECT DECODE(count(*)
+        , 1
+        , 'true'
+        , 'false')
+         INTO P_RESULT
+      FROM MEMBER 
+     WHERE MEM_EMAIL=PR_MEM_EMAIL
+       AND MEM_PW=PR_MEM_PW;
+    IF P_RESULT = 'true' THEN
+                UPDATE MEMBER
+                SET MEM_PW=PR_CHANGE_PW
+                WHERE MEM_EMAIL=PR_MEM_EMAIL;
+                COMMIT;
+            PR_RESULT := 1;
+    ELSIF P_RESULT = 'false' THEN
+        PR_RESULT := 0;
+    END IF;
+END proc_mem_pw;
+
+CREATE OR REPLACE PROCEDURE proc_board_main_categori(pr_categori IN varchar2,p_temp OUT sys_refcursor)
+IS
+BEGIN
+OPEN p_temp
+FOR 
+SELECT bm.BM_NO,bm.BI_FILE,bm.BM_TITLE,bm.BM_DATE,bm.BM_PRICE,bm.BM_STATUS,bm.BM_LIKE,bm.BM_CONTENT,BM.CATEGORY_NAME
+FROM ( SELECT bm.BM_NO,bi.BI_FILE,bm.BM_TITLE,bm.BM_DATE,bm.BM_PRICE,bm.BM_STATUS,bm.BM_LIKE,bm.BM_CONTENT,BM.CATEGORY_NAME
+            FROM board_master bm,(select bi1.*
+                                               from board_img bi1,
+                                                     (select min(bi_no) bi_no,bm_no from board_img group by bm_no) bi2
+                                              where bi1.bi_no=bi2.bi_no) bi
+        WHERE  bm.CATEGORY_NAME=pr_categori and bm.BM_NO=bi.BM_NO
+        ORDER BY bm.bm_no desc)bm;
+
+END proc_board_main_categori;
+
+CREATE OR REPLACE PROCEDURE proc_board_select(pr_MEM_EMAIL IN varchar2,pr_bm_no IN number,p_temp OUT sys_refcursor )
+IS
+BEGIN
+open p_temp
+FOR select bm.bm_no,BM_TITLE,BM_HIT,BM_DATE,BM_LIKE,BM_CONTENT,BM_PRICE,BM_STATUS,SELLER_NICKNAME,bm_status,
+       (select case when EXISTS(select  1 from MY_LIKE  where MEM_EMAIL=pr_MEM_EMAIL and BM_NO=pr_bm_no) then 1
+                  else -1  end from dual) i_like
+from BOARD_MASTER bm
+where bm.bm_no=pr_bm_no;
+
+UPDATE BOARD_MASTER
+set BM_HIT=BM_HIT+1
+WHERE  bm_no=pr_bm_no;
+
+commit;
+
+END proc_board_select;
+
+CREATE OR REPLACE PROCEDURE proc_board_select_comments(pr_bm_no IN number,pr_mem_nickname IN varchar2  ,p_temp OUT sys_refcursor)
+IS
+BEGIN
+OPEN p_temp
+FOR 
+select comment_step,comment_msg, comment_group, commnet_pos as comment_pos, mem_nickname, comment_date, Decode(pr_mem_nickname,mem_nickname,1,0) as comment_me
+from COMMENTS 
+where bm_no=pr_bm_no
+order by comment_GROUP , comment_step;
+END proc_board_select_comments;
+
+CREATE OR REPLACE PROCEDURE proc_board_bm_status(pr_bm_no IN number,result OUT varchar2)
+IS
+BEGIN
+
+select BM_STATUS INTO result
+from BOARD_MASTER 
+where  bm_no=pr_bm_no;
+
+--만약 판매중이면 판매완료 처리가 가능하나 ''S'상태로 누가 돈을 넣은 상태라면 false를 반환해준다.
+IF result='N' THEN
+    result :='true';
+    update BOARD_MASTER
+    set bm_status='C'
+    where bm_no=pr_bm_no;
+    commit;
+ELSE
+     result :='false';
+END IF;
+
+END proc_board_bm_status;
+
+CREATE OR REPLACE PROCEDURE proc_board_info(pr_mem_nickname_req IN VARCHAR2,pr_mem_nickname_nds IN VARCHAR2,pr_BM_NO IN number,room_state OUT number)
+IS
+    pr_bm_status char(1);
+    pr_board_info number(1);
+BEGIN
+
+
+--방 존재 여부
+SELECT NVL((select ROOM_NO from room where ((mem_nickname_m=pr_mem_nickname_req and mem_nickname_s=pr_mem_nickname_nds) 
+                                                                            or (mem_nickname_m=pr_mem_nickname_nds and mem_nickname_s=pr_mem_nickname_req))),-1) INTO room_state
+FROM dual;
+
+--만약 방이 존재하지 않는다면 방을 개설
+IF  room_state=-1 THEN
+    select seq_room.nextval INTO room_state from dual;
+    INSERT INTO Room(room_no,mem_nickname_m,mem_nickname_s,room_date)
+    values(room_state,pr_mem_nickname_req,pr_mem_nickname_nds,TO_CHAR(sysdate, 'YYYY/MM/DD HH24:MI:SS'));
+END IF;
+
+--팔린 물건인지 아닌지
+select bm_status INTO pr_bm_status
+from BOARD_MASTER 
+where BM_NO=pr_BM_NO;
+
+select count(*) INTO pr_board_info from board_info where room_no=room_state and BM_NO=pr_BM_NO;
+
+--심부름 생성하기 (메세지 방 안)
+IF pr_bm_status='N' and pr_board_info = 0 THEN
+    INSERT INTO board_info(room_no,BM_NO)
+    values(room_state,pr_BM_NO);
+END IF;
+
+commit;
+END proc_board_info;
+
+CREATE OR REPLACE PROCEDURE proc_board_main(pr_choice IN varchar2 ,p_temp OUT sys_refcursor)
+IS
+BEGIN
+OPEN p_temp
+FOR SELECT bm.BM_NO,bm.BI_FILE,bm.BM_TITLE,bm.BM_DATE,bm.BM_PRICE,bm.BM_STATUS,bm.BM_LIKE,bm.BM_CONTENT,BM.CATEGORY_NAME,DECODE(bm.BM_NO,ML.BM_NO,1,0) as "I_LIKE"
+FROM (SELECT bm.BM_NO,bi.BI_FILE,bm.BM_TITLE,bm.BM_DATE,bm.BM_PRICE,bm.BM_STATUS,bm.BM_LIKE,bm.BM_CONTENT,BM.CATEGORY_NAME
+       FROM board_master bm,(select bi1.*
+                                               from board_img bi1,
+                                                     (select min(bi_no) bi_no,bm_no from board_img group by bm_no) bi2
+                                              where bi1.bi_no=bi2.bi_no) bi
+        WHERE  bm.BM_NO=bi.BM_NO
+        ORDER BY DECODE(pr_choice,'like_rank', bm.BM_LIKE) desc, bm.bm_no desc)bm left join MY_LIKE  ml
+        on BM.BM_NO=ml.BM_NO;
+
+END proc_board_main;
+commit;

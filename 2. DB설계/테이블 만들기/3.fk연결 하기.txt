@@ -21,10 +21,10 @@ REFERENCES member (
 
 
 ALTER TABLE coin_trans ADD CONSTRAINT coin_trans_mem_nickname_fk FOREIGN KEY (
-	mem_nickname
+	mem_email
 )
 REFERENCES member (
-	mem_nickname
+	mem_email
 );
 
 
